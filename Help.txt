@@ -1,0 +1,30 @@
+1.create database "kingsfields_database".
+
+2.import the kingsfields_database.sql file.(or run all sql query which is in "kingsfields_database.sql" file)
+
+3.edit the connect.php file with your config.(which is in session folder).
+[database username,password,host,database]
+
+4. administrator username : admin / password : admin
+
+5. to log-in client reserved of make an transactions 1st ang log-in ur username and password if you upload already at your domain your
+ reservation details will automatically send to your email
+
+6.done. 
+
+------------------------------------------------------------------------------
+
+
+
+Please like or add me as your friend if you want to get more updates or ask for a help Thanks!
+
+
+kringcarl_j@yahoo.com.ph and facebook\michael.galanza or michael fujimura galanza
+
+special thanks to bootstrap and jquery advance learning!
+
+good luck and god bless 
+
+if you dont have the database please pm me or visit my facebook profile to download the database
+
+more updates available soon....................
