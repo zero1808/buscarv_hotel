@@ -264,9 +264,12 @@
   <div class="alert alert-info">Agregar producto <strong>Información</strong></div>
                  
                  	<form method="post">
+               
+                	<div align="center">Nombre del producto: <input name="pproduct" type="text" value="" />
+                        </div>
                  
-                	<div align="center">Nombre del producto: <input name="pproduct" type="text" value="" /></div>
-                    <div style="margin-left:55px;" align="center">Precio: <input name="pprice" type="text" value="" /></div>
+                <div style="margin-left: 90px" align="center">Precio: <input name="pprice" type="text" value="" /></div>
+
                      
   </div>
   	 
@@ -304,8 +307,8 @@
                  
                  	<form method="post">
                  
-                	<div align="center">Tipo de descuento: <input name="ndiscount" type="text" value="" /></div>
-                    <div style="margin-left:35px;" align="center">Monto de descuento: <input name="price" type="text" value="" /></div>
+                	<div style="margin-left: 10px" align="center">Tipo de descuento: <input name="ndiscount" type="text" value="" /></div>
+                    <div align="center">Monto de descuento: <input name="price" type="text" value="" /></div>
                      
   </div>
   	 
@@ -340,7 +343,7 @@
   <div class="modal-header">
   </div>
   <div class="modal-body">
-  <div class="alert alert-info">¿Estas seguro que quieres desconectarte?<strong>Cerrar sesión</strong>?</div>
+  <div class="alert alert-info">¿Estas seguro que quieres desconectarte?<strong> Cerrar sesión</strong>?</div>
   </div>
   <div class="modal-footer">
       <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
