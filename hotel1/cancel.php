@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Kingsfields Express Inn</title>
+    <title>BASIC HOTEL</title>
 
     <script type='text/javascript' src="admin/js/jquery.js"></script>
 
@@ -88,7 +88,7 @@ $qry = mysql_query("select count('reserveID') from tb_reserve where transaction_
 	
 	
 		$mail_To = $email;
-                $mail_Subject = "Reservation notification From Kingsfields Express Inn";
+                $mail_Subject = "Reservation notification From BASIC HOTEL";
                 $mail_Body = "First Name: $fname\n".
 		"Last Name: $lname\n".
 		"Email: $email \n".

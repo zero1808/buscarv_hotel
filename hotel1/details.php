@@ -246,7 +246,7 @@ function goBack()
                 
     			<div class="form-signin">
                 
-                <h4><div style="margin-top:-10px; margin-left:-5px;"><img src="media/kingsfields.png" height="50" width="50"></div> Kingsfield Express Inn</h4>
+                <h4><div style="margin-top:-10px; margin-left:-5px;"><img src="media/kingsfields.png" height="50" width="50"></div> BASIC HOTEL</h4>
                 
                 <hr>
                 
@@ -354,7 +354,7 @@ function goBack()
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
   

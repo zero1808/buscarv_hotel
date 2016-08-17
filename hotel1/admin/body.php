@@ -79,7 +79,7 @@
                                           <div id="checkin<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
                                         	
-                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> Kingsfield Express Inn Check-In</h5>
+                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Check-In</h5>
                                         	
                                         </div>
                                         <div class="modal-body">
@@ -111,7 +111,7 @@
        <div id="change<?php echo $order_id;?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-     <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> Kingsfield Express Inn Change Room</h5>
+     <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Change Room</h5>
   </div>
   <div class="modal-body"> 
   
@@ -155,7 +155,7 @@
      <div id="discount<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
                                         	
-                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> Kingsfield Express Inn Discounts</h5>
+                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Discounts</h5>
                                         	
                                         </div>
                                         <div class="modal-body">
@@ -301,7 +301,7 @@
 <div id="orderd<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
   
-  <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> Kingsfield Express Inn Order Details</h5>
+  <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Order Details</h5>
   
   </div>
   <div class="modal-body">
@@ -359,7 +359,7 @@
                                     <div id="checkout<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
                                         	
-                                           <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> Kingsfield Express Inn Check-out</h5>
+                                           <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Check-out</h5>
                                         	
                                         </div>
                                         <div class="modal-body">
@@ -381,7 +381,7 @@ function Clickheretoprint()
   
   var docprint=window.open("","",disp_setting); 
    docprint.document.open(); 
-   docprint.document.write('<html><head><title>Kingsfield Express Inn Power System</title>'); 
+   docprint.document.write('<html><head><title>BASIC HOTEL Power System</title>'); 
    docprint.document.write('</head><body onLoad="self.print()" style="width: 400px; font-size:12px; font-family:arial;">');          
    docprint.document.write(content_vlue);          
    docprint.document.write('</body></html>'); 
@@ -426,7 +426,7 @@ function Clickheretoprint()
                                     <!-- addtime modal -->
                                     <div id="addtime<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
-                                        	<h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> Kingsfield Express Inn Extensions/Orders</h5>
+                                        	<h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Extensions/Orders</h5>
                                         	
                                         </div>
                                         <div class="modal-body">
@@ -500,7 +500,7 @@ function Clickheretoprint()
      <div id="discount<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
                                         	
-                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> Kingsfield Express Inn Discounts</h5>
+                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Discounts</h5>
                                         	
                                         </div>
                                         <div class="modal-body">
@@ -796,7 +796,7 @@ function Clickheretoprint()
 <div id="delete_member<?php echo $mmid; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
     <div class="alert alert-danger"><p>Are you sure you want to Delete? <strong><?php echo $member_row['firstname']." ".$member_row['lastname'];?></strong></p></div>
@@ -876,7 +876,7 @@ function Clickheretoprint()
 <div id="delete_user<?php echo $user_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
     <div class="alert alert-danger"><p>Are you sure you want to Delete? <strong><?php echo $cart_row['firstname']." ".$cart_row['lastname'];?></strong></p></div>
@@ -1020,7 +1020,7 @@ function Clickheretoprint()
 <div id="update<?php echo $roomID; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
     
@@ -1044,7 +1044,7 @@ function Clickheretoprint()
 <div id="delete_room<?php echo $roomID; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
     <div class="alert alert-danger"><p>Are you sure you want to Delete? <strong>Room <?php echo $room_row['name']." ".$cat_row['category_name'];?></strong></p></div>

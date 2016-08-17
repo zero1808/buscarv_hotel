@@ -122,7 +122,7 @@ $qry = mysql_query("select count('memberID') from tb_member where username = '$u
 		
 		
 		$mail_To = $email;
-                $mail_Subject = "Reservation notification From Kingsfields Express Inn";
+                $mail_Subject = "Reservation notification From BASIC HOTEL";
                 $mail_Body = "First Name: $fname\n".
 		"Last Name: $lname\n".
 		"Email: $email \n".
@@ -209,7 +209,7 @@ function Clickheretoprint()
   
   var docprint=window.open("","",disp_setting); 
    docprint.document.open(); 
-   docprint.document.write('<html><head><title>Kingsfield Express Inn Power System</title>'); 
+   docprint.document.write('<html><head><title>BASIC HOTEL Power System</title>'); 
    docprint.document.write('</head><body onLoad="self.print()" style="width: 400px; font-size:12px; font-family:arial;">');          
    docprint.document.write(content_vlue);          
    docprint.document.write('</body></html>'); 

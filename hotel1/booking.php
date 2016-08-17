@@ -267,7 +267,7 @@ function goBack()
 		
      
       <div class="footer">
-        <p>&copy; Kingsfield Express Inn 2013</p>
+        <p>&copy; BASIC HOTEL 2013</p>
       </div>
 
     </div> <!-- /container -->

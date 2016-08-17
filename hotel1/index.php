@@ -12,7 +12,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> Kingsfield Express inn</a>
+          <a class="brand" href="#"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> BASIC HOTEL</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#"><i class="icon-home"></i> Home</a></li>
@@ -89,7 +89,7 @@
 <div id="about" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
     <p>One fine body…</p>
@@ -105,7 +105,7 @@
 <div id="contact" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
   
@@ -187,9 +187,9 @@
           <img src="admin/slider/IMG_5561.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>WELCOME TO KINGSFIELD</h1>
-              <p class="lead" align-justify>"Welcome to KINGSFIELD Express Inn!
-Kingsfield Express Inn is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
+              <h1>WELCOME TO BASIC HOTEL</h1>
+              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
+BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
 Enjoy an intimate and peaceful night’s rest in the city!".</p>
               <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
             </div>
@@ -199,9 +199,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5563.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>WELCOME TO KINGSFIELD</h1>
-              <p class="lead" align-justify>"Welcome to KINGSFIELD Express Inn!
-Kingsfield Express Inn is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
+              <h1>WELCOME TO BASIC HOTEL</h1>
+              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
+BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
 Enjoy an intimate and peaceful night’s rest in the city!".</p>
               <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
             </div>
@@ -211,9 +211,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5565.jpg" alt="">
           <div class="container">
              <div class="carousel-caption">
-              <h1>WELCOME TO KINGSFIELD</h1>
-              <p class="lead" align-justify>"Welcome to KINGSFIELD Express Inn!
-Kingsfield Express Inn is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
+              <h1>WELCOME TO BASIC HOTEL</h1>
+              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
+BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
 Enjoy an intimate and peaceful night’s rest in the city!".</p>
               <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
             </div>
@@ -223,9 +223,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5566.jpg" alt="">
           <div class="container">
              <div class="carousel-caption">
-              <h1>WELCOME TO KINGSFIELD</h1>
-              <p class="lead" align-justify>"Welcome to KINGSFIELD Express Inn!
-Kingsfield Express Inn is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
+              <h1>WELCOME TO BASIC HOTEL</h1>
+              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
+BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
 Enjoy an intimate and peaceful night’s rest in the city!".</p>
               <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
             </div>
@@ -235,9 +235,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5560.jpg" alt="">
           <div class="container">
              <div class="carousel-caption">
-              <h1>WELCOME TO KINGSFIELD</h1>
-              <p class="lead" align-justify>"Welcome to KINGSFIELD Express Inn!
-Kingsfield Express Inn is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
+              <h1>WELCOME TO BASIC HOTEL</h1>
+              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
+BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
 Enjoy an intimate and peaceful night’s rest in the city!".</p>
               <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
             </div>
@@ -247,9 +247,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5564.jpg" alt="">
           <div class="container">
              <div class="carousel-caption">
-              <h1>WELCOME TO KINGSFIELD</h1>
-              <p class="lead" align-justify>"Welcome to KINGSFIELD Express Inn!
-Kingsfield Express Inn is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
+              <h1>WELCOME TO BASIC HOTEL</h1>
+              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
+BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
 Enjoy an intimate and peaceful night’s rest in the city!".</p>
               <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
             </div>
@@ -270,7 +270,7 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
       <hr>
 
       <footer>
-        <center>&copy; Kingsfield Express Inn, All right reserved 2014</center>
+        <center>&copy; BASIC HOTEL, All right reserved 2014</center>
       </footer>
 
     <!-- Le javascript

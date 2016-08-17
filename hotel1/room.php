@@ -51,7 +51,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> Kingsfield Express inn</a>
+          <a class="brand" href="#"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> BASIC HOTEL</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li><a href="index.php"><i class="icon-home"></i> Home</a></li>
@@ -128,7 +128,7 @@
 <div id="about" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
     <p>One fine body…</p>
@@ -143,7 +143,7 @@
 <div id="contact" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> Kingsfields Express Inn</h3>
+    <h3 id="myModalLabel"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
   
@@ -460,7 +460,7 @@ No additional charge if you cancel 24 hour(s) or more before your arrival date. 
       <hr>
 
       <footer>
-        <p>&copy; Kingsfields Express Inn 2013, All Right Reserved 2014 </p>
+        <p>&copy; BASIC HOTEL 2013, All Right Reserved 2014 </p>
       </footer>
 
     <!-- Le javascript
