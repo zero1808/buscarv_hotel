@@ -1,11 +1,30 @@
-<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
+<div id="myCarousel" class="carousel slide" data-interval="0">
+ <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
+
+ <div style="margin-top:15px;" class="container thumbnail">
+<div  class="input-prepend">
+          <div class="btn-group">
+          <a class="btn" href="#myCarousel" data-slide-to="0" data-interval="0"><i class="icon-print"></i> Reservaciones</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="1" data-interval="0"><i class="icon-print"></i> Checkin</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="2" data-interval="0"><i class="icon-print"></i> Checkout</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="3" data-interval="0"><i class="icon-print"></i> T. Canceladas</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="4" data-interval="0"><i class="icon-print"></i> Logs</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="5" data-interval="0"><i class="icon-print"></i> Clientes</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="6" data-interval="0"><i class="icon-off"></i> Usuarios</a>
+          <a class="btn" href="#myCarousel" data-slide-to="7" data-interval="0"><i class="icon-off"></i> Habitaciones</a>  
+
+      </div>
+            
+</div>
+</div>
+
   <!-- Carousel items -->
   <div class="carousel-inner">
+
 
 
 <div class="active item"> <!--item 1 -->
@@ -1015,7 +1034,7 @@ function Clickheretoprint()
                                             <a href="#delete_room<?php echo $roomID;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Delete</a>
                                             </div></td>
                                             
-                                            
+                                           
                                              <!-- Modal delete room -->
 <div id="update<?php echo $roomID; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -1162,7 +1181,7 @@ function Clickheretoprint()
                <?php }?>
                 
         </table>        
-      
+    <!--  <a href="#delete_room<?php echo $roomID;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Delete All</a>  -->
 
 </div><!--container -->
 
@@ -1175,9 +1194,10 @@ function Clickheretoprint()
 
 
   </div>
-  <!-- Carousel nav -->
+  <!-- Carousel nav 
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  -->
 </div>
 
 
