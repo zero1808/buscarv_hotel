@@ -200,7 +200,7 @@ function goBack()
                 <td>Username:<input class="validate[required,custom[onlyLetterNumber],maxSize[20],ajax[ajaxUserCallPhp]] text-input" name="user" type="text" id="user"/></td>
                 
                 	
-                    <td>Contact Number:<input value="63" class="validate[required,[maxSize[12],custom[onlyNumberSp],[minSize[12]] text-input" name="cnumber" maxlength="12" type="text" id="telephone"></td>
+                    <td>Contact Number:<input value="63" class="validate[required,[maxSize[10],custom[onlyNumberSp],[minSize[10]] text-input" name="cnumber" maxlength="10" type="text" id="telephone"></td>
                 
                 
                 </tr>

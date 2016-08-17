@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Kingsfields Express Inn</title>
+    <title>Hotel</title>
 
     <script type='text/javascript' src="js/jquery.js"></script>
 
@@ -79,7 +79,7 @@
   
 			<div style="margin-top:200px;" class="modal">	
             	<div class="modal-body">
-                		<h4>Processing......</h4>
+                		<h4>Cargando......</h4>
                 		<div id="prog" class="progress progress-info progress-striped">
                <div class="bar text-filled-1" data-amount-part="1337" data-amount-total="9000" data-percentage="100"><?php include('user_name.php'); ?></div>
                 </div>

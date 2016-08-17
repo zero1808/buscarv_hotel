@@ -21,8 +21,8 @@ $validateValue=$_REQUEST['fieldValue'];
 $validateId=$_REQUEST['fieldId'];
 
 
-$validateError= "This username is already taken";
-$validateSuccess= "This username is available";
+$validateError= "Este nombre de usuario ya existe";
+$validateSuccess= "Este nombre de usuario esta disponible";
 
 
 
@@ -35,21 +35,21 @@ $validateSuccess= "This username is available";
 	while ($row = mysql_fetch_array($query)){
 		
 		$user = $row['username'];
-		
-		}
-
-if($validateValue == $user){		// validate??
-	$arrayToJs[1] = false;			// RETURN TRUE
-	echo json_encode($arrayToJs);			// RETURN ARRAY WITH success
-}else{
+        
+        if($validateValue == $user){		// validate??
+	       $arrayToJs[1] = false;			// RETURN TRUE
+	       echo json_encode($arrayToJs);    // RETURN ARRAY WITH success
+            exit;
+            }       
+ 
+	
+        }
 	for($x=0;$x<1000000;$x++){
 		if($x == 990000){
 			$arrayToJs[1] = true;
 			echo json_encode($arrayToJs);		// RETURN ARRAY WITH ERROR
+            exit;
 		}
 	}
-	
-}
-
 	
 ?>

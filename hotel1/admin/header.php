@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 
-        <title>Kingsfields</title>
+        <title>Hotel</title>
         <link href="images/icon.png" rel="icon" type="image">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="screen">
         <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css" media="screen">

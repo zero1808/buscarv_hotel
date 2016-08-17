@@ -136,17 +136,17 @@
                     "url": "ajaxValidateFieldUser",
                     // you may want to pass extra data on the ajax call
                     "extraData": "name=eric",
-                    "alertText": "* This user is already taken",
-                    "alertTextLoad": "* Validating, please wait"
+                    "alertText": "* Este usuario ya existe",
+                    "alertTextLoad": "* Validando, por favor espere."
                 },
 				"ajaxUserCallPhp": {
                     "url": "phpajax/ajaxValidateFieldUser.php",
                     // you may want to pass extra data on the ajax call
                     "extraData": "name=eric",
                     // if you provide an "alertTextOk", it will show as a green prompt when the field validates
-                    "alertTextOk": "* This username is available",
-                    "alertText": "* This user is already taken",
-                    "alertTextLoad": "* Validating, please wait"
+                    "alertTextOk": "* Este nombre de usuario esta disponible",
+                    "alertText": "* Este usuario ya existe",
+                    "alertTextLoad": "* Validando, por favor espere."
                 },
                 "ajaxNameCall": {
                     // remote json service location
@@ -156,7 +156,7 @@
                     // if you provide an "alertTextOk", it will show as a green prompt when the field validates
                     "alertTextOk": "* This name is available",
                     // speaks by itself
-                    "alertTextLoad": "* Validating, please wait"
+                    "alertTextLoad": "* Validando, por favor espere."
                 },
 				 "ajaxNameCallPhp": {
 	                    // remote json service location
@@ -164,7 +164,7 @@
 	                    // error
 	                    "alertText": "* This name is already taken",
 	                    // speaks by itself
-	                    "alertTextLoad": "* Validating, please wait"
+	                    "alertTextLoad": "* Validando, por favor espere."
 	                },
                 "validate2fields": {
                     "alertText": "* Please input HELLO"

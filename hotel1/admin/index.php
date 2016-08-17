@@ -66,13 +66,13 @@ unset($_SESSION['id']);
     <div class="container">
 
       <form class="form-signin" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Por favor inicia sesión</h2>
         <input name="username" type="text" class="input-block-level" placeholder="Email address">
         <input name="password" type="password" class="input-block-level" placeholder="Password">
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
+          <input type="checkbox" value="remember-me"> Recuerdame
         </label>
-        <button class="btn btn-primary" name="login" type="submit"><i class=" icon-check"></i> Sign in</button>
+        <button class="btn btn-primary" name="login" type="submit"><i class=" icon-check"></i> Iniciar</button>
         
         
          <?php

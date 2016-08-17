@@ -12,25 +12,25 @@
 
 <div style="margin-top:15px;" class="container thumbnail">
 
-            <pre><h4><strong><i class="icon-list"></i> List of Reserved</strong></h4></pre>
+            <pre><h4><strong><i class="icon-list"></i> Reservaciones</strong></h4></pre>
  
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
-                        <th><div align="center">Confirmation</div></th>
-                        <th><div align="center">No.</div></th>
-                        <th><div align="center">Guest</div></th>
-                        <th><div align="center">Days</div></th>
-                        <th><div align="center">Arrival</div></th>
-                        <th><div align="center">Departure</div></th>
+                        <th><div align="center">Confirmación</div></th>
+                        <th><div align="center">No. Habitación</div></th>
+                        <th><div align="center">Cliente</div></th>
+                        <th><div align="center">Días</div></th>
+                        <th><div align="center">Llegada</div></th>
+                        <th><div align="center">Salida</div></th>
                         <th><div align="center">Total</div></th>
-                        <th><div align="center">Partial</div></th>
+                        <th><div align="center">Parcial</div></th>
                         <th><div align="center">Balance</div></th>
                         <th><div align="center">Status</div></th>
-                        <th><div align="center">Discount</div></th>
-                        <th><div align="center">Request</div></th>
+                        <th><div align="center">Descuento</div></th>
+                        <th><div align="center">Requiere</div></th>
                         <th><div align="center">Mode</div></th>
-                        <th><div align="center"><a data-trigger="hover" title="Buttons Function" data-placement="top" data-content="Change Room/Discount/Checkin" data-toggle="popover">Actions</a></div></th>
+                        <th><div align="center"><a data-trigger="hover" title="Buttons Function" data-placement="top" data-content="Change Room/Discount/Checkin" data-toggle="popover">Menú</a></div></th>
                     </tr>
                 </thead>
                 	

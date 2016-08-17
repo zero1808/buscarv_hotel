@@ -4,10 +4,12 @@ $user_row = mysql_fetch_array($username_query);
 ?>  
 <div class="pull-right-date">
     <?php
+    setlocale(LC_TIME, 'es_ES.UTF-8');
+
     $Today = date('m/d/y');
-    $new = date('l, F d, Y', strtotime($Today));
-    echo $new;
+    $new = date('d / m / Y', strtotime($Today));
+    echo "Fecha: ".$new;
     ?>
 </div>
-<div class="username">Welcome:&nbsp;&nbsp;<?php echo $user_row['firstname'] . " " . $user_row['lastname']; ?></div>
+<div class="username">Bienvenido:&nbsp;&nbsp;<?php echo $user_row['firstname'] . " " . $user_row['lastname']; ?></div>
 
