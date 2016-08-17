@@ -5,23 +5,23 @@
 <div id="addroom" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Add Rooms</h3>
+    <h3 id="myModalLabel">Agregar habitación</h3>
   </div>
   <div class="modal-body">
   
   <form class="form-horizontal" method="post"  enctype="multipart/form-data">
-                                <div class="alert alert-info"><strong>Informations</strong></div>
+                                <div class="alert alert-info"><strong>Información</strong></div>
                                 <hr>
                                                               
                                 
                                 <div class="control-group">
-                                    <label class="control-label" for="inputEmail">Room no.</label>
+                                    <label class="control-label" for="inputEmail">No. de habitación</label>
                                     <div class="controls">
                                         <input required="required" type="text" name="name" id="inputEmail">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Description:</label>
+                                    <label class="control-label" for="inputPassword">Descripción:</label>
                                     <div class="controls">
                                         <input type="text"  name="description" >
                                     </div>
@@ -29,11 +29,11 @@
                                 
                             
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Category:</label>
+                                    <label class="control-label" for="inputPassword">Categoría:</label>
                                     <div class="controls">
                                         <select type="text" name="category">
                                   		
-                                        <option>--Select Category--</option>
+                                        <option>--Seleccione Categoría--</option>
           		<?php
 				$result = mysql_query("SELECT * FROM tb_category ORDER BY category_id");
 				while($test = mysql_fetch_array($result))
@@ -59,7 +59,7 @@
                              
 
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Price:</label>
+                                    <label class="control-label" for="inputPassword">Precio:</label>
                                     <div class="controls">
                                         <input type="text" name="price">
                                         <input type="hidden" name="status" value="Available" >
@@ -69,7 +69,7 @@
                                
 
                                 <div class="control-group">
-                                    <label class="control-label" for="input01">Image:</label>
+                                    <label class="control-label" for="input01">Imagen:</label>
                                     <div class="controls">
                                         <input type="file" name="image"> 
                                     </div>
@@ -80,8 +80,8 @@
     
   </div>
   <div class="modal-footer">
-   <button type="submit" name="roomsave" class="btn btn-success"><i class="icon-check"></i> Save</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+   <button type="submit" name="roomsave" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
     
   </div>
   
@@ -123,46 +123,97 @@
 
 
 
+<!--add category modal -->
+<div id="addcategory" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Agregar categoria</h3>
+  </div>
+  <div class="modal-body">
+    <form id="align-center" class="form-horizontal" method="post">
+    <div class="alert alert-info"><strong>Información</strong></div>
+                                <hr>
+    
+                                <div class="control-group">
+                                    <label class="control-label" for="nombre_categoria">Nombre de la categoría:</label>
+                                    <div class="controls">
+                            <input name="nombre_categoria" type="text" required="required"  id="nombre_categoria"   >
+                                    </div>
+                                </div>
+                         
+
+                                
+                            
+
+                           
+  </div>
+  <div class="modal-footer">
+  	
+  	<button type="submit" name="save_category" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
+   
+    
+  </div>
+</div><!--modal -->
+
+ </form>
+ 
+
+
+	 					<?php
+                            if (isset($_POST['save_category'])) {
+
+                                $nombre_categoria = $_POST['nombre_categoria'];
+
+                                mysql_query("insert into tb_category (category_name) values('$nombre_categoria')") or die(mysql_error());
+                                header('location:progressbar.php');
+                            }
+							
+                            ?>
+							
+                            
+<!--add user modal end -->     
+                       
 
 
 <!--adduser modal -->
 <div id="adduser" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Add user</h3>
+    <h3 id="myModalLabel">Agregar usuario</h3>
   </div>
   <div class="modal-body">
     <form id="align-center" class="form-horizontal" method="post">
-    <div class="alert alert-info"><strong>Informations</strong></div>
+    <div class="alert alert-info"><strong>Información</strong></div>
                                 <hr>
     
                                 <div class="control-group">
-                                    <label class="control-label" for="inputEmail">FirstName:</label>
+                                    <label class="control-label" for="inputEmail">Nombre(s):</label>
                                     <div class="controls">
                                         <input name="fn" type="text" required="required" id="inputEmail"   >
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">LastName:</label>
+                                    <label class="control-label" for="inputPassword">Apellido Paterno:</label>
                                     <div class="controls">
                                         <input type="text" required="required"  name="ln">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Username:</label>
+                                    <label class="control-label" for="inputPassword">Nombre de usuario:</label>
                                     <div class="controls">
                                         <input type="text" required="required" name="un">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Password:</label>
+                                    <label class="control-label" for="inputPassword">Contraseña:</label>
                                     <div class="controls">
                                         <input type="password" required="required" name="p">
                                     </div>
                                 </div>
 
 								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Contact Number:</label>
+                                    <label class="control-label" for="inputPassword">Teléfono:</label>
                                     <div class="controls">
                                         <input name="cn" type="text" required="required" max="13">
                                     </div>
@@ -175,8 +226,8 @@
   </div>
   <div class="modal-footer">
   	
-  	<button type="submit" name="saveu" class="btn btn-success"><i class="icon-check"></i> Save</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  	<button type="submit" name="saveu" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
    
     
   </div>
@@ -210,18 +261,18 @@
   <div class="modal-header">
   </div>
   <div class="modal-body">
-  <div class="alert alert-info">Enter Product <strong>Informations</strong></div>
+  <div class="alert alert-info">Agregar producto <strong>Información</strong></div>
                  
                  	<form method="post">
                  
-                	<div align="center">Product Name: <input name="pproduct" type="text" value="" /></div>
-                    <div style="margin-left:55px;" align="center">Price: <input name="pprice" type="text" value="" /></div>
+                	<div align="center">Nombre del producto: <input name="pproduct" type="text" value="" /></div>
+                    <div style="margin-left:55px;" align="center">Precio: <input name="pprice" type="text" value="" /></div>
                      
   </div>
   	 
   <div class="modal-footer">
-  		<button class="btn btn-info" type="submit" name="product"><i class="icon-check"></i> Save</button>
-      	<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  		<button class="btn btn-info" type="submit" name="product"><i class="icon-check"></i> Guardar</button>
+      	<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
   </div>
   
   					</form>
@@ -249,18 +300,18 @@
   <div class="modal-header">
   </div>
   <div class="modal-body">
-  <div class="alert alert-info">Enter Discount <strong>Informations</strong></div>
+  <div class="alert alert-info">Agregar descuento <strong>Información</strong></div>
                  
                  	<form method="post">
                  
-                	<div align="center">Discount Type: <input name="ndiscount" type="text" value="" /></div>
-                    <div style="margin-left:35px;" align="center">Discount: <input name="price" type="text" value="" /></div>
+                	<div align="center">Tipo de descuento: <input name="ndiscount" type="text" value="" /></div>
+                    <div style="margin-left:35px;" align="center">Monto de descuento: <input name="price" type="text" value="" /></div>
                      
   </div>
   	 
   <div class="modal-footer">
-  		<button class="btn btn-info" type="submit" name="discount"><i class="icon-check"></i> Save</button>
-      	<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  		<button class="btn btn-info" type="submit" name="discount"><i class="icon-check"></i> Guardar</button>
+      	<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
   </div>
   
   					</form>
@@ -289,11 +340,11 @@
   <div class="modal-header">
   </div>
   <div class="modal-body">
-  <div class="alert alert-info">Are you Sure you Want to <strong>Logout</strong>?</div>
+  <div class="alert alert-info">¿Estas seguro que quieres desconectarte?<strong>Cerrar sesión</strong>?</div>
   </div>
   <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
-      <a href="logout.php" class="btn btn-info"><i class="icon-off"></i> Logout</a>
+      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
+      <a href="logout.php" class="btn btn-info"><i class="icon-off"></i> Cerrar sesión</a>
   </div>
 </div>             
                             
