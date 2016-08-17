@@ -1,5 +1,5 @@
-<?php include('core.php'); ?>		
 <?php include('session.php'); ?>
+<?php include('core.php'); ?>		
 <?php include('connect.php');?>
 <?php include('hover.php');?>
 
