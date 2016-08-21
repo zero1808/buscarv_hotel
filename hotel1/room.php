@@ -227,6 +227,9 @@
                                     <th width="100"><div align="center" style="font-size:16px">Price</div></th>
                                     <th width="50"><div align="center" style="font-size:18px;">Adults</div><div style="font-size:10px;" align="center"> Age: 8+</div></th>
                                     <th width="50"><div align="center" style="font-size:18px;">Childs</div><div style="font-size:10px;" align="center"> Age: 0-7</div></th>
+                                    <th width="50"><div align="center" style="font-size:18px;">No. Camas</div><div style="font-size:10px;" align="center"> KingSize</div></th>
+                                    <th width="50"><div align="center" style="font-size:18px;">No.Camas</div><div style="font-size:10px;" align="center">Matrimoniales</div></th>
+                                    <th width="50"><div align="center" style="font-size:18px;">No.Camas</div><div style="font-size:10px;" align="center">Individuales</div></th>
                                     <th width="180"><div align="center" style="font-size:16px">Category</div></th>
                                     <th width="160"><div align="center" style="font-size:16px">10% Pre-payment</div></th>
                                     <th><div align="center" style="font-size:16px">Status</div></th>
@@ -246,7 +249,7 @@
 										
 										$cat = mysql_query("select * from tb_category where category_id = '$catid'") or die(mysql_error());
 										while ($cat_row = mysql_fetch_array($cat)){
-									
+									   
 										
                                         ?>
                                  
@@ -257,94 +260,42 @@
                                             
                                             <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{echo $row['name'];;}?></div></td>
                                              
-                                    		<td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{ switch($price){
-												
-										case 900:
-											
-											echo '900.00 incl. Taxes & Fees';
-											
-											break;		
-												
-												
-										case 1100;		
-										
-											echo '1100.00 incl. Taxes & Fees';	
-												
-												break;
-												
-										case 950;		
-										
-											echo '950.00 incl. Taxes & Fees';	
-												
-												break;
-												
-												default:
-												
-												}
-											
+                                    		<td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{
+                                            echo "$".$row['price']." MXN";
 											
 											}?></div></td>
-                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{switch ($catid){
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{
 										
-										case 1:
-										
-											echo '<i class="icon-user"></i>';
-										
-										break;
+                                                echo $cat_row['no_adultos'];
+                                            
 												
-										case 2:
-											echo '<i class="icon-user"></i><i class="icon-user"></i>';
+										
 											
-										break;	
+											}?></div></td> 
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{
 										
-										case 3:
-											echo '<i class="icon-user"></i><i class="icon-user"></i>';
-											
-										break;
-										
-										case 4:
-											echo '<i class="icon-user"></i><i class="icon-user"></i>';
-											
-										break;			
+                                                echo $cat_row['no_ninios'];
+                                            
 												
-										default:		
-												
-												
-												}
 										
 											
 											}?></div></td> 
                                        
-                                       <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{switch ($catid){
-										
-										case 1:
-										
-											echo '<span style="font-size:10px;">Not allowed</span>';
-										
-										break;
-												
-										case 2:
-											echo '<i class="icon-user"></i>';
-											
-										break;	
-										
-										case 3:
-											echo '<i class="icon-user"></i>';
-											
-										break;
-										
-										case 4:
-											echo '<i class="icon-user"></i><i class="icon-user"></i>';
-											
-										break;			
-												
-										default:		
-												
-												
-												}
-										
-											
+                                       
+                                       <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{
+                                            echo $cat_row['camas_kingsize'];
+                                            
 											}?></div></td>  
+                                            
+                                        <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{
+                                            echo $cat_row['camas_matrimoniales'];
+                                            
+											}?></div></td>  
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{
+                                            echo $cat_row['camas_individuales'];
+                                            
+											}?></div></td>  
+                                            
                                             
                                                
                                             

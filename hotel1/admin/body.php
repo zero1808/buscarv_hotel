@@ -9,25 +9,25 @@
  <div style="margin-top:15px;" class="container thumbnail">
 <div  class="input-prepend">
           <div class="btn-group">
-          <a class="btn" href="#myCarousel" data-slide-to="0" ><i class="icon-print"></i> Reservaciones</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="1" ><i class="icon-print"></i> Checkin</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="2" ><i class="icon-print"></i> Checkout</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="3" ><i class="icon-print"></i> T. Canceladas</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="4" ><i class="icon-print"></i> Logs</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="5" ><i class="icon-print"></i> Clientes</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="6" ><i class="icon-off"></i> Usuarios</a>
-          <a class="btn" href="#myCarousel" data-slide-to="7" ><i class="icon-off"></i> Habitaciones</a>  
+          <button id="btt_reservaciones" class="btn"><i class="icon-print"></i> Reservaciones</button>   
+          <button id="btt_checkin" class="btn"></i> Checkin</button>      
+          <button id="btt_checkout" class="btn"></i> Checkout</button>    
+          <button id="btt_canceladas" class="btn"></i> T. Canceladas</button>     
+          <button id="btt_logs" class="btn"></i> Logs</button>    
+          <button id="btt_clientes" class="btn"></i> Clientes</button>     
+          <button id="btt_usuarios" class="btn"></i> Usuarios</button>   
+          <button id="btt_habitaciones" class="btn"><i class="icon-off"></i> Habitaciones</button>    
       </div>
             
 </div>
 </div>
 
   <!-- Carousel items -->
-  <div class="carousel-inner">
+  <div>
 
 
 
-<div class="active item"> <!--item 1 -->
+<div id="reservaciones_item" style="display:block"> <!--item 1 -->
 
 <div style="margin-top:15px;" class="container thumbnail">
 
@@ -237,7 +237,7 @@
 
 
 
-<div class="item"> <!--item 1 -->
+<div id="checkin_item" style="display:none"> <!--item 1 -->
 
 <div style="margin-top:15px;" class="container thumbnail">
 
@@ -578,7 +578,7 @@ function Clickheretoprint()
 
 	</div><!--item end -->
 
-<div class="item"> <!--item 1 -->
+<div id="checkout_item" style="display:none"> <!--item 1 -->
 
 <div style="margin-top:15px;" class="container thumbnail">
 
@@ -645,7 +645,7 @@ function Clickheretoprint()
 	</div><!--item end -->
     
 
-<div class="item"> <!--item 1 -->
+<div id="cancel_item" style="display:none"> <!--item 1 -->
 
 <div style="margin-top:15px;" class="container thumbnail">
 
@@ -712,7 +712,7 @@ function Clickheretoprint()
 	</div><!--item end -->
     
     
-    <div class="item"> <!--item 1 -->
+    <div id="logs_item" style="display:none"> <!--item 1 -->
 
 <div style="margin-top:15px;" class="container thumbnail">
 
@@ -769,7 +769,7 @@ function Clickheretoprint()
 
     
 
-<div class="item"> <!--item 1 -->
+<div id="members_item" style="display:none"> <!--item 1 -->
 
 <div style="margin-top:15px;" class="container thumbnail">
 
@@ -849,7 +849,7 @@ function Clickheretoprint()
 
 
 
-<div class="item"> <!--item 1 -->
+<div id="users_item" style="display:none"> <!--item 1 -->
 
 <div style="margin-top:15px;" class="container thumbnail">
 
@@ -986,7 +986,7 @@ function Clickheretoprint()
 
 
 
-<div class="item"> <!--item 1 -->
+<div id="rooms_items" style="display:none"> <!--item 1 -->
 
 <div style="margin-top:15px;" class="container thumbnail">
 
@@ -1199,5 +1199,106 @@ function Clickheretoprint()
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
   -->
 </div>
+<script>
+$( document ).ready(function() {
+    $("#btt_reservaciones").click(function(){ 
+       $("#reservaciones_item").css("display","block");
+       $("#checkin_item").css("display","none");
+       $("#checkout_item").css("display","none");
+       $("#cancel_item").css("display","none");
+       $("#logs_item").css("display","none");
+       $("#logs_item").css("display","none");
+       $("#members_item").css("display","none");
+       $("#users_item").css("display","none");
+       $("#rooms_items").css("display","none");
+        
+     
+    });
+      $("#btt_checkin").click(function(){ 
+       $("#reservaciones_item").css("display","none");
+       $("#checkin_item").css("display","block");
+       $("#checkout_item").css("display","none");
+       $("#cancel_item").css("display","none");
+       $("#logs_item").css("display","none");
+       $("#members_item").css("display","none");
+       $("#users_item").css("display","none");
+       $("#rooms_items").css("display","none");
+        
+     
+    });
+      $("#btt_checkout").click(function(){ 
+       $("#reservaciones_item").css("display","none");
+       $("#checkin_item").css("display","none");
+       $("#checkout_item").css("display","block");
+       $("#cancel_item").css("display","none");
+       $("#logs_item").css("display","none");
+       $("#members_item").css("display","none");
+       $("#users_item").css("display","none");
+       $("#rooms_items").css("display","none");
+        
+     
+    });
+      $("#btt_canceladas").click(function(){ 
+       $("#reservaciones_item").css("display","none");
+       $("#checkin_item").css("display","none");
+       $("#checkout_item").css("display","none");
+       $("#cancel_item").css("display","block");
+       $("#logs_item").css("display","none");
+       $("#members_item").css("display","none");
+       $("#users_item").css("display","none");
+       $("#rooms_items").css("display","none");
+        
+     
+    });
+      $("#btt_logs").click(function(){ 
+       $("#reservaciones_item").css("display","none");
+       $("#checkin_item").css("display","none");
+       $("#checkout_item").css("display","none");
+       $("#cancel_item").css("display","none");
+       $("#logs_item").css("display","block");
+       $("#members_item").css("display","none");
+       $("#users_item").css("display","none");
+       $("#rooms_items").css("display","none");
+        
+     
+    });
+      $("#btt_clientes").click(function(){ 
+       $("#reservaciones_item").css("display","none");
+       $("#checkin_item").css("display","none");
+       $("#checkout_item").css("display","none");
+       $("#cancel_item").css("display","none");
+       $("#logs_item").css("display","none");
+       $("#members_item").css("display","block");
+       $("#users_item").css("display","none");
+       $("#rooms_items").css("display","none");
+        
+     
+    });
+      $("#btt_usuarios").click(function(){ 
+       $("#reservaciones_item").css("display","none");
+       $("#checkin_item").css("display","none");
+       $("#checkout_item").css("display","none");
+       $("#cancel_item").css("display","none");
+       $("#logs_item").css("display","none");
+       $("#members_item").css("display","none");
+       $("#users_item").css("display","block");
+       $("#rooms_items").css("display","none");
+        
+     
+    });
+      $("#btt_habitaciones").click(function(){ 
+       $("#reservaciones_item").css("display","none");
+       $("#checkin_item").css("display","none");
+       $("#checkout_item").css("display","none");
+       $("#cancel_item").css("display","none");
+       $("#logs_item").css("display","none");
+       $("#members_item").css("display","none");
+       $("#users_item").css("display","none");
+       $("#rooms_items").css("display","block");
+        
+     
+    });
 
+});
+</script>
 
