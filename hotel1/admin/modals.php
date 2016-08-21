@@ -133,14 +133,43 @@
     <form id="align-center" class="form-horizontal" method="post">
     <div class="alert alert-info"><strong>Información</strong></div>
                                 <hr>
-    
+                                    
                                 <div class="control-group">
                                     <label class="control-label" for="nombre_categoria">Nombre de la categoría:</label>
                                     <div class="controls">
                             <input name="nombre_categoria" type="text" required="required"  id="nombre_categoria"   >
                                     </div>
                                 </div>
-                         
+                                  <div class="control-group">
+                                    <label class="control-label" for="camas_king">Numero de camas KingSize:</label>
+                                    <div class="controls">
+                            <input name="camas_king" type="text" required="required"  id="camas_king">
+                                    </div>
+                                </div>
+                                  <div class="control-group">
+                                <label class="control-label" for="camas_mat">Numero de camas Matrimoniales:</label>
+                                    <div class="controls">
+                            <input name="camas_mat" type="text" required="required"  id="camas_mat">
+                                    </div>
+                                </div>                         
+                                  <div class="control-group">
+                                <label class="control-label" for="camas_ind">Numero de camas Individuales:</label>
+                                    <div class="controls">
+                            <input name="camas_ind" type="text" required="required"  id="camas_ind">
+                                    </div>
+                                </div>                         
+                                  <div class="control-group">
+                                <label class="control-label" for="no_adultos">Numero de adultos:</label>
+                                    <div class="controls">
+                            <input name="no_adultos" type="text" required="required"  id="no_adultos">
+                                    </div>
+                                </div>                         
+                                  <div class="control-group">
+                                <label class="control-label" for="no_ninios">Numero de niños:</label>
+                                    <div class="controls">
+                            <input name="no_ninios" type="text" required="required"  id="no_ninios">
+                                    </div>
+                                </div>                                                                                 
 
                                 
                             
@@ -164,8 +193,12 @@
                             if (isset($_POST['save_category'])) {
 
                                 $nombre_categoria = $_POST['nombre_categoria'];
-
-                                mysql_query("insert into tb_category (category_name) values('$nombre_categoria')") or die(mysql_error());
+                                $no_camas_king=$_POST['camas_king'];
+                                $no_camas_mat=$_POST['camas_mat'];
+                                $no_camas_ind=$_POST['camas_ind'];
+                                $no_adultos=$_POST['no_adultos'];
+                                $no_ninios=$_POST['no_ninios'];
+                                mysql_query("insert into tb_category (category_name,camas_kingsize,camas_matrimoniales,camas_individuales,no_adultos,no_ninios) values('$nombre_categoria','$no_camas_king','$no_camas_mat','$no_camas_ind','$no_adultos','$no_ninios')") or die(mysql_error());
                                 header('location:progressbar.php');
                             }
 							
