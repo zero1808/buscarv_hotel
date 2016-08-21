@@ -222,16 +222,15 @@
                             <thead class=" hero-unit">
                                 <tr>
                                 
-                                	<th width="60"><div align="center" style="margin-top:10px;">Image</div></th>
+                                	<th width="60"><div align="center" style="margin-top:10px;">Foto</div></th>
                                     <th width="20"><div align="center" style="margin-top:10px;">No.</div></th>
-                                    <th width="100"><div align="center" style="font-size:16px">Price</div></th>
-                                    <th width="50"><div align="center" style="font-size:18px;">Adults</div><div style="font-size:10px;" align="center"> Age: 8+</div></th>
-                                    <th width="50"><div align="center" style="font-size:18px;">Childs</div><div style="font-size:10px;" align="center"> Age: 0-7</div></th>
+                                    <th width="100"><div align="center" style="font-size:16px">Precio</div></th>
+                                    <th width="50"><div align="center" style="font-size:18px;">Adultos</div><div style="font-size:10px;" align="center"> Age: 8+</div></th>
+                                    <th width="50"><div align="center" style="font-size:18px;">Niños</div><div style="font-size:10px;" align="center"> Age: 0-7</div></th>
                                     <th width="50"><div align="center" style="font-size:18px;">No. Camas</div><div style="font-size:10px;" align="center"> KingSize</div></th>
                                     <th width="50"><div align="center" style="font-size:18px;">No.Camas</div><div style="font-size:10px;" align="center">Matrimoniales</div></th>
                                     <th width="50"><div align="center" style="font-size:18px;">No.Camas</div><div style="font-size:10px;" align="center">Individuales</div></th>
-                                    <th width="180"><div align="center" style="font-size:16px">Category</div></th>
-                                    <th width="160"><div align="center" style="font-size:16px">10% Pre-payment</div></th>
+                                    <th width="180"><div align="center" style="font-size:16px">Categoría</div></th>
                                     <th><div align="center" style="font-size:16px">Status</div></th>
                             
                           
@@ -245,7 +244,6 @@
                                     while ($row = mysql_fetch_array($query)) {
                                         $id = $row['roomID'];
 										$catid = $row['category_id'];
-										$price = $row['price'];
 										
 										$cat = mysql_query("select * from tb_category where category_id = '$catid'") or die(mysql_error());
 										while ($cat_row = mysql_fetch_array($cat)){
@@ -261,7 +259,7 @@
                                             <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{echo $row['name'];;}?></div></td>
                                              
                                     		<td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{
-                                            echo "$".$row['price']." MXN";
+                                            echo "$".$cat_row['precio']." MXN";
 											
 											}?></div></td>
                                             <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{
@@ -300,36 +298,7 @@
                                                
                                             
                                             <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{echo $cat_row['category_name'];}?></div></td> 
- 											<td><div align="center" style="margin-top:20px"><?php if($row['status']=='Reserved'){ echo '-&deg;-';}else{switch ($catid){
-										
-										case 1:
-										
-											echo '<div align="center" style="margin-top:20px; color: rgba(0,0,0,1); font-size:16px;">PHP 900.00</div><div align="center" style="font-size:10px;">for 1 night</div><div align="center" style="font-size:12px; color:rgba(0,204,0,1)">Pay only 10% to reserve!</div>';
-										
-										break;
-												
-										case 2:
-											echo '<div align="center" style="margin-top:20px; color: rgba(0,0,0,1); font-size:16px;">PHP 950.00</div><div align="center" style="font-size:10px;">for 1 night</div><div align="center" style="font-size:12px; color:rgba(0,204,0,1)">Pay only 10% to reserve!</div>';
-											
-										break;	
-										
-										case 3:
-											echo '<div align="center" style="margin-top:20px; color: rgba(0,0,0,1); font-size:16px;">PHP 1100.00</div><div align="center" style="font-size:10px;">for 1 night</div><div align="center" style="font-size:12px; color:rgba(0,204,0,1)">Pay only 10% to reserve!</div>';
-											
-										break;
-										
-										case 4:
-											echo '<div align="center" style="margin-top:20px; color: rgba(0,0,0,1); font-size:16px;">PHP 1100.00</div><div align="center" style="font-size:10px;">for 1 night</div><div align="center" style="font-size:12px; color:rgba(0,204,0,1)">Pay only 10% to reserve!</div>';
-											
-										break;			
-												
-										default:		
-												
-												
-												}
-										
-											
-											}?></div></td> 
+ 											
                                                 
                                             
                                             <td><div align="center" style="margin-top:20px"><strong>

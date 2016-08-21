@@ -105,9 +105,9 @@
                                         
                  <div class="alert-block">
                                  	
-                 	<p><strong>Transaction Code: </strong><?php echo $cart_row['transaction_code']; ?></p>
-                    <p><strong>Guest Name: </strong> <?php echo $member_row['firstname']." ".$member_row['lastname']; ?></p>
-                 	<p><strong>Partial Payment: </strong> <?php echo $cart_row['partial']; ?></p>
+                 	<p><strong>Confirmación: </strong><?php echo $cart_row['transaction_code']; ?></p>
+                    <p><strong>Nombre del cliente </strong> <?php echo $member_row['firstname']." ".$member_row['lastname']; ?></p>
+                 	<p><strong>Pago parcial: </strong> <?php echo $cart_row['partial']; ?></p>
                     
                  </div>
                  
@@ -130,7 +130,7 @@
        <div id="change<?php echo $order_id;?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-     <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Change Room</h5>
+     <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Cambiar habitación</h5>
   </div>
   <div class="modal-body"> 
   
@@ -140,7 +140,7 @@
   
   <input name="roomp" type="hidden" value="<?php echo $product_id;?>">
   
-  <div align="center">Room Number: <select class="span2" name="roomID">
+  <div align="center">No. de habitación: <select class="span2" name="roomID">
   <?php 
  	
 	$resc = mysql_query("select * from tb_rooms where category_id = '$catdi' and status = 'available'") or die (mysql_error());
@@ -161,8 +161,8 @@
   
   <div class="modal-footer">
   	
-    <button type="submit" class="btn btn-info" name="res"><i class="icon-edit"></i> Change</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+    <button type="submit" class="btn btn-info" name="res"><i class="icon-edit"></i> Cambiar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
     
   </div>
   
@@ -174,7 +174,7 @@
      <div id="discount<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
                                         	
-                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Discounts</h5>
+                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Descuentos</h5>
                                         	
                                         </div>
                                         <div class="modal-body">
@@ -183,8 +183,8 @@
                   
  <form action="discount.php" method="post">
   
-  <div align="center">Discount Type: <select class="span2" name="disID">
-  <option value="0">--Select Discount--</option>
+  <div align="center">Tipo de descuento: <select class="span2" name="disID">
+  <option value="0">--Seleccion descuento--</option>
   <?php 
  	
 	$rescs = mysql_query("select * from tb_discount order by 'price'") or die (mysql_error());
@@ -210,8 +210,8 @@
                          
                          		
                                         <div class="modal-footer">
-          <button class=" btn btn-success" name="discount" type="submit"><i class="icon-check"></i> Ok</button>
-          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancel</button>
+          <button class=" btn btn-success" name="discount" type="submit"><i class="icon-check"></i> Guardar</button>
+          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancelar</button>
 
                                         </div>
                                         
@@ -241,24 +241,24 @@
 
 <div style="margin-top:15px;" class="container thumbnail">
 
-           <pre><h4><strong><i class="icon-list"></i> List of Checkin</strong></h4></pre>
+           <pre><h4><strong><i class="icon-list"></i> Lista de Checkin</strong></h4></pre>
  
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
-                        <th><div align="center">Confirmation</div></th>
-                        <th><div align="center">Room </div></th>
-                        <th><div align="center">Guest</div></th>
-                        <th><div align="center">Days</div></th>
-                        <th><div align="center">Arrival</div></th>
-                        <th><div align="center">Departure</div></th>
+                        <th><div align="center">Confirmación</div></th>
+                        <th><div align="center">No. Habitación</div></th>
+                        <th><div align="center">Cliente</div></th>
+                        <th><div align="center">Dias</div></th>
+                        <th><div align="center">Llegada</div></th>
+                        <th><div align="center">Salida</div></th>
                         <th><div align="center">Total</div></th>
-                        <th><div align="center">Partial</div></th>
+                        <th><div align="center">Parcial</div></th>
                         <th><div align="center">Balance</div></th>
                         <th><div align="center">Orders</div></th>
-                        <th><div align="center">Discount</div></th>
+                        <th><div align="center">Descuento</div></th>
                         <th><div align="center">Payment</div></th>
-                        <th><div align="center"><a data-trigger="hover" title="Buttons Functions" data-placement="top" data-content="Check-out/Additional/Discount" data-toggle="popover">Actions</a></div></th>
+                        <th><div align="center"><a data-trigger="hover" title="Buttons Functions" data-placement="top" data-content="Check-out/Additional/Discount" data-toggle="popover">Menú</a></div></th>
                     </tr>
                 </thead>
                 	
@@ -320,7 +320,7 @@
 <div id="orderd<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
   
-  <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Order Details</h5>
+  <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Detalle de orden</h5>
   
   </div>
   <div class="modal-body">
@@ -331,7 +331,7 @@
             	<div class="controls">
                 
                 	<div class="thumbnail table alert-info">
- <strong>Product ID &nbsp;</strong>   <strong>Product Name &nbsp;</strong> <strong>Product Price &nbsp;&nbsp;&nbsp;&nbsp;</strong> <strong>Qty &nbsp;</strong> <strong class="pull-right">Extension &nbsp;</strong>
+ <strong>Id del producto &nbsp;</strong>   <strong>Nombre del producto &nbsp;</strong> <strong>Precio &nbsp;&nbsp;&nbsp;&nbsp;</strong> <strong>Qty &nbsp;</strong> <strong class="pull-right">Extension &nbsp;</strong>
                     </div>
                 
                 	   		<?php $table_order = mysql_query("SELECT * FROM tb_orders where reserveID = '$order_id'") or die (mysql_error());				while($row_orders = mysql_fetch_array($table_order)){
@@ -367,7 +367,7 @@
  
   </div>
   <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
   </div>
 </div>             
                             
@@ -430,7 +430,7 @@ function Clickheretoprint()
                          		
                                         <div class="modal-footer">
           <button class="btn btn-info" name="checkout" type="submit"><i class="icon-check"></i> Checkout</button>
-          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancel</button>
+          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancelar</button>
 
                                         </div>
                                         
@@ -478,7 +478,7 @@ function Clickheretoprint()
 				
                     <select name="productID">
                     
-                 	<option value="0">--Product--</option>
+                 	<option value="0">--Producto--</option>
                  
                  	<?php
 				 
@@ -519,7 +519,7 @@ function Clickheretoprint()
      <div id="discount<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
                                         	
-                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Discounts</h5>
+                                            <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Descuentos</h5>
                                         	
                                         </div>
                                         <div class="modal-body">
@@ -528,8 +528,8 @@ function Clickheretoprint()
                   
  <form action="discount.php" method="post">
   
-  <div align="center">Discount Type: <select class="span2" name="disID">
-  <option value="0">--Select Discount--</option>
+  <div align="center">Tipo de descuento: <select class="span2" name="disID">
+  <option value="0">--Seleccionar descuento--</option>
   <?php 
  	
 	$rescs = mysql_query("select * from tb_discount order by 'price'") or die (mysql_error());
@@ -555,8 +555,8 @@ function Clickheretoprint()
                          
                          		
                                         <div class="modal-footer">
-          <button class=" btn btn-success" name="discount" type="submit"><i class="icon-check"></i> Ok</button>
-          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancel</button>
+          <button class=" btn btn-success" name="discount" type="submit"><i class="icon-check"></i> Guardar</button>
+          <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancelar</button>
 
                                         </div>
                                         
@@ -582,20 +582,20 @@ function Clickheretoprint()
 
 <div style="margin-top:15px;" class="container thumbnail">
 
-            <pre><h4><strong><i class="icon-list"></i> List of Checkout</strong></h4></pre>
+            <pre><h4><strong><i class="icon-list"></i> Lista de Checkout</strong></h4></pre>
  
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
-                        <th><div align="center">Confirmation Code</div></th>
-                        <th><div align="center">Room no.</div></th>
-                        <th><div align="center">Guest</div></th>
-                        <th><div align="center">Days</div></th>
-                        <th><div align="center">Arrival</div></th>
-                        <th><div align="center">Departure</div></th>
-                        <th><div align="center">Total Amount</div></th>
+                        <th><div align="center">Confirmación</div></th>
+                        <th><div align="center">No. Habitación</div></th>
+                        <th><div align="center">Cliente</div></th>
+                        <th><div align="center">Dias</div></th>
+                        <th><div align="center">Llegada</div></th>
+                        <th><div align="center">Salida</div></th>
+                        <th><div align="center">Monto total</div></th>
                         <th><div align="center">Status</div></th>
-                        <th><div align="center">Incharge</div></th>
+                        <th><div align="center">Encargado</div></th>
                         <th><div align="center">Checkout</div></th>
                     </tr>
                 </thead>
@@ -649,20 +649,20 @@ function Clickheretoprint()
 
 <div style="margin-top:15px;" class="container thumbnail">
 
-            <pre><h4><strong><i class="icon-list"></i> List of Cancel Transactions</strong></h4></pre>
+            <pre><h4><strong><i class="icon-list"></i> Lista de transaciones canceladas</strong></h4></pre>
  
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
-                        <th><div align="center">Confirmation Code</div></th>
-                        <th><div align="center">Room no.</div></th>
-                        <th><div align="center">Guest</div></th>
-                        <th><div align="center">Days</div></th>
-                        <th><div align="center">Arrival</div></th>
-                        <th><div align="center">Departure</div></th>
-                        <th><div align="center">Total Amount</div></th>
+                        <th><div align="center">Confirmación</div></th>
+                        <th><div align="center">No. Habitación</div></th>
+                        <th><div align="center">Cliente</div></th>
+                        <th><div align="center">Dias</div></th>
+                        <th><div align="center">Llegada</div></th>
+                        <th><div align="center">Salida</div></th>
+                        <th><div align="center">Monto total</div></th>
                         <th><div align="center">Status</div></th>
-                        <th><div align="center">Incharge</div></th>
+                        <th><div align="center">Encargado</div></th>
                         <th><div align="center">Checkout</div></th>
                     </tr>
                 </thead>
@@ -716,17 +716,17 @@ function Clickheretoprint()
 
 <div style="margin-top:15px;" class="container thumbnail">
 
-            <pre><h4><strong><i class="icon-user"></i> History Logs</strong></h4></pre>
+            <pre><h4><strong><i class="icon-user"></i> Historial de conexión</strong></h4></pre>
  
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
                         <th><div align="center">ID</div></th>
-                        <th><div align="center">Firstname</div></th>
-                        <th><div align="center">Lastname</div></th>
-                        <th><div align="center">Contact</div></th>
-                        <th><div align="center">Action</div></th>
-                        <th><div align="center">Date/Time</div></th>
+                        <th><div align="center">Nombre(s)</div></th>
+                        <th><div align="center">Apellido</div></th>
+                        <th><div align="center">Contacto</div></th>
+                        <th><div align="center">Acción</div></th>
+                        <th><div align="center">Fecha/Hora</div></th>
                     
                     </tr>
                 </thead>
@@ -773,20 +773,20 @@ function Clickheretoprint()
 
 <div style="margin-top:15px;" class="container thumbnail">
 
-            <pre><h4><strong><i class="icon-user"></i> List of Members</strong></h4></pre>
+            <pre><h4><strong><i class="icon-user"></i> Lista de Clientes</strong></h4></pre>
  
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
                         <th><div align="center">ID</div></th>
-                        <th><div align="center">Firstname</div></th>
-                        <th><div align="center">Lastname</div></th>
+                        <th><div align="center">Nombre(s)</div></th>
+                        <th><div align="center">Apellido</div></th>
                         <th><div align="center">Email</div></th>
-                        <th><div align="center">Contact no.</div></th>
+                        <th><div align="center">Teléfono</div></th>
                         <th><div align="center">Username</div></th>
                         <th><div align="center">Password</div></th>
-                        <th><div align="center">Address</div></th>
-                        <th><div align="center">Action</div></th>
+                        <th><div align="center">Direccion</div></th>
+                        <th><div align="center">Acción</div></th>
                     </tr>
                 </thead>
                 	
@@ -818,11 +818,11 @@ function Clickheretoprint()
     <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
-    <div class="alert alert-danger"><p>Are you sure you want to Delete? <strong><?php echo $member_row['firstname']." ".$member_row['lastname'];?></strong></p></div>
+    <div class="alert alert-danger"><p>Estas seugro que desas borrar este usuario? <strong><?php echo $member_row['firstname']." ".$member_row['lastname'];?></strong></p></div>
   </div>
   <div class="modal-footer">
-  	<a class="btn btn-danger" href="delete_member.php<?php echo '?id=' . $mmid; ?>" ><i class="icon-check"></i>&nbsp;Yes</a>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  	<a class="btn btn-danger" href="delete_member.php<?php echo '?id=' . $mmid; ?>" ><i class="icon-check"></i>&nbsp;Si</a>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancelar</button>
   </div>
 </div>
                                          <!--modal end --> 
@@ -853,7 +853,7 @@ function Clickheretoprint()
 
 <div style="margin-top:15px;" class="container thumbnail">
 
-            <pre><h4><strong><i class="icon-user"></i> List of Users</strong></h4></pre>
+            <pre><h4><strong><i class="icon-user"></i> Lista de usuarios</strong></h4></pre>
  
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
@@ -861,10 +861,10 @@ function Clickheretoprint()
                         <th><div align="center">ID</div></th>
                         <th><div align="center">Username</div></th>
                         <th><div align="center">Password</div></th>
-                        <th><div align="center">Firstname</div></th>
-                        <th><div align="center">Lastname</div></th>
-                        <th><div align="center">Contact no.</div></th>
-                        <th><div align="center">Actions</div></th>      
+                        <th><div align="center">Nombre(s)</div></th>
+                        <th><div align="center">Apellido</div></th>
+                        <th><div align="center">Teléfono</div></th>
+                        <th><div align="center">Acciones</div></th>      
                     </tr>
                 </thead>
                 	
@@ -898,11 +898,11 @@ function Clickheretoprint()
     <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
-    <div class="alert alert-danger"><p>Are you sure you want to Delete? <strong><?php echo $cart_row['firstname']." ".$cart_row['lastname'];?></strong></p></div>
+    <div class="alert alert-danger"><p>Estas seguro que deseas borrar? <strong><?php echo $cart_row['firstname']." ".$cart_row['lastname'];?></strong></p></div>
   </div>
   <div class="modal-footer">
-  	<a class="btn btn-danger" href="delete_user.php<?php echo '?id=' . $user_id; ?>" ><i class="icon-check"></i>&nbsp;Yes</a>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  	<a class="btn btn-danger" href="delete_user.php<?php echo '?id=' . $user_id; ?>" ><i class="icon-check"></i>&nbsp;Si</a>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancel</button>
   </div>
 </div>
                                          <!--modal end --> 
@@ -912,23 +912,23 @@ function Clickheretoprint()
 <div id="edit_user<?php echo $user_id;?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Edit user</h3>
+    <h3 id="myModalLabel">Editar usuario</h3>
   </div>
   <div class="modal-body">
     <form action="edit_user.php<?php echo '?id=' . $user_id; ?>" id="align-center" class="form-horizontal" method="post">
-    <div class="alert alert-info"><strong>Informations</strong></div>
+    <div class="alert alert-info"><strong>Información</strong></div>
                                 <hr>
     
                                 <div  class="control-group">
                                    
                                     <div align="center" class="controls">
-                                        Firstname: <input type="text" name="fn" id="inputEmail" value="<?php echo $cart_row['firstname']?>">
+                                        Nombre(s): <input type="text" name="fn" id="inputEmail" value="<?php echo $cart_row['firstname']?>">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     
                                     <div align="center" class="controls">
-                                        Lastname: <input type="text"  name="ln" value="<?php echo $cart_row['lastname'];?>">
+                                        Apellido: <input type="text"  name="ln" value="<?php echo $cart_row['lastname'];?>">
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -946,7 +946,7 @@ function Clickheretoprint()
                                 
                                 <div class="control-group">
                                     <div align="center" class="controls">
-                                       Contact no.: <input type="text" name="cn" value="<?php echo $cart_row['contact'];?>">
+                                      Teléfono: <input type="text" name="cn" value="<?php echo $cart_row['contact'];?>">
                                     </div>
                                 </div>
             
@@ -956,8 +956,8 @@ function Clickheretoprint()
   </div>
   <div class="modal-footer">
   	
-  	<button type="submit" name="update" class="btn btn-success"><i class="icon-check"></i> Save</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  	<button type="submit" name="update" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
    
     
   </div>
@@ -990,18 +990,18 @@ function Clickheretoprint()
 
 <div style="margin-top:15px;" class="container thumbnail">
 
-            <pre><h4><strong><i class="icon-list"></i> List of Rooms</strong></h4></pre>
+            <pre><h4><strong><i class="icon-list"></i> Lista de habitaciones</strong></h4></pre>
  
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
                         <th><div align="center">ID</div></th>
-                        <th><div align="center">Room</div></th>
-                        <th><div align="center">Description</div></th>
-                        <th><div align="center">Price</div></th>
-                        <th><div align="center">Category</div></th>
+                        <th><div align="center">No. de habitación</div></th>
+                        <th><div align="center">Descripción</div></th>
+                        <th><div align="center">Precio</div></th>
+                        <th><div align="center">Categoría</div></th>
                         <th><div align="center">Status</div></th>
-                        <th><div align="center">Actions</div></th>      
+                        <th><div align="center">Menú</div></th>      
                     </tr>
                 </thead>
                 	
@@ -1025,13 +1025,13 @@ function Clickheretoprint()
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $room_row['roomID'];?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $room_row['name'];?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $room_row['description'];?></div></td>
-                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $room_row['price'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cat_row['precio'];?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cat_row['category_name'];?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $room_row['status'];?></div></td>
                                             <td width="250"><div align="center">
-                                            <a href="#update<?php echo$roomID;?>" class="btn" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Update</a>
-                                            <a href="#edit_room<?php echo $roomID;?>" class="btn" role="button" data-toggle="modal"><i class="icon-edit"></i> Edit</a>
-                                            <a href="#delete_room<?php echo $roomID;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Delete</a>
+                                            <a href="#update<?php echo$roomID;?>" class="btn" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Actualizar</a>
+                                            <a href="#edit_room<?php echo $roomID;?>" class="btn" role="button" data-toggle="modal"><i class="icon-edit"></i> Editar</a>
+                                            <a href="#delete_room<?php echo $roomID;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Borrar</a>
                                             </div></td>
                                             
                                            
@@ -1045,12 +1045,12 @@ function Clickheretoprint()
     
    <form action="update_room.php<?php echo '?id=' . $roomID; ?>" method="post">
    
-   			<div align="center">Room Status: <input name="status" type="text" value="" /></div>
+   			<div align="center">Status habitación: <input name="status" type="text" value="" /></div>
     
   </div>
   <div class="modal-footer">
-  	<button type="submit" name="updateroom" class="btn btn-success"><i class="icon-check"></i> Save</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  	<button type="submit" name="updateroom" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
   </div>
   
   </form>
@@ -1066,11 +1066,11 @@ function Clickheretoprint()
     <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
-    <div class="alert alert-danger"><p>Are you sure you want to Delete? <strong>Room <?php echo $room_row['name']." ".$cat_row['category_name'];?></strong></p></div>
+    <div class="alert alert-danger"><p>Estas seguro que deseas borrar? <strong>Room <?php echo $room_row['name']." ".$cat_row['category_name'];?></strong></p></div>
   </div>
   <div class="modal-footer">
-  	<a class="btn btn-danger" href="delete_room.php<?php echo '?id=' . $roomID; ?>" ><i class="icon-check"></i>&nbsp;Yes</a>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  	<a class="btn btn-danger" href="delete_room.php<?php echo '?id=' . $roomID; ?>" ><i class="icon-check"></i>&nbsp;Si</a>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancelar</button>
   </div>
 </div>
                                          <!--modal end --> 
@@ -1079,33 +1079,33 @@ function Clickheretoprint()
 <div id="edit_room<?php echo $roomID;?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Add Rooms</h3>
+    <h3 id="myModalLabel">Agregar habitación</h3>
   </div>
   <div class="modal-body">
   
   <form action="edit_room.php<?php echo '?id=' . $roomID; ?>" class="form-horizontal" method="post"  enctype="multipart/form-data">
-                                <div class="alert alert-info"><strong>Informations</strong></div>
+                                <div class="alert alert-info"><strong>Información</strong></div>
                                 <hr>
                                                               
                                 
                                 <div class="control-group">
                                     
                                     <div align="center" class="controls">
-                                        Room no.: <input required type="text" name="name" id="inputEmail" value="<?php echo $room_row['name'];?>">
+                                        No. Habitación: <input required type="text" name="name" id="inputEmail" value="<?php echo $room_row['name'];?>">
                                     </div>
                                 </div>
                                 
                                 <div class="control-group">
                                    
                                     <div style="margin-left:104px;" class="controls">
-                                        Descriptions: <input type="text"  name="description" value="<?php echo $room_row['description'] ;?>" >
+                                        Descripción: <input type="text"  name="description" value="<?php echo $room_row['description'] ;?>" >
                                     </div>
                                 </div>
                                 
                             
                                 <div class="control-group">
                                     <div style="margin-left:125px;" class="controls">
-                                        Category: <select type="text" name="category">
+                                        Categoría: <select type="text" name="category">
                                         
                                         <option>--Select Category--</option>
 
@@ -1134,7 +1134,7 @@ function Clickheretoprint()
 
                                 <div class="control-group">
                                     <div style="margin-left:150px;" class="controls">
-                                        Price: <input type="text" name="price" value="<?php echo $room_row['price'];?>">
+                                        Precio: <input type="text" name="price" value="<?php echo $cat_row['precio'];?>">
                                         	<input type="hidden" name="status" value="Available" >
                                     </div>
                                 </div>
