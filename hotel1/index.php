@@ -270,7 +270,7 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
       <hr>
 
       <footer>
-        <center>&copy; BASIC HOTEL, All right reserved 2014</center>
+        <center>&copy; BASIC HOTEL 2016</center>
       </footer>
 
     <!-- Le javascript

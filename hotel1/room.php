@@ -460,7 +460,7 @@ No additional charge if you cancel 24 hour(s) or more before your arrival date. 
       <hr>
 
       <footer>
-        <p>&copy; BASIC HOTEL 2013, All Right Reserved 2014 </p>
+        <p>&copy; BASIC HOTEL 2016 </p>
       </footer>
 
     <!-- Le javascript
