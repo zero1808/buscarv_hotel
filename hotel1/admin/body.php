@@ -1,22 +1,22 @@
-<div id="myCarousel" class="carousel slide" data-interval="0">
- <ol class="carousel-indicators">
+
+<div id="myCarousel" class="carousel slide">
+ <!--<ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
+  </ol>-->
 
  <div style="margin-top:15px;" class="container thumbnail">
 <div  class="input-prepend">
           <div class="btn-group">
-          <a class="btn" href="#myCarousel" data-slide-to="0" data-interval="0"><i class="icon-print"></i> Reservaciones</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="1" data-interval="0"><i class="icon-print"></i> Checkin</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="2" data-interval="0"><i class="icon-print"></i> Checkout</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="3" data-interval="0"><i class="icon-print"></i> T. Canceladas</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="4" data-interval="0"><i class="icon-print"></i> Logs</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="5" data-interval="0"><i class="icon-print"></i> Clientes</a>   
-          <a class="btn" href="#myCarousel" data-slide-to="6" data-interval="0"><i class="icon-off"></i> Usuarios</a>
-          <a class="btn" href="#myCarousel" data-slide-to="7" data-interval="0"><i class="icon-off"></i> Habitaciones</a>  
-
+          <a class="btn" href="#myCarousel" data-slide-to="0" ><i class="icon-print"></i> Reservaciones</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="1" ><i class="icon-print"></i> Checkin</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="2" ><i class="icon-print"></i> Checkout</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="3" ><i class="icon-print"></i> T. Canceladas</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="4" ><i class="icon-print"></i> Logs</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="5" ><i class="icon-print"></i> Clientes</a>   
+          <a class="btn" href="#myCarousel" data-slide-to="6" ><i class="icon-off"></i> Usuarios</a>
+          <a class="btn" href="#myCarousel" data-slide-to="7" ><i class="icon-off"></i> Habitaciones</a>  
       </div>
             
 </div>

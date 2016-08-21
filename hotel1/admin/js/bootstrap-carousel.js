@@ -171,8 +171,8 @@
   }
 
   $.fn.carousel.defaults = {
-    interval: 5000
-  , pause: 'hover'
+    interval: 50000000,
+    pause: "false"
   }
 
   $.fn.carousel.Constructor = Carousel
@@ -186,6 +186,13 @@
     return this
   }
 
+   /* CAROUSEL VALORES POR DEFECTO
+  * ==================== 
+$(function() {
+  $('#carousel').carousel({
+    interval: 5000000,
+    pause: "false"
+  });
  /* CAROUSEL DATA-API
   * ================= */
 
