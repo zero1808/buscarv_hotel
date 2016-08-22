@@ -19,7 +19,7 @@ $get_id=$_GET['id'];
                                 move_uploaded_file($_FILES["image"]["tmp_name"], "upload/" . $_FILES["image"]["name"]);
                                 $location = "upload/" . $_FILES["image"]["name"];
 
-                            	mysql_query("update tb_rooms set name='$name',description='$description',category_id='$category',price='$price',location='$location' where roomID='$get_id'") or die(mysql_query());
+                            	mysql_query("update tb_rooms set name='$name',description='$description',category_id='$category',location='$location' where roomID='$get_id'") or die(mysql_query());
                                 header('location:progressbar.php');
                             }
                             ?>

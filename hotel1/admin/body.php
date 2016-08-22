@@ -1107,7 +1107,7 @@ function Clickheretoprint()
                             
                                 <div class="control-group">
                                     <div style="margin-left:125px;" class="controls">
-                                        Categoría: <select type="text" name="category">
+                                        Categoría: <select type="text" name="category"/>
                                         
                                         <option>--Select Category--</option>
 
@@ -1132,16 +1132,7 @@ function Clickheretoprint()
                                 </div>
                                 
   									
-                             
-
-                                <div class="control-group">
-                                    <div style="margin-left:150px;" class="controls">
-                                        Precio: <input type="text" name="price" value="<?php echo $cat_row['precio'];?>">
-                                        	<input type="hidden" name="status" value="Available" >
-                                    </div>
-                                </div>
-
-                               
+                                           
 
                                 <div class="control-group">
                                    <div style="margin-left:250px;" class="controls">
@@ -1154,8 +1145,8 @@ function Clickheretoprint()
     
   </div>
   <div class="modal-footer">
-   <button type="submit" name="roomupdate" class="btn btn-success"><i class="icon-check"></i> Save</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+   <button type="submit" name="roomupdate" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
     
   </div>
   
@@ -1216,7 +1207,7 @@ function Clickheretoprint()
     $categoria_tabla = mysql_query("select  * from tb_category order by category_id") or die(mysql_error());
                                     $categoria_count = mysql_num_rows($categoria_tabla);
                                     while ($categoria_row = mysql_fetch_array($categoria_tabla)) {
-
+                                        $category_id=$categoria_row['category_id'];
 										
                                         ?>
                                         
@@ -1233,61 +1224,39 @@ function Clickheretoprint()
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['no_ninios'];?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['precio'];?></div></td>
                                             <td width="250"><div align="center">
-                                            <a href="#update<?php echo$roomID;?>" class="btn" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Actualizar</a>
-                                            <a href="#edit_room<?php echo $roomID;?>" class="btn" role="button" data-toggle="modal"><i class="icon-edit"></i> Editar</a>
-                                            <a href="#delete_room<?php echo $roomID;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Borrar</a>
+                                            <a href="#edit_category<?php echo $category_id;?>" class="btn" role="button" data-toggle="modal"><i class="icon-edit"></i> Editar</a>
+                                            <a href="#delete_category<?php echo $category_id;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Borrar</a>
                                             </div></td>
                                             
                                            
-                                             <!-- Modal delete room -->
-<div id="update<?php echo $roomID; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">BASIC HOTEL</h3>
-  </div>
-  <div class="modal-body">
-    
-   <form action="update_room.php<?php echo '?id=' . $roomID; ?>" method="post">
-   
-   			<div align="center">Status habitación: <input name="status" type="text" value="" /></div>
-    
-  </div>
-  <div class="modal-footer">
-  	<button type="submit" name="updateroom" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
-  </div>
-  
-  </form>
-  
-</div>
-                                         <!--modal end --> 
+
                                             
                                             
                                             <!-- Modal delete room -->
-<div id="delete_room<?php echo $roomID; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="delete_category<?php echo $category_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">BASIC HOTEL</h3>
   </div>
   <div class="modal-body">
-    <div class="alert alert-danger"><p>Estas seguro que deseas borrar? <strong>Room <?php echo $room_row['name']." ".$cat_row['category_name'];?></strong></p></div>
+    <div class="alert alert-danger"><p>Estas seguro que deseas borrar? <strong>Categoria: <?php echo $categoria_row['category_name'];?></strong></p></div>
   </div>
   <div class="modal-footer">
-  	<a class="btn btn-danger" href="delete_room.php<?php echo '?id=' . $roomID; ?>" ><i class="icon-check"></i>&nbsp;Si</a>
+  	<a class="btn btn-danger" href="delete_category.php<?php echo '?id=' . $category_id; ?>" ><i class="icon-check"></i>&nbsp;Si</a>
     <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancelar</button>
   </div>
 </div>
                                          <!--modal end --> 
                                             
                                           <!-- Modal add rooms -->
-<div id="edit_room<?php echo $roomID;?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="edit_category<?php echo $category_id;?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Agregar habitación</h3>
+    <h3 id="myModalLabel">Agregar categoria</h3>
   </div>
   <div class="modal-body">
   
-  <form action="edit_room.php<?php echo '?id=' . $roomID; ?>" class="form-horizontal" method="post"  enctype="multipart/form-data">
+  <form action="edit_category.php<?php echo '?id=' . $category_id; ?>" class="form-horizontal" method="post"  enctype="multipart/form-data">
                                 <div class="alert alert-info"><strong>Información</strong></div>
                                 <hr>
                                                               
@@ -1295,69 +1264,56 @@ function Clickheretoprint()
                                 <div class="control-group">
                                     
                                     <div align="center" class="controls">
-                                        No. Habitación: <input required type="text" name="name" id="inputEmail" value="<?php echo $room_row['name'];?>">
+                                        Nombre: <input required type="text" name="name" id="name" value="<?php echo $categoria_row['category_name'];?>">
                                     </div>
                                 </div>
                                 
                                 <div class="control-group">
                                    
                                     <div style="margin-left:104px;" class="controls">
-                                        Descripción: <input type="text"  name="description" value="<?php echo $room_row['description'] ;?>" >
+                                        No. Camas Kingsize: <input type="text"  name="no_camasking" value="<?php echo $categoria_row['camas_kingsize'];?>" >
                                     </div>
                                 </div>
-                                
-                            
+                          
                                 <div class="control-group">
-                                    <div style="margin-left:125px;" class="controls">
-                                        Categoría: <select type="text" name="category">
-                                        
-                                        <option>--Select Category--</option>
-
-          		<?php
-				$rslt = mysql_query("SELECT * FROM tb_category ORDER BY category_id ");
-				while($tst = mysql_fetch_array($rslt))
-				{
-				if (!$rslt)
-					{
-					die("Error: Data not Found. . ");
-					}
-				echo "<option value=".$tst['category_id'].">".$tst['category_name']."</option>";
-				}
-				 ?>
-                                  	
-                                        </select>
-                                                
-                   						
-                                      
+                                   
+                                    <div style="margin-left:104px;" class="controls">
+                                        No. Camas matrimoniales: <input type="text"  name="no_camasmat" value="<?php echo $categoria_row['camas_matrimoniales'];?>" >
                                     </div>
-                                    
                                 </div>
-                                
-  									
-                             
+                                <div class="control-group">
+                                   
+                                    <div style="margin-left:104px;" class="controls">
+                                        No. Camas individuales: <input type="text"  name="no_camasind" value="<?php echo $categoria_row['camas_individuales'];?>" >
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                   
+                                    <div style="margin-left:104px;" class="controls">
+                                        No. Adultos: <input type="text"  name="no_adultos" value="<?php echo $categoria_row['no_adultos'];?>" >
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                   
+                                    <div style="margin-left:104px;" class="controls">
+                                        No. Niños: <input type="text"  name="no_ninios" value="<?php echo $categoria_row['no_ninios'];?>" >
+                                    </div>
+                                </div>
+                            
 
                                 <div class="control-group">
                                     <div style="margin-left:150px;" class="controls">
-                                        Precio: <input type="text" name="price" value="<?php echo $cat_row['precio'];?>">
+                                        Precio: <input type="text" name="price" value="<?php echo $categoria_row['precio'];?>">
                                         	<input type="hidden" name="status" value="Available" >
                                     </div>
                                 </div>
 
-                               
-
-                                <div class="control-group">
-                                   <div style="margin-left:250px;" class="controls">
-                                        <input type="file" name="image"> 
-                                    </div>
-                                </div>
-
        
-  
     
   </div>
   <div class="modal-footer">
-   <button type="submit" name="roomupdate" class="btn btn-success"><i class="icon-check"></i> Save</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+   <button type="submit" name="categoryupdate" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
     
   </div>
   
