@@ -16,7 +16,9 @@
           <button id="btt_logs" class="btn"></i> Logs</button>    
           <button id="btt_clientes" class="btn"></i> Clientes</button>     
           <button id="btt_usuarios" class="btn"></i> Usuarios</button>   
-          <button id="btt_habitaciones" class="btn"><i class="icon-off"></i> Habitaciones</button>    
+          <button id="btt_habitaciones" class="btn"><i class="icon-off"></i> Habitaciones</button>
+          <button id="btt_categorias" class="btn"></i>Categorías</button>     
+
       </div>
             
 </div>
@@ -1189,6 +1191,205 @@ function Clickheretoprint()
 
 
 
+<div id="categoria_item" style="display:none"> <!--item 1 -->
+
+<div style="margin-top:15px;" class="container thumbnail">
+
+            <pre><h4><strong><i class="icon-list"></i> Lista de categorías</strong></h4></pre>
+ 
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                <thead>
+                    <tr>
+                        <th><div align="center">ID</div></th>
+                        <th><div align="center">Nombre</div></th>
+                        <th><div align="center">No. camas KingSize</div></th>
+                        <th><div align="center">No. camas matrimoniales</div></th>
+                        <th><div align="center">No. camas individuales</div></th>
+                        <th><div align="center">No. adultos</div></th>
+                        <th><div align="center">No. niños</div></th>
+                        <th><div align="center">Precio</div></th>                     
+                        <th><div align="center">Menú</div></th>      
+                    </tr>
+                </thead>
+                	
+                    <?php
+    $categoria_tabla = mysql_query("select  * from tb_category order by category_id") or die(mysql_error());
+                                    $categoria_count = mysql_num_rows($categoria_tabla);
+                                    while ($categoria_row = mysql_fetch_array($categoria_tabla)) {
+
+										
+                                        ?>
+                                        
+              		
+                <tbody>
+                						<tr>
+                                            
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['category_id'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['category_name'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['camas_kingsize'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['camas_matrimoniales'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['camas_individuales'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['no_adultos'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['no_ninios'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['precio'];?></div></td>
+                                            <td width="250"><div align="center">
+                                            <a href="#update<?php echo$roomID;?>" class="btn" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Actualizar</a>
+                                            <a href="#edit_room<?php echo $roomID;?>" class="btn" role="button" data-toggle="modal"><i class="icon-edit"></i> Editar</a>
+                                            <a href="#delete_room<?php echo $roomID;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Borrar</a>
+                                            </div></td>
+                                            
+                                           
+                                             <!-- Modal delete room -->
+<div id="update<?php echo $roomID; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
+  </div>
+  <div class="modal-body">
+    
+   <form action="update_room.php<?php echo '?id=' . $roomID; ?>" method="post">
+   
+   			<div align="center">Status habitación: <input name="status" type="text" value="" /></div>
+    
+  </div>
+  <div class="modal-footer">
+  	<button type="submit" name="updateroom" class="btn btn-success"><i class="icon-check"></i> Guardar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
+  </div>
+  
+  </form>
+  
+</div>
+                                         <!--modal end --> 
+                                            
+                                            
+                                            <!-- Modal delete room -->
+<div id="delete_room<?php echo $roomID; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">BASIC HOTEL</h3>
+  </div>
+  <div class="modal-body">
+    <div class="alert alert-danger"><p>Estas seguro que deseas borrar? <strong>Room <?php echo $room_row['name']." ".$cat_row['category_name'];?></strong></p></div>
+  </div>
+  <div class="modal-footer">
+  	<a class="btn btn-danger" href="delete_room.php<?php echo '?id=' . $roomID; ?>" ><i class="icon-check"></i>&nbsp;Si</a>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancelar</button>
+  </div>
+</div>
+                                         <!--modal end --> 
+                                            
+                                          <!-- Modal add rooms -->
+<div id="edit_room<?php echo $roomID;?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Agregar habitación</h3>
+  </div>
+  <div class="modal-body">
+  
+  <form action="edit_room.php<?php echo '?id=' . $roomID; ?>" class="form-horizontal" method="post"  enctype="multipart/form-data">
+                                <div class="alert alert-info"><strong>Información</strong></div>
+                                <hr>
+                                                              
+                                
+                                <div class="control-group">
+                                    
+                                    <div align="center" class="controls">
+                                        No. Habitación: <input required type="text" name="name" id="inputEmail" value="<?php echo $room_row['name'];?>">
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                   
+                                    <div style="margin-left:104px;" class="controls">
+                                        Descripción: <input type="text"  name="description" value="<?php echo $room_row['description'] ;?>" >
+                                    </div>
+                                </div>
+                                
+                            
+                                <div class="control-group">
+                                    <div style="margin-left:125px;" class="controls">
+                                        Categoría: <select type="text" name="category">
+                                        
+                                        <option>--Select Category--</option>
+
+          		<?php
+				$rslt = mysql_query("SELECT * FROM tb_category ORDER BY category_id ");
+				while($tst = mysql_fetch_array($rslt))
+				{
+				if (!$rslt)
+					{
+					die("Error: Data not Found. . ");
+					}
+				echo "<option value=".$tst['category_id'].">".$tst['category_name']."</option>";
+				}
+				 ?>
+                                  	
+                                        </select>
+                                                
+                   						
+                                      
+                                    </div>
+                                    
+                                </div>
+                                
+  									
+                             
+
+                                <div class="control-group">
+                                    <div style="margin-left:150px;" class="controls">
+                                        Precio: <input type="text" name="price" value="<?php echo $cat_row['precio'];?>">
+                                        	<input type="hidden" name="status" value="Available" >
+                                    </div>
+                                </div>
+
+                               
+
+                                <div class="control-group">
+                                   <div style="margin-left:250px;" class="controls">
+                                        <input type="file" name="image"> 
+                                    </div>
+                                </div>
+
+       
+  
+    
+  </div>
+  <div class="modal-footer">
+   <button type="submit" name="roomupdate" class="btn btn-success"><i class="icon-check"></i> Save</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+    
+  </div>
+  
+</div>
+                        
+    </form>                      
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                           											
+                                        </tr>
+               </tbody>
+               
+               <?php }?>
+                
+        </table>        
+    <!--  <a href="#delete_room<?php echo $roomID;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Delete All</a>  -->
+
+</div><!--container -->
+
+	</div><!--item end -->
 
 
 
@@ -1211,6 +1412,8 @@ $( document ).ready(function() {
        $("#members_item").css("display","none");
        $("#users_item").css("display","none");
        $("#rooms_items").css("display","none");
+       $("#categoria_item").css("display","none");
+
         
      
     });
@@ -1223,6 +1426,8 @@ $( document ).ready(function() {
        $("#members_item").css("display","none");
        $("#users_item").css("display","none");
        $("#rooms_items").css("display","none");
+       $("#categoria_item").css("display","none");
+
         
      
     });
@@ -1235,7 +1440,7 @@ $( document ).ready(function() {
        $("#members_item").css("display","none");
        $("#users_item").css("display","none");
        $("#rooms_items").css("display","none");
-        
+       $("#categoria_item").css("display","none"); 
      
     });
       $("#btt_canceladas").click(function(){ 
@@ -1247,7 +1452,7 @@ $( document ).ready(function() {
        $("#members_item").css("display","none");
        $("#users_item").css("display","none");
        $("#rooms_items").css("display","none");
-        
+       $("#categoria_item").css("display","none"); 
      
     });
       $("#btt_logs").click(function(){ 
@@ -1259,7 +1464,7 @@ $( document ).ready(function() {
        $("#members_item").css("display","none");
        $("#users_item").css("display","none");
        $("#rooms_items").css("display","none");
-        
+       $("#categoria_item").css("display","none"); 
      
     });
       $("#btt_clientes").click(function(){ 
@@ -1271,7 +1476,7 @@ $( document ).ready(function() {
        $("#members_item").css("display","block");
        $("#users_item").css("display","none");
        $("#rooms_items").css("display","none");
-        
+       $("#categoria_item").css("display","none"); 
      
     });
       $("#btt_usuarios").click(function(){ 
@@ -1283,7 +1488,7 @@ $( document ).ready(function() {
        $("#members_item").css("display","none");
        $("#users_item").css("display","block");
        $("#rooms_items").css("display","none");
-        
+       $("#categoria_item").css("display","none"); 
      
     });
       $("#btt_habitaciones").click(function(){ 
@@ -1295,7 +1500,19 @@ $( document ).ready(function() {
        $("#members_item").css("display","none");
        $("#users_item").css("display","none");
        $("#rooms_items").css("display","block");
-        
+       $("#categoria_item").css("display","none"); 
+     
+    });
+      $("#btt_categorias").click(function(){ 
+       $("#reservaciones_item").css("display","none");
+       $("#checkin_item").css("display","none");
+       $("#checkout_item").css("display","none");
+       $("#cancel_item").css("display","none");
+       $("#logs_item").css("display","none");
+       $("#members_item").css("display","none");
+       $("#users_item").css("display","none");
+       $("#rooms_items").css("display","none");
+       $("#categoria_item").css("display","block"); 
      
     });
 
