@@ -152,17 +152,20 @@ return true;
                             <thead class=" hero-unit">
                                 <tr>
                                 
-                                	<th width="60"><div align="center" style="margin-top:10px;">Image</div></th>
-                                    <th width="20"><div align="center" style="margin-top:10px;">No.</div></th>
-                                    <th width="100"><div align="center" style="font-size:16px">Price</div></th>
-                                    <th width="50"><div align="center" style="font-size:18px;">Adults</div><div style="font-size:10px;" align="center"> Age: 8+</div></th>
-                                    <th width="50"><div align="center" style="font-size:18px;">Childs</div><div style="font-size:10px;" align="center"> Age: 0-7</div></th>
-                                    <th width="180"><div align="center" style="font-size:16px">Category</div></th>
-                                    <th width="180"><div align="center" style="font-size:16px">10% Pre-payment</div></th>
+                                	<th width="60"><div align="center" style="margin-top:10px;">Foto</div></th>
+                                    <th width="20"><div align="center" style="margin-top:10px;">No. Habitación</div></th>
+                                    <th width="100"><div align="center" style="font-size:16px">Precio</div></th>
+                                    <th width="50"><div align="center" style="font-size:18px;">Adultos</div><div style="font-size:10px;" align="center"> Edad: 8+</div></th>
+                                    <th width="50"><div align="center" style="font-size:18px;">Niños</div><div style="font-size:10px;" align="center"> Edad: 0-7</div></th>
+                                    <th width="20"><div align="center" style="margin-top:10px;">No. camas kingsize</div></th>
+                                    <th width="20"><div align="center" style="margin-top:10px;">No. camas matrimoniales</div></th> 
+                                    <th width="20"><div align="center" style="margin-top:10px;">No. camas individuales</div></th>
+                                    <th width="180"><div align="center" style="font-size:16px">Categoría</div></th>
+
                                     <th><div align="center" style="font-size:16px">Status</div></th>
                                
 
-                         <th width="60"><div align="center" style="font-size:16px">Reserve</div></th>
+                         <th width="60"><div align="center" style="font-size:16px">Reservar</div></th>
                           
                                 </tr>
                             </thead>
@@ -174,7 +177,6 @@ return true;
                                     while ($row = mysql_fetch_array($query)) {
                                         $id = $row['roomID'];
 										$catid = $row['category_id'];
-										$price = $row['price'];
 										
 										$cat = mysql_query("select * from tb_category where category_id = '$catid'") or die(mysql_error());
 										while ($cat_row = mysql_fetch_array($cat)){
@@ -189,63 +191,38 @@ return true;
                                             
                                             <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo $row['name'];}else{echo '-&deg;-';}?></div></td>
                                              
-                                    		<td><div align="center" style="margin-top:10px"><?php if($row['status']=='Available'){ switch($price){
-												
-										case 900:
-											
-											echo '900.00 incl. Taxes & Fees';
-											
-											break;		
-												
-												
-										case 1100;		
-										
-											echo '1100.00 incl. Taxes & Fees';	
-												
-												break;
-												
-										case 950;		
-										
-											echo '950.00 incl. Taxes & Fees';	
-												
-												break;
-												
-												default:
-												
-												}
+                                    		<td><div align="center" style="margin-top:10px"><?php if($row['status']=='Available'){ echo $cat_row['precio'];
 											}
 												else{ echo '-&deg;-';}
 											
 											
 											?></div></td>
-                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){switch ($catid){
-										
-										case 1:
-										
-											echo '<i class="icon-user"></i>';
-										
-										break;
-												
-										case 2:
-											echo '<i class="icon-user"></i><i class="icon-user"></i>';
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo '<i class="icon-user"></i>'." : ".$cat_row['no_adultos'];
 											
-										break;	
-										
-										case 3:
-											echo '<i class="icon-user"></i><i class="icon-user"></i>';
+											}
 											
-										break;
-										
-										case 4:
-											echo '<i class="icon-user"></i><i class="icon-user"></i>';
+											else{ echo '-&deg;-';}
 											
-										break;			
-												
-										default:		
-												
-												
-												}
-										
+											?></div></td>   
+                                                   <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){echo '<i class="icon-user"></i>'." : ".$cat_row['no_ninios'];
+											
+											}else{ echo '-&deg;-';}?></div></td>  
+                                            
+                                               
+                                            
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo $cat_row['camas_kingsize'];
+											
+											}
+											
+											else{ echo '-&deg;-';}
+											
+											?></div></td>     <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo $cat_row['camas_matrimoniales'];
+											
+											}
+											
+											else{ echo '-&deg;-';}
+											
+											?></div></td>     <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo $cat_row['camas_individuales'];
 											
 											}
 											
@@ -253,75 +230,10 @@ return true;
 											
 											?></div></td> 
                                        
-                                       <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){switch ($catid){
-										
-										case 1:
-										
-											echo '<span style="font-size:10px;">Not allowed</span>';
-										
-										break;
-												
-										case 2:
-											echo '<i class="icon-user"></i>';
-											
-										break;	
-										
-										case 3:
-											echo '<i class="icon-user"></i>';
-											
-										break;
-										
-										case 4:
-											echo '<i class="icon-user"></i><i class="icon-user"></i>';
-											
-										break;			
-												
-										default:		
-												
-												
-												}
-										
-											
-											}else{ echo '-&deg;-';}?></div></td>  
-                                            
-                                               
+                                
                                             
                                             <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){echo $cat_row['category_name'];}else{ echo '-&deg;-';}?></div></td> 
- 											<td><div align="center" style="margin-top:10px"><?php if($row['status']=='Available'){switch ($catid){
-										
-										case 1:
-										
-											echo '<div align="center" style="margin-top:10px; color: rgba(0,0,0,1); font-size:16px;">PHP 900.00</div><div align="center" style="font-size:10px;">for 1 night</div><div align="center" style="font-size:12px; color:rgba(255,0,0,1)">Pay only 10% to reserve!</div>';
-										
-										break;
-												
-										case 2:
-											echo '<div align="center" style="margin-top:10px; color: rgba(0,0,0,1); font-size:16px;">PHP 950.00</div><div align="center" style="font-size:10px;">for 1 night</div><div align="center" style="font-size:12px; color:rgba(255,0,0,1)">Pay only 10% to reserve!</div>';
-											
-										break;	
-										
-										case 3:
-											echo '<div align="center" style="margin-top:10px; color: rgba(0,0,0,1); font-size:16px;">PHP 1100.00</div><div align="center" style="font-size:10px;">for 1 night</div><div align="center" style="font-size:12px; color:rgba(255,0,0,1)">Pay only 10% to reserve!</div>';
-											
-										break;
-										
-										case 4:
-											echo '<div align="center" style="margin-top:10px; color: rgba(0,0,0,1); font-size:16px;">PHP 1100.00</div><div align="center" style="font-size:10px;">for 1 night</div><div align="center" style="font-size:12px; color:rgba(255,0,0,1)">Pay only 10% to reserve!</div>';
-											
-										break;			
-												
-										default:		
-												
-												
-												}
-										
-											
-											}
-											
-											else{ echo '-&deg;-';}
-											
-											?></div></td> 
-                                                
+ 									
                                             
                                             <td><div align="center" style="margin-top:30px;"><strong>
 											<?php if ($row['status']=='Available'){
