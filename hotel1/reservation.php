@@ -72,15 +72,15 @@ function goBack()
   </button>
   <ul class="dropdown-menu">
   
-  <li><a tabindex="-1" href="#"><strong>Dates of Reservation</strong></a></li>
+  <li><a tabindex="-1" href="#"><strong>Datos de la reservación</strong></a></li>
   <li class="divider"></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Arrival:</span> <?php echo $start?></a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Departure:</span> <?php echo $end?></a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">No. of Days:</span> <?php echo $result?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">LLegada:</span> <?php echo $start?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Salida:</span> <?php echo $end?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">No. de dias:</span> <?php echo $result?></a></li>
   <li class="divider"></li>
-  <li><a tabindex="-1" href="#"><strong>Room</strong></a></li>
+  <li><a tabindex="-1" href="#"><strong>No. Habitacion:</strong></a></li>
   <li class="divider"></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Room ID.</span>  <?php
+  <li><a tabindex="-1" href="#"><span class="text-info">ID de la habitación:</span>  <?php
 
 					$id=$_POST['selector'];
 					$N = count($id);
@@ -98,12 +98,12 @@ function goBack()
                 
 
 
-        <h4>Step 3: Confirm reservation</h4>
+        <h4>Pas 3: Confirmar la reservación</h4>
         
 			<hr>
             <table>
             	<tr>
-					<td><strong>Room no.</strong></td>
+					<td><strong>No. de la habitación</strong></td>
                     <td width="300px"><div align="right"> 
   	<?php 
   
@@ -130,7 +130,7 @@ function goBack()
     <?php }?>  </div></td>
  				</tr>
                 <tr>
-                	<td><strong>Price</strong></td>
+                	<td><strong>Precio</strong></td>
                 	<td><div align="right"><?php 
   
   	$id=$_POST['selector'];
@@ -143,7 +143,15 @@ function goBack()
 	
 	$res = mysql_query("SELECT * FROM tb_rooms where roomID='$id[$i]'");
 	while($row = mysql_fetch_array($res)){
-			$pname += $row['price'];
+            $catid=$row['category_id'];
+        	
+    $cat = mysql_query("select * from tb_category where category_id = '$catid'") or die(mysql_error());
+										while ($cat_row = mysql_fetch_array($cat)){
+                                            
+                                            $pname += $cat_row['precio'];
+
+                                        }
+									
 
 
 			
@@ -159,11 +167,11 @@ function goBack()
 	
 	$f = sprintf ("%.2f", $pname);
 	
-	 echo 'PHP'." ". $f;?>  </div></td>                
+	 echo '$'." ". $f;?>  </div></td>                
                 </tr>
       
                 <tr>
-                	<td><strong>Room type:</strong></td>
+                	<td><strong>Tipo de habitación:</strong></td>
                 	<td><div align="right"><?php 
   
   	$id=$_POST['selector'];
@@ -177,12 +185,12 @@ function goBack()
 	$res = mysql_query("SELECT * FROM tb_rooms where roomID='$id[$i]'");
 	while($row = mysql_fetch_array($res)){
 			$catid = $row['category_id'];
-			$pname += $row['price'];
 			
 			$cat = mysql_query("SELECT * FROM tb_category where category_id = '$catid'") or die(mysql_error());
 				while($rowcat = mysql_fetch_array($cat)){
 						$category = $rowcat['category_name'];
-					
+				        $pname += $rowcat['precio'];
+
 						
 							
 					
@@ -202,7 +210,7 @@ function goBack()
                 </tr>
                 <tr>
                 	<td></td>
-                    <td><div align="right">Total room price with charges:</div></td>
+                    <td><div align="right">Precio total por noche:</div></td>
                     <td width="100px"><div align="right"><?php 
 					
 					$rtotal = $f;
@@ -211,7 +219,7 @@ function goBack()
 					$g = sprintf ("%.2f", $rtotal);
 					
 					
-					echo 'PHP'." ".$g;
+					echo '$'." ".$g;
 					
 					?> </div></td>
                 
@@ -232,7 +240,18 @@ function goBack()
 	
 	$res = mysql_query("SELECT * FROM tb_rooms where roomID='$id[$i]'");
 	while($row = mysql_fetch_array($res)){
-			$prce = $row['price'];
+			$catid = $row['category_id'];
+        
+        	
+			$cat = mysql_query("SELECT * FROM tb_category where category_id = '$catid'") or die(mysql_error());
+				while($rowcat = mysql_fetch_array($cat)){
+							$prce = $rowcat['precio'];
+
+						
+							
+					
+				}
+		
 
 			
 	}
@@ -256,7 +275,7 @@ function goBack()
 	
 	$t = sprintf ("%.2f", $tax);
 	
-	$total = $f * $result;
+	$total = $f * $result+$t;
 	
 	$tt = sprintf ("%.2f", $total);
 	
@@ -264,7 +283,7 @@ function goBack()
 	
 	$pre = sprintf ("%.2f", $p);
 	
-	$b = $tt - $pre;
+	$b = $tt /*- $pre*/;
 	
 	$bal = sprintf ("%.2f", $b);
 	
@@ -272,7 +291,7 @@ function goBack()
 	
 	$totalper = sprintf("%.2f",$result * $prce);	
 	$prep = sprintf("%.2f",$totalper * .10);
-	$balance = sprintf("%.2f",$totalper - $prep);
+	$balance = sprintf("%.2f",$totalper /*- $prep*/);
 	$part = sprintf("%.2f",$totalper - $balance);
 	
 	?>
@@ -284,26 +303,26 @@ function goBack()
                 </tr>
                 <tr>
                 	<td></td>
-                    <td><div align="right"><i class="icon-info-sign"></i> Taxes:</div></td>
-                    <td width="100px"><div align="right"><?php echo 'PHP'." ".$t;?> </div></td>
+                    <td><div align="right"><i class="icon-info-sign"></i> Impuesto por reservación:</div></td>
+                    <td width="100px"><div align="right"><?php echo '$'." ".$t;?> </div></td>
                 
                 </tr>
                 <tr>
                 	<td></td>
-                    <td><div align="right">Total reservation cost:</div></td>
-                    <td width="100px"><div align="right"><?php echo 'PHP'." ".$tt;?> </div></td>
+                    <td><div align="right">Costo total de las habitaciones:</div></td>
+                    <td width="100px"><div align="right"><?php echo '$'." ".$tt;?> </div></td>
                 
                 </tr>
                
-                <tr class="alert alert-info">
+            <!--    <tr class="alert alert-info">
                 	<td></td>
-                    <td><div align="right">DUE NOW - PREPAYMENT 10%:</div></td>
-                    <td width="100px"><div align="right"><?php echo 'PHP'." ".$pre;?> </div></td>
-                </tr>
+                    <td><div align="right">PAGA AHORA - PARA APARTAR 10%:</div></td>
+                    <td width="100px"><div align="right"><?php echo '$'." ".$pre;?> </div></td>
+                </tr>-->
                 <tr class="alert alert-success">    
                     <td></td>
-                    <td><div align="right">BALANCE:</div></td>
-                    <td width="100px"><div align="right"><?php echo 'PHP'." ".$bal;?> </div></td>
+                    <td><div align="right">TOTAL:</div></td>
+                    <td width="100px"><div align="right"><?php echo '$'." ".$bal;?> </div></td>
                 </tr>
                 
                 
@@ -312,7 +331,7 @@ function goBack()
             	<form action="details.php" method="post">
                 
                 <div style="margin-right:16px; margin-top:20px;" class="pull-right">
-                <button name="order" class="btn btn-large btn-primary" type="submit"><i class="icon-user"></i> Guest details <i class="icon-arrow-right"></i></button>
+                <button name="order" class="btn btn-large btn-primary" type="submit"><i class="icon-user"></i> Siguiente<i class="icon-arrow-right"></i></button>
             		</div>
                	<p>&nbsp;</p> 
                 <p>&nbsp;</p>
@@ -379,26 +398,25 @@ function goBack()
     
     			<div class="form-signin">
 					
-                    <h4><i class="icon-time"></i> Arrival & Departure Details</h4>
+                    <h4><i class="icon-time"></i> Detalles de llegada y salida</h4>
                     <hr>
 					<table>
                     	<tr>
-                    		<td><strong>Arrival:</strong></td>
+                    		<td><strong>Llegada:</strong></td>
                             <td width="100px"><div align="right"><?php echo $start;?></div></td>  
                     	</tr>
                         <tr>
-                    		<td><strong>Departure:</strong></td>
+                    		<td><strong>Salida:</strong></td>
                             <td width="100px"><div align="right"><?php echo $end;?></div></td>  
                     	</tr>
                         <tr>
-                    		<td><strong>Number of night/s:</strong></td>
-                            <td width="100px"><div align="right"><?php if ($result==1){echo $result; echo ' night'; }else{echo $result; echo ' nights';}?></div></td>  
+                    		<td><strong>Numero de noches:</strong></td>
+                            <td width="100px"><div align="right"><?php if ($result==1){echo $result; echo ' Noche'; }else{echo $result; echo ' Noches';}?></div></td>  
                     	</tr>
                     </table>
                     <hr>
-                    <p>Prepayment  is required to confirm your reservation and this is non-refundable.</p>
-                    <p>No additional charge if you cancel 24 hour(s) or more before your arrival date. For cancellations
-                    made less than 24 hour(s) before the arrival date, the cost of the first night will be apply</p>
+                    <p>El anticipo  es requerido para confirmar tu reservacion y no hay reembolso en este.</p>
+                    <p>No habra cargo adicional si usted cancela antes de 24 horas de su llegada. Para cancelaciones dentro de las 24 horas de su llegada, se tomara el cargo por la primera noche. </p>
  
       			</div>
                 

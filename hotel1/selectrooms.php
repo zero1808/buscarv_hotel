@@ -118,11 +118,11 @@ return true;
   </button>
   <ul class="dropdown-menu">
   
-  <li><a tabindex="-1" href="#"><strong>Dates of Reservation</strong></a></li>
+  <li><a tabindex="-1" href="#"><strong>Datos de la reservación</strong></a></li>
   <li class="divider"></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Arrival:</span> <?php echo $start?></a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Departure:</span> <?php echo $end?></a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">No. of Days:</span> <?php echo $result?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">LLegada:</span> <?php echo $start?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Salida:</span> <?php echo $end?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">No. de dias</span> <?php echo $result?></a></li>
     <!-- dropdown menu links -->
   </ul>
 </div>
@@ -134,9 +134,9 @@ return true;
                             <form name="form1" onSubmit="return validate()" method="post" action="reservation.php">
                           
       
-      	<div class="pull-right"><button class="btn btn-large btn-primary" name="submit" type="submit"><i class="icon-check"></i> Reserved</button></div>
+      	<div class="pull-right"><button class="btn btn-large btn-primary" name="submit" type="submit"><i class="icon-check"></i> Reservación</button></div>
       
-        <h4>Step 2: Please Select Rooms</h4>
+        <h4>Paso 2: Por favor selecciona habitaciones</h4>
         
         
         

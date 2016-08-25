@@ -200,13 +200,13 @@ function validateForms()
 var a=document.forms["cancelpage"]["confirmation"].value;
 if ((a==null || a==""))
   {
-  alert("Enter your confirmation code to cancel you reservation!!!");
+  alert("Ingresa tu codigo de confirmacion para cancelar tu reservación!!!");
   return false;
   }
  
 if (document.cancelpage.cancelpolicy.checked == false)
 {
-alert ('Please agree the cancelation policy of this hotel!');
+alert ('Por favor, acepte las condiciones de cancelación de este hotel!');
 return false;
 }
 else
@@ -235,23 +235,23 @@ function goBack()
 
     <div class="container-narrow">
 
-   	<button style="margin-bottom:-80px;" class="btn" onClick="goBack()"><i class="icon-hand-left"></i> Back</button>
+   	<button style="margin-bottom:-80px;" class="btn" onClick="goBack()"><i class="icon-hand-left"></i> Regresar</button>
       <hr>
 
       <div class="jumbotron">
-        <h1>Please Select Your Dates</h1>
+        <h1>Selecciona la fecha de tu estancia</h1>
         <p class="lead"><img src="media/kingsfields.png" width="150" height="150"></p>
     
       
       				<form method="post" action="selectrooms.php" name="index" onSubmit="return validateForm()">
 				                    
-					  <span style="margin-right: 5px; color:rgba(0,0,0,1);">Start Date: <input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Arrival" name="start" id="sd" value="" maxlength="10" readonly style="width: 210px; margin-left: 15px; border: 1px double #CCCCCC; padding:5px 10px;"/></span><br>
-						<span style="margin-right: 5px; color:rgba(0,0,0,1);">End Date:<input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Departure" name="end" id="ed" value="" maxlength="10" readonly style="width: 210px; margin-left: 23px; border: 1px double #CCCCCC; padding:5px 10px;" /></span><br>
+					  <span style="margin-right: 5px; color:rgba(0,0,0,1);">LLegada:<input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="LLegada" name="start" id="sd" value="" maxlength="10" readonly style="width: 210px; margin-left: 15px; border: 1px double #CCCCCC; padding:5px 10px;"/></span><br>
+						<span style="margin-right: 5px; color:rgba(0,0,0,1);"> Salida :  <input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Salida" name="end" id="ed" value="" maxlength="10" readonly style="width: 210px; margin-left: 23px; border: 1px double #CCCCCC; padding:5px 10px;" /></span><br>
 						<input type="hidden" name="result" id="result" /><br>
                         
                     
         <div align="center"> 	
-<button type="submit" onClick="setDifference(this.form);" class="btn btn-info"><i class="icon-check"></i> CHECK AVAILABILITY</button>
+<button type="submit" onClick="setDifference(this.form);" class="btn btn-info"><i class="icon-check"></i>VER DISPONIBILIDAD</button>
        </div>
                         
 						
@@ -260,14 +260,14 @@ function goBack()
 
       </div>
       
-     <span style="margin-bottom:-80px; margin-left:603px;" class="btn">Proceed <i class="icon-hand-right"></i></span>
+     <span style="margin-bottom:-80px; margin-left:603px;" class="btn">Proceder <i class="icon-hand-right"></i></span>
   
       <hr>
 
 		
      
       <div class="footer">
-        <p>&copy; BASIC HOTEL 2013</p>
+        <p>&copy; BASIC HOTEL 2016</p>
       </div>
 
     </div> <!-- /container -->

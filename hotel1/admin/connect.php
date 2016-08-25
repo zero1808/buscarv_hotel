@@ -1,5 +1,4 @@
-<?php
-	$hostname = "localhost";
+<?php $hostname = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "kingsfields_database";
@@ -11,5 +10,4 @@
 	$dbselect  = mysql_select_db($dbname);
 	if(!$dbselect) {
 		echo "Database selection failed.";
-	}
-?>
+	}?>
