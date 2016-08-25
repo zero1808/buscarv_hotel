@@ -12,25 +12,25 @@
           <a class="brand" href="#"><img style="margin-top:-5px;" src="media/kingsfields.png" width="30" height="30"> BASIC HOTEL</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#"><i class="icon-home"></i> Home</a></li>
-              <li><a href="room.php"><i class="icon-list"></i> Rooms</a></li>
-              <li><a href="#contact" data-toggle="modal"><i class="icon-envelope"></i> Contact</a></li>
+              <li class="active"><a href="#"><i class="icon-home"></i>Inicio</a></li>
+              <li><a href="room.php"><i class="icon-list"></i>Habitaciones</a></li>
+              <li><a href="#contact" data-toggle="modal"><i class="icon-envelope"></i>Contacto</a></li>
             </ul>
             <form method="post" class="navbar-form pull-right">
               <input class="search-query" type="text" name="username" placeholder="Username" required>
               <input class="search-query" type="password" name="password" placeholder="Password" required>
               
             <div class="btn-group">
-  					<button type="submit" class="btn" name="login"><i class="icon-check"></i> Sign in</button>
+  					<button type="submit" class="btn" name="login"><i class="icon-check"></i>Iniciar Sesion</button>
 
 
   					<button class="btn dropdown-toggle" data-toggle="dropdown">
     				<span class="caret"></span>
   					</button>
   				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-    				<li><a href="#cancel" data-toggle="modal"><i class="icon-remove"></i> Cancel Reservation</a></li>
+    				<li><a href="#cancel" data-toggle="modal"><i class="icon-remove"></i> Cancelar Reservacion</a></li>
                     <li class="divider"></li>
-                    <li><a href="booking.php"><i class="icon-calendar"></i> Check Availability</a></li>
+                    <li><a href="booking.php"><i class="icon-calendar"></i> Checar Disponibilidad</a></li>
   				</ul>
 			</div>
               
@@ -87,7 +87,7 @@
     
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
   </div>
 </div><!--Modal end -->
 
@@ -104,10 +104,10 @@
                 	
                 <form action="" method="post">
                         
-                <div style="margin-left:-110px;">Your Full Name: <input name="name" type="text" required placeholder="Full name"></div>
-        		<div style="margin-left:-105px;">Email Address: <input name="email" type="email" required placeholder="Email"></div>	
+                <div style="margin-left:-110px;">Tu nombre completo: <input name="name" type="text" required placeholder="Nombre Completo"></div>
+        		<div style="margin-left:-105px;">Email: <input name="email" type="email" required placeholder="Email"></div>	
                    
-                <div style="margin-right:-75px;">Message: <textarea required placeholder="message" class="span4" name="message" rows="6"></textarea></div>
+                <div style="margin-right:-75px;">Mensaje: <textarea required placeholder="Mensaje" class="span4" name="message" rows="6"></textarea></div>
             		
                	
                 
@@ -138,8 +138,8 @@
   
   </div>
   <div class="modal-footer">
-  <button class="btn btn-primary" name="send" type="submit"><i class="icon-envelope"></i> Send</button>             
-  <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  <button class="btn btn-primary" name="send" type="submit"><i class="icon-envelope"></i> Enviar</button>             
+  <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
   </div>
   </form>
   
@@ -150,15 +150,15 @@
   <form action="cancel.php" method="post">
   <div class="modal-header">  	
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Please Enter Your Cancelation Code</h3>
+    <h3 id="myModalLabel">Por favor, Ingresa tu codigo de Cancelacion</h3>
   </div>
   <div class="modal-body">
     <div align="center"><input name="confirmation" type="text" placeholder="Confirmation Code" required></div>
     <div align="center"><input name="balance" type="text" placeholder="Your Balance" required></div>                
   </div>
   <div class="modal-footer">
-  	<button type="submit" class="btn btn-info"><i class=" icon-arrow-right"></i> Proceed</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  	<button type="submit" class="btn btn-info"><i class=" icon-arrow-right"></i> Proceder</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
   </div>
   </form>
 </div><!--Modal end -->
@@ -178,11 +178,9 @@
           <img src="admin/slider/IMG_5561.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>WELCOME TO BASIC HOTEL</h1>
-              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
-BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
-Enjoy an intimate and peaceful night’s rest in the city!".</p>
-              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
+              <h1>BIENVENIDO A BASIC HOTEL</h1>
+              <p class="lead" align-justify>"BASIC HOTEL está situado en la carretera circunferencial , Ciudad de Mexico , tomamos un enfoque cálido y agradable a la hospitalidad , tanto si viaja por negocios o unas vacaciones que amara, tenemos una ubicación excepcional , buena relación calidad-precio , habitaciones limpias y cómodas .Disfrute de un descanso nocturno  y tranquilo en la ciudad!".</p>
+              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Reserve en linea Aqui</a>
             </div>
           </div>
         </div>
@@ -190,11 +188,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5563.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>WELCOME TO BASIC HOTEL</h1>
-              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
-BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
-Enjoy an intimate and peaceful night’s rest in the city!".</p>
-              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
+              <h1>BIENVENIDO A BASIC HOTEL</h1>
+              <p class="lead" align-justify>"BASIC HOTEL está situado en la carretera circunferencial , Ciudad de Mexico , tomamos un enfoque cálido y agradable a la hospitalidad , tanto si viaja por negocios o unas vacaciones que amara, tenemos una ubicación excepcional , buena relación calidad-precio , habitaciones limpias y cómodas .Disfrute de un descanso nocturno  y tranquilo en la ciudad!".</p>
+              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i>Reserve en linea Aqui</a>
             </div>
           </div>
         </div>
@@ -202,11 +198,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5565.jpg" alt="">
           <div class="container">
              <div class="carousel-caption">
-              <h1>WELCOME TO BASIC HOTEL</h1>
-              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
-BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
-Enjoy an intimate and peaceful night’s rest in the city!".</p>
-              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
+              <h1>BIENVENIDO A BASIC HOTEL</h1>
+              <p class="lead" align-justify>"BASIC HOTEL está situado en la carretera circunferencial , Ciudad de Mexico , tomamos un enfoque cálido y agradable a la hospitalidad , tanto si viaja por negocios o unas vacaciones que amara, tenemos una ubicación excepcional , buena relación calidad-precio , habitaciones limpias y cómodas .Disfrute de un descanso nocturno  y tranquilo en la ciudad!".</p>
+              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Reserve en linea Aqui</a>
             </div>
           </div>
         </div>
@@ -214,11 +208,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5566.jpg" alt="">
           <div class="container">
              <div class="carousel-caption">
-              <h1>WELCOME TO BASIC HOTEL</h1>
-              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
-BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
-Enjoy an intimate and peaceful night’s rest in the city!".</p>
-              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
+              <h1>BIENVENIDO A BASIC HOTEL</h1>
+              <p class="lead" align-justify>"BASIC HOTEL está situado en la carretera circunferencial , Ciudad de Mexico , tomamos un enfoque cálido y agradable a la hospitalidad , tanto si viaja por negocios o unas vacaciones que amara, tenemos una ubicación excepcional , buena relación calidad-precio , habitaciones limpias y cómodas .Disfrute de un descanso nocturno  y tranquilo en la ciudad!".</p>
+              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Reserve en linea Aqui</a>
             </div>
           </div>
         </div>
@@ -226,11 +218,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5560.jpg" alt="">
           <div class="container">
              <div class="carousel-caption">
-              <h1>WELCOME TO BASIC HOTEL</h1>
-              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
-BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
-Enjoy an intimate and peaceful night’s rest in the city!".</p>
-              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
+              <h1>BIENVENIDO A BASIC HOTEL</h1>
+              <p class="lead" align-justify>"BASIC HOTEL está situado en la carretera circunferencial , Ciudad de Mexico , tomamos un enfoque cálido y agradable a la hospitalidad , tanto si viaja por negocios o unas vacaciones que amara, tenemos una ubicación excepcional , buena relación calidad-precio , habitaciones limpias y cómodas .Disfrute de un descanso nocturno  y tranquilo en la ciudad!".</p>
+              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Reserve en linea Aqui</a>
             </div>
           </div>
         </div>
@@ -238,11 +228,9 @@ Enjoy an intimate and peaceful night’s rest in the city!".</p>
           <img src="admin/slider/IMG_5564.jpg" alt="">
           <div class="container">
              <div class="carousel-caption">
-              <h1>WELCOME TO BASIC HOTEL</h1>
-              <p class="lead" align-justify>"Welcome to BASIC HOTEL!
-BASIC HOTEL is located at Circumferential Road, Tagum City, we take a warm and friendly approach to hospitality, whether you are travelling for business or a vacation you will love an exceptional location, good value, clean and comfortable rooms.
-Enjoy an intimate and peaceful night’s rest in the city!".</p>
-              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Book Online Here</a>
+              <h1>BIENVENIDO A BASIC HOTEL</h1>
+              <p class="lead" align-justify>"BASIC HOTEL está situado en la carretera circunferencial , Ciudad de Mexico , tomamos un enfoque cálido y agradable a la hospitalidad , tanto si viaja por negocios o unas vacaciones que amara, tenemos una ubicación excepcional , buena relación calidad-precio , habitaciones limpias y cómodas .Disfrute de un descanso nocturno  y tranquilo en la ciudad!".</p>
+              <a class="btn btn-primary btn-large" href="booking.php"><i class="icon-calendar"></i> Reserve en linea Aqui</a>
             </div>
           </div>
         </div>
