@@ -197,13 +197,13 @@ function validateForms()
 var a=document.forms["cancelpage"]["confirmation"].value;
 if ((a==null || a==""))
   {
-  alert("Enter your confirmation code to cancel you reservation!!!");
+  alert("Ingresa tu codigo de reservación para cancelar!!!");
   return false;
   }
  
 if (document.cancelpage.cancelpolicy.checked == false)
 {
-alert ('Please agree the cancelation policy of this hotel!');
+alert ('Acepras las politicas de cancelacion de este hotel!');
 return false;
 }
 else

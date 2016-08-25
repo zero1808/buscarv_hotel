@@ -112,18 +112,18 @@ function goBack()
   </button>
   <ul class="dropdown-menu">
   
-  <li><a tabindex="-1" href="#"><strong>Dates of Reservation</strong></a></li>
+  <li><a tabindex="-1" href="#"><strong>Datos de la reservación</strong></a></li>
   <li class="divider"></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Arrival:</span> <?php echo $start;?></a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Departure:</span> <?php echo $end;?></a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">No. of Days:</span> <?php echo $result;?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Llegada:</span> <?php echo $start;?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Salida:</span> <?php echo $end;?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">No. de noches:</span> <?php echo $result;?></a></li>
   <li class="divider"></li>
-  <li><a tabindex="-1" href="#"><strong>Payables at the Hotel</strong></a></li>
+  <li><a tabindex="-1" href="#"><strong>Pagables al hotel</strong></a></li>
   <li class="divider"></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Total:</span> PHP <?php echo $total;?>.00</a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Pre-payment:</span> PHP <?php echo $pre;?>.00</a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Balance:</span> PHP <?php echo $bal;?>.00</a></li>
-  <li><a tabindex="-1" href="#"><span class="text-info">Tax:</span> PHP <?php echo $tax;?>.00</a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Total:</span>$<?php echo $total;?>.00</a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Anticipo:</span>$<?php echo $pre;?>.00</a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Balance:</span> $<?php echo $bal;?>.00</a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Tax:</span>$<?php echo $tax;?>.00</a></li>
   <li class="divider"></li>
   <li><a tabindex="-1" href="#"><strong>Rooms</strong></a></li>
   <li class="divider"></li>
@@ -146,7 +146,7 @@ function goBack()
                 
                 <form id="formID" class="formular" method="post" action="order.php">
 
-        <h4>Step 4: Guest Details</h4>
+        <h4>Step 4: Detalles del cliente</h4>
         	<hr>
             <table width="503">
   
@@ -180,17 +180,17 @@ function goBack()
             
             	<tr>
 
-                	<td width="270">Firstname:<input class="validate[required,custom[onlyLetterSp]] text-input" name="fname" type="text" id="req" ></td>
+                	<td width="270">Nombre(s):<input class="validate[required,custom[onlyLetterSp]] text-input" name="fname" type="text" id="req" ></td>
                     
-            		<td width="221">Lastname:<input class="validate[required,custom[onlyLetterSp]] text-input" name="lname" type="text" id="req2"></td>
+            		<td width="221">Apellido:<input class="validate[required,custom[onlyLetterSp]] text-input" name="lname" type="text" id="req2"></td>
 		
         		</tr>
 
                 
                 <tr>
                 
-                	<td>Email Address:<input class="validate[required,custom[email]] text-input" name="email" id="email" type="text"></td>
-                    <td>Confirm Email Address:<input class="validate[required,equals[email]] text-input" name="cemail" id="email2" type="text"></td>
+                	<td>Email:<input class="validate[required,custom[email]] text-input" name="email" id="email" type="text"></td>
+                    <td>Confirmar email:<input class="validate[required,equals[email]] text-input" name="cemail" id="email2" type="text"></td>
                 
                 
                 </tr>
@@ -200,7 +200,7 @@ function goBack()
                 <td>Username:<input class="validate[required,custom[onlyLetterNumber],maxSize[20],ajax[ajaxUserCallPhp]] text-input" name="user" type="text" id="user"/></td>
                 
                 	
-                    <td>Contact Number:<input value="63" class="validate[required,[maxSize[10],custom[onlyNumberSp],[minSize[10]] text-input" name="cnumber" maxlength="10" type="text" id="telephone"></td>
+                    <td>Teléfono:<input value="63" class="validate[required,[maxSize[10],custom[onlyNumberSp],[minSize[10]] text-input" name="cnumber" maxlength="10" type="text" id="telephone"></td>
                 
                 
                 </tr>
@@ -208,29 +208,29 @@ function goBack()
                  <tr>
                 
                 	<td>Password:<input class="validate[required,minSize[6]] text-input" name="password" id="password" type="password"></td>
-                    <td>Retype Password:<input class="validate[required,minSize[6],equals[password]] text-input" name="password2" id="password2" type="password"></td>
+                    <td>Confirmar Password:<input class="validate[required,minSize[6],equals[password]] text-input" name="password2" id="password2" type="password"></td>
                 
                 
                 </tr>
                 
                  <tr>
                     
-                    <td>Zip Code:<input class="validate[required,custom[onlyNumberSp]] text-input" name="zip" type="text" id="onlynumber"/></td>
+                    <td>Código postal:<input class="validate[required,custom[onlyNumberSp]] text-input" name="zip" type="text" id="onlynumber"/></td>
                 
                 
                 </tr>
                 
                 <tr>
                 
-                	<td>Address:<input class="validate[required] text-input" name="address" type="text"/></td>
-                    <td><input class="validate[required] checkbox" type="checkbox" id="agree" name="agree"/> <span style=" font-size:12px">I agree & accept <a href="#myModal" data-toggle="modal">terms & conditions</a></span></td>
+                	<td>Dirección:<input class="validate[required] text-input" name="address" type="text"/></td>
+                    <td><input class="validate[required] checkbox" type="checkbox" id="agree" name="agree"/> <span style=" font-size:12px">Yo & acepto <a href="#myModal" data-toggle="modal">terminos & condiciones</a></span></td>
                     
                 </tr>    
                         
             </table>
             
-            <label>Special Request</label>
-            <label style="font-size:12px">(Optional. You may also specify your flight details here.)</label>
+            <label>Requerimiento especial</label>
+            <label style="font-size:12px">(Puedes especificar algo extra que necesites)</label>
        		<textarea class="span11" rows="8" name="request"></textarea>
             
    			  </div><!--form sign -->
@@ -264,7 +264,7 @@ function goBack()
   <div style="margin-top:20px;" class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        <i class="icon-user"></i> Member Area
+        <i class="icon-user"></i>Login
       </a>
     </div>
     <div id="collapseTwo" class="accordion-body collapse">
@@ -321,7 +321,7 @@ function goBack()
                    	
                     <div class="control-group">
                     	<div class="controls">
-						<button class="btn" type="submit" name="order_login"><i class="icon-check"></i> Sign-in</button>
+						<button class="btn" type="submit" name="order_login"><i class="icon-check"></i>Siguiente</button>
 						</div>
                     </div>    
                 </div>
@@ -360,12 +360,12 @@ function goBack()
   
   
   
-    <p>Terms & Conditions here…</p>
+    <p>Terminos y condiciones</p>
     
-    <p>Diri eh butang</p>
+    <p></p>
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
   </div>
 </div>
 

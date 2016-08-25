@@ -1,14 +1,10 @@
-
 <?php include('header.php');?>
 <?php include('admin/connect.php');?>
-<?php include('session.php'); ?>
-
     <style type="text/css">
       body {
         padding-top: 40px;
         padding-bottom: 40px;
       }
-
       .form-signin {
         max-width: 1000px;
         padding: 19px 29px 29px;
@@ -26,7 +22,6 @@
       .form-signin .checkbox {
         margin-bottom: 10px;
       }
-  
     </style>
     
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script> 
@@ -287,74 +282,39 @@ return true;
                                     <th><div align="center" style="font-size:16px">Departure</div></th>
                                     <th><div align="center" style="font-size:16px">Trans_code</div></th>
                                     <th width="280"><div align="center" style="font-size:16px">Actions</div></th>
-                            
-                          
-                                </tr>
+                                                            </tr>
                             </thead>
                             <tbody>
-                              
-                                      <?php
-									  
-                                    $query = mysql_query("select * from tb_reserve where memberID = '$session_id' and status='reserved'") or die(mysql_error());
+                                      <?php $query = mysql_query("select * from tb_reserve where memberID = '$session_id' and status='reserved'") or die(mysql_error());
                                     while ($row = mysql_fetch_array($query)) {
 										$roomID = $row['roomID'];
 										$balance =$row['balance'];
 										$pre = $row['partial'];
-									
                                     $qry = mysql_query("select * from tb_rooms where roomID = '$roomID'") or die(mysql_error());
                                     while ($rowroom = mysql_fetch_array($qry)) {
-											
 										$catid = $rowroom['category_id'];
 										$price = $rowroom['price'];
-										
                       					 $qr = mysql_query("select * from tb_category where category_id = '$catid'") or die(mysql_error());
-                                    while ($rowcat = mysql_fetch_array($qr)) {
-										 	
-										
-                                        ?>
-                                 		
-                                    
-
-                              <tr>
-                                        
-                                        <td><img class="img-polaroid" src="admin/<?php echo $rowroom['location']?>" width="80" height="100"></td>
+                                    while ($rowcat = mysql_fetch_array($qr)) {?>
+                         <tr>
+<td><img class="img-polaroid" src="admin/<?php echo $rowroom['location']?>" width="80" height="100"></td>
                                 <td><?php echo $rowroom['name']?></td>
-                                <td><?php 
-								
-									$f = sprintf ("%.2f", $price);
-									
-									echo 'PHP'." ". $f;
-								
-									?>
+                                <td><?php $f = sprintf ("%.2f", $price);
+									echo 'PHP'." ". $f;?>
                                 </td>
-                                <td><?php 
-								
-									$b = sprintf ("%.2f", $balance);
-									
-									echo 'PHP'." ". $b;
-								
-									?>
+                                <td><?php $b = sprintf ("%.2f", $balance);
+									echo 'PHP'." ". $b;?>
                                 </td>
-                               <td><?php 
-								
-									$p = sprintf ("%.2f", $pre);
-									
-									echo 'PHP'." ". $p;
-								
-									?>
+                               <td><?php $p = sprintf ("%.2f", $pre);
+									echo 'PHP'." ". $p;?>
                                 </td>
                                 <td><?php echo $rowcat['category_name']?></td>
                                 <td><?php echo $row['arrival']?></td>
                                 <td><?php echo $row['departure']?></td>
                                 <td><?php echo $row['transaction_code']?></td>
-                                <td>
-                                
-                                
-                                <a class="btn" href="#resched<?php echo $row['reserveID'];?>" role="button" data-toggle="modal">Re-sched <i class="icon-edit"></i></a> 
-                                <a class="btn btn-info" href="#transfer<?php echo $row['reserveID'];?>" data-toggle="modal">Change <i class="icon-home"></i></a>
-                               
-                                </td>        	
-               
+                                <td><a class="btn" href="#resched<?php echo $row['reserveID'];?>" role="button" data-toggle="modal">Re-sched <i class="icon-edit"></i></a> 
+ <a class="btn btn-info" href="#transfer<?php echo $row['reserveID'];?>" data-toggle="modal">Change <i class="icon-home"></i></a>
+</td>        	   
 <!-- Modal -->
 <div id="resched<?php echo $row['reserveID'];?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -362,47 +322,20 @@ return true;
     <h3 id="myModalLabel">Reservation Schedule Change</h3>
   </div>
   <div class="modal-body"> 
-  
-  
-  
- 
-  
- <form method="post" action="resched.php" name="index" onSubmit="return validateForm()">
- 
-  <input name="reserveid" type="hidden" value="<?php echo $row['reserveID'];?>">
+  <form method="post" action="resched.php" name="index" onSubmit="return validateForm()">
+   <input name="reserveid" type="hidden" value="<?php echo $row['reserveID'];?>">
   <input name="price" type="hidden" value="<?php echo $price;?>">
   <input name="partial" type="hidden" value="<?php echo $pre;?>">
- 
- <div align="center"> 	
-				                    
-						<span style="margin-right: 11px; color:rgba(255,255,255,1);">Start Date: <input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Arrival" name="start" id="sd" value="" maxlength="10" readonly style="width: 210px; margin-left: 15px; border: 1px double #CCCCCC; padding:5px 10px;"/></span><br>
-						<span style="margin-right: 11px; color:rgba(255,255,255,1);">End Date:<input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Departure" name="end" id="ed" value="" maxlength="10" readonly style="width: 210px; margin-left: 23px; border: 1px double #CCCCCC; padding:5px 10px;" /></span><br>
+ <div align="center"><span style="margin-right: 11px; color:rgba(255,255,255,1);">Start Date: <input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Arrival" name="start" id="sd" value="" maxlength="10" readonly style="width: 210px; margin-left: 15px; border: 1px double #CCCCCC; padding:5px 10px;"/></span><br><span style="margin-right: 11px; color:rgba(255,255,255,1);">End Date:<input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Departure" name="end" id="ed" value="" maxlength="10" readonly style="width: 210px; margin-left: 23px; border: 1px double #CCCCCC; padding:5px 10px;" /></span><br>
 <input type="hidden" name="result" id="result" /><br>
-                        
-                    
-        
-
        </div>
-                        
-						
-					  
-  
-           
-      
   </div>
-  
-  <div class="modal-footer">
+    <div class="modal-footer">
   	<button type="submit" name="resche" onClick="setDifference(this.form);" class="btn btn-info"><i class="icon-check"></i> CHECK AVAILABILITY</button>
     <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
-    
-  </div>
-  
-  </form>
-  
-</div><!--modal end -->  
-
-
-                        
+     </div>
+  </form> 
+</div><!--modal end -->                    
 <!-- Modal -->
 <div id="transfer<?php echo $row['reserveID'];?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -410,69 +343,30 @@ return true;
     <h3 id="myModalLabel">Reservation Schedule Change</h3>
   </div>
   <div class="modal-body"> 
-  
   <form action="res.php" method="post">
-  
   <input name="reserveid" type="hidden" value="<?php echo $row['reserveID'];?>">
-  
   <input name="roomp" type="hidden" value="<?php echo $roomID?>">
-  
   <div align="center">Room Number: <select class="span2" name="roomID">
-  <?php 
- 	
-	$resc = mysql_query("select * from tb_rooms where category_id = '$catid' and status = 'available'") or die (mysql_error());
- 		while ($row_sche = mysql_fetch_array($resc)){
- 
-  
-  ?>
-  
+  <?php $resc = mysql_query("select * from tb_rooms where category_id = '$catid' and status = 'available'") or die (mysql_error());
+ 		while ($row_sche = mysql_fetch_array($resc)){?> 
  <option  value="<?php echo $row_sche['roomID']?>"><?php echo 'Room'." ".$row_sche['name'];?></option> 
- 
  <?php }?>
-  
   </select>
-  
+    </div>
   </div>
-
-  </div>
-  
-  <div class="modal-footer">
-  	
-    <button type="submit" class="btn btn-info" name="res"><i class="icon-edit"></i> Change</button>
+    <div class="modal-footer">
+  	    <button type="submit" class="btn btn-info" name="res"><i class="icon-edit"></i> Change</button>
     <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
-    
-  </div>
-  
-   </form>  
-  
-</div><!--modal end -->             
-           
-               
-											
-                       		  </tr>
-                                  
-                                  
-                                                                     
-                        		<?php } ?>
-                                <?php } ?>
-                                <?php } ?>
-      
-                            </tbody>
-                        </table>
- 
-
-           
-                        <hr>
- 
-
-    </div> <!-- /container -->
-    
-    
-   
-
-
-
-  </body>
-  
-  
+      </div>
+     </form>  
+  </div><!--modal end -->             		
+ </tr>                               
+<?php }?>
+<?php }?>
+<?php }?>
+</tbody>
+</table>
+<hr>
+</div> <!-- /container -->
+</body>
 </html>

@@ -110,19 +110,19 @@ $query = mysql_query("insert into tb_member (firstname,lastname,email,contact_nu
 		
 		
 		$mail_To = $email;
-                $mail_Subject = "Reservation notification From BASIC HOTEL";
-                $mail_Body = "First Name: $username\n".
-		"Last Name: $lname\n".
+                $mail_Subject = "Notificacion de reservación BASIC HOTEL";
+                $mail_Body = "Nombre(s): $username\n".
+		"Apellido: $lname\n".
 		"Email: $email \n".
-		"Zip Code: $zip \n".
-		"Contact Number: $cnumber \n".
+		"Código postal: $zip \n".
+		"Teléfono: $cnumber \n".
 		"Password: $password \n".
 		"Check In: $start\n ".
 		"Check Out: $end\n ".
-		"Total nights of stay: $result\n ".
-		"Payable amount: $total\n ".
-		"Room ID: echo $id[$i];\n".
-		"Confirmation Number: $confirmation\n ";
+		"Total de noches: $result\n ".
+		"Total a pagar: $total\n ".
+		"ID Habitación: echo $id[$i];\n".
+		"Numero de confirmación: $confirmation\n ";
                 mail($mail_To, $mail_Subject, $mail_Body);?>
 
 
@@ -214,7 +214,7 @@ function Clickheretoprint()
   
   var docprint=window.open("","",disp_setting); 
    docprint.document.open(); 
-   docprint.document.write('<html><head><title>BASIC HOTEL Power System</title>'); 
+   docprint.document.write('<html><head><title>BASIC HOTEL BuscarV</title>'); 
    docprint.document.write('</head><body onLoad="self.print()" style="width: 400px; font-size:12px; font-family:arial;">');          
    docprint.document.write(content_vlue);          
    docprint.document.write('</body></html>'); 
@@ -234,8 +234,8 @@ function Clickheretoprint()
 
 	<div class="form-signin">
     
-    <h4>Thank you for your patients</h4>
-    <h6>Please Submit your reservation detail to paypal to confirm your 10% Partial Payment</h6>    
+    <h4>Gracias por su paciencia</h4>
+    <h6>Por favor imprime los detalles de tu reservación. Anticipo del 10%.</h6>    
 			<hr>
             
             <a style=" margin-bottom:10px;" class="btn" href="javascript:Clickheretoprint()"><i class="icon-print"></i> Print</a>
@@ -246,45 +246,45 @@ function Clickheretoprint()
     
     <table>
     			<tr>
-					<td><strong>Trans_Code:</strong></td>
+					<td><strong>Código de transacción:</strong></td>
                     <td width="300px"><div align="right"><?php echo $confirmation;?></div></td>
  				</tr>
                 
             	<tr>
-					<td><strong>Arrival:</strong></td>
+					<td><strong>Llegada:</strong></td>
                     <td width="300px"><div align="right"><?php echo $start;?></div></td>
  				</tr>
                 
                 
                 <tr>
-                	<td><strong>Departure:</strong></td>
+                	<td><strong>Salida:</strong></td>
                 	<td><div align="right"><?php echo $end;?></div></td>                
                 </tr>
                 <tr>
-                	<td><strong>Number of Days:</strong></td>
+                	<td><strong>Numero de noches:</strong></td>
                 	<td><div align="right"><?php echo $result;?></div></td>
                 </tr>
                 <tr>
                 	<td></td>
-                    <td><div align="right">Total room charges:</div></td>
+                    <td><div align="right">Cargo total por renta de habitacion/es:</div></td>
                     <td width="170px"><div align="right">PHP <?php echo $total;?></div></td>
                 
                 </tr>
                 <tr>
                 	<td></td>
-                    <td><div align="right">Balance:</div></td>
+                    <td><div align="right">Total:</div></td>
                     <td width="100px"><div align="right">PHP <?php echo $bal;?></div></td>
                 
                 </tr>
-                <tr class="alert alert-info">
+              <!--  <tr class="alert alert-info">
                 	<td><strong>Paypal Payment</strong></td>
                     <td><div align="right"><i class="icon-info-sign"></i>DUE NOW - PREPAYMENT 10%:</div></td>
                     <td width="100px"><div align="right">PHP <?php echo $pre;?>.00</div></td>
                 
-                </tr>
+                </tr>-->
                 <tr>
                 	<td></td>
-                    <td><div align="right">Room Number:</div></td>
+                    <td><div align="right">No. de habitación:</div></td>
                     <td width="100px"><div align="right">	<?php 
   
   	$id=$_POST['selector'];
@@ -315,32 +315,32 @@ function Clickheretoprint()
                
                 <tr>
                 	<td></td>
-                    <td><div align="right">Taxes:</div></td>
-                    <td width="100px"><div align="right">PHP <?php echo $tax;?></div></td>
+                    <td><div align="right">Impuestos:</div></td>
+                    <td width="100px"><div align="right">$ <?php echo $tax;?></div></td>
                 </tr>
                  
                 
                 <tr class="alert alert-success">
-					<td><strong>Guest Details</strong></td>
+					<td><strong>Detalles del cliente</strong></td>
                     <td width="300px"><div align="right"></div></td>
  				</tr>
                 
                 <tr>
-					<td><strong>Firstname:</strong></td>
+					<td><strong>Nombre(s):</strong></td>
                     <td width="300px"><div align="right"><?php echo $fname;?></div></td>
  				</tr>
                 
                 <tr>
-					<td><strong>Lastname:</strong></td>
+					<td><strong>Apellido:</strong></td>
                     <td width="300px"><div align="right"><?php echo $lname;?></div></td>
  				</tr>
                 <tr>
-					<td><strong>Email Address:</strong></td>
+					<td><strong>Email:</strong></td>
                     <td width="300px"><div align="right"><?php echo $email;?></div></td>
  				</tr>
               
                 <tr>
-					<td><strong>Contact Number:</strong></td>
+					<td><strong>Teléfono:</strong></td>
                     <td width="300px"><div align="right"><?php echo $cnumber;?></div></td>
  				</tr>
                 <tr>
@@ -348,11 +348,11 @@ function Clickheretoprint()
                     <td width="300px"><div align="right"><?php echo $password;?></div></td>
  				</tr>
                 <tr>
-					<td><strong>Zip Code:</strong></td>
+					<td><strong>Codigo Postal:</strong></td>
                     <td width="300px"><div align="right"><?php echo $zip;?></div></td>
  				</tr>
                 <tr>
-					<td><strong>Address:</strong></td>
+					<td><strong>Dirección:</strong></td>
                     <td width="300px"><div align="right"><?php echo $address;?></div></td>
  				</tr>
         
