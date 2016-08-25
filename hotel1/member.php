@@ -1,8 +1,6 @@
-
 <?php include('header.php');?>
-<?php include('admin/connect.php');?>
 <?php include('session.php'); ?>
-
+<?php include('admin/connect.php');?>
     <style type="text/css">
       body {
         padding-top: 40px;
@@ -30,7 +28,6 @@
     </style>
     
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script> 
-
 	<script type="text/javascript" src="js/sagallery.js"></script>
 	<script src="gallery/jquery-photo-gallery/jquery-photo-gallery/js/jquery.quicksand.js" type="text/javascript"></script>
 	<script src="gallery/jquery-photo-gallery/jquery-photo-gallery/js/jquery.easing.js" type="text/javascript"></script>
@@ -225,20 +222,20 @@ return true;
           <a class="brand" href="#">BASIC HOTEL</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="member.php"><i class="icon-home"></i> Home</a></li>
-              <li><a href="profile.php"><i class="icon-list"></i> Profile</a></li>
-              <li><a href="contact.php"><i class="icon-envelope"></i> Contact</a></li>
+              <li class="active"><a href="member.php"><i class="icon-home"></i> Inicio</a></li>
+              <li><a href="profile.php"><i class="icon-list"></i> Perfil</a></li>
+              <li><a href="contact.php"><i class="icon-envelope"></i> Contacto</a></li>
             </ul>
             <form class="navbar-form pull-right">
 
             <div class="btn-group">
-  					<button type="submit" class="btn">Actions</button>
+  					<button type="submit" class="btn">Acciones</button>
   					<button class="btn dropdown-toggle" data-toggle="dropdown">
     				<span class="caret"></span>
   					</button>
   				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                 	<li class="divider"></li>
-    				<li><a href="#logout" data-toggle="modal"><i class="icon-off"></i> Log-out</a></li>  
+    				<li><a href="#logout" data-toggle="modal"><i class="icon-off"></i> Desconectarse</a></li>  
                     
                  
   				</ul>
@@ -256,11 +253,11 @@ return true;
   <div class="modal-header">
   </div>
   <div class="modal-body">
-  <div class="alert alert-info">Are you Sure you Want to <strong>Logout</strong>?</div>
+  <div class="alert alert-info">¿Estas seguro que quieres <strong>Desconectarte</strong>?</div>
   </div>
   <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
-      <a href="logout.php" class="btn btn-info"><i class="icon-off"></i> Logout</a>
+      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
+      <a href="logout.php" class="btn btn-info"><i class="icon-off"></i>Desconectarse</a>
   </div>
 </div>             
                             
@@ -277,16 +274,16 @@ return true;
                             <thead class=" hero-unit">
                                 <tr>
                                 
-                                	<th width="110"><div align="center" style="margin-top:10px;">Image</div></th>
-                                    <th width="20"><div align="center" style="margin-top:10px;">No.</div></th>
-                                    <th width="100"><div align="center" style="font-size:16px">Price</div></th>
+                                	<th width="110"><div align="center" style="margin-top:10px;">Imagen</div></th>
+                                    <th width="20"><div align="center" style="margin-top:10px;">No. Habitacion</div></th>
+                                    <th width="100"><div align="center" style="font-size:16px">Precio</div></th>
                                     <th width="100"><div align="center" style="font-size:16px">Balance</div></th>
-                                    <th width="100"><div align="center" style="font-size:16px">Partial</div></th>
-                                    <th width="180"><div align="center" style="font-size:16px">Category</div></th>
-                                    <th width="160"><div align="center" style="font-size:16px">Arrival</div></th>
-                                    <th><div align="center" style="font-size:16px">Departure</div></th>
-                                    <th><div align="center" style="font-size:16px">Trans_code</div></th>
-                                    <th width="280"><div align="center" style="font-size:16px">Actions</div></th>
+                                    <th width="100"><div align="center" style="font-size:16px">Parcial</div></th>
+                                    <th width="180"><div align="center" style="font-size:16px">Categoria</div></th>
+                                    <th width="160"><div align="center" style="font-size:16px">Llegada</div></th>
+                                    <th><div align="center" style="font-size:16px">Salida</div></th>
+                                    <th><div align="center" style="font-size:16px">Codigo Transaccion</div></th>
+                                    <th width="280"><div align="center" style="font-size:16px">Acciones</div></th>
                             
                           
                                 </tr>
@@ -350,8 +347,8 @@ return true;
                                 <td>
                                 
                                 
-                                <a class="btn" href="#resched<?php echo $row['reserveID'];?>" role="button" data-toggle="modal">Re-sched <i class="icon-edit"></i></a> 
-                                <a class="btn btn-info" href="#transfer<?php echo $row['reserveID'];?>" data-toggle="modal">Change <i class="icon-home"></i></a>
+                                <a class="btn" href="#resched<?php echo $row['reserveID'];?>" role="button" data-toggle="modal">Cambiar fechas<i class="icon-edit"></i></a> 
+                                <a class="btn btn-info" href="#transfer<?php echo $row['reserveID'];?>" data-toggle="modal">Cambiar habitacion<i class="icon-home"></i></a>
                                
                                 </td>        	
                
@@ -359,7 +356,7 @@ return true;
 <div id="resched<?php echo $row['reserveID'];?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Reservation Schedule Change</h3>
+    <h3 id="myModalLabel">Ventana de cambios en la reservacion</h3>
   </div>
   <div class="modal-body"> 
   
@@ -375,8 +372,8 @@ return true;
  
  <div align="center"> 	
 				                    
-						<span style="margin-right: 11px; color:rgba(255,255,255,1);">Start Date: <input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Arrival" name="start" id="sd" value="" maxlength="10" readonly style="width: 210px; margin-left: 15px; border: 1px double #CCCCCC; padding:5px 10px;"/></span><br>
-						<span style="margin-right: 11px; color:rgba(255,255,255,1);">End Date:<input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Departure" name="end" id="ed" value="" maxlength="10" readonly style="width: 210px; margin-left: 23px; border: 1px double #CCCCCC; padding:5px 10px;" /></span><br>
+						<span style="margin-right: 11px; color:rgba(255,255,255,1);">Fecha de inicio: <input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Llegada" name="start" id="sd" value="" maxlength="10" readonly style="width: 210px; margin-left: 15px; border: 1px double #CCCCCC; padding:5px 10px;"/></span><br>
+						<span style="margin-right: 11px; color:rgba(255,255,255,1);">Fecha final:<input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Salida" name="end" id="ed" value="" maxlength="10" readonly style="width: 210px; margin-left: 43px; border: 1px double #CCCCCC; padding:5px 10px;" /></span><br>
 <input type="hidden" name="result" id="result" /><br>
                         
                     
@@ -392,8 +389,8 @@ return true;
   </div>
   
   <div class="modal-footer">
-  	<button type="submit" name="resche" onClick="setDifference(this.form);" class="btn btn-info"><i class="icon-check"></i> CHECK AVAILABILITY</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+  	<button type="submit" name="resche" onClick="setDifference(this.form);" class="btn btn-info"><i class="icon-check"></i>Checar disponibilidad</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
     
   </div>
   
@@ -407,7 +404,7 @@ return true;
 <div id="transfer<?php echo $row['reserveID'];?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Reservation Schedule Change</h3>
+    <h3 id="myModalLabel">Ventana de cambios en la reservacion</h3>
   </div>
   <div class="modal-body"> 
   
@@ -417,7 +414,7 @@ return true;
   
   <input name="roomp" type="hidden" value="<?php echo $roomID?>">
   
-  <div align="center">Room Number: <select class="span2" name="roomID">
+  <div align="center">Numero de habitacion: <select class="span2" name="roomID">
   <?php 
  	
 	$resc = mysql_query("select * from tb_rooms where category_id = '$catid' and status = 'available'") or die (mysql_error());
@@ -438,8 +435,8 @@ return true;
   
   <div class="modal-footer">
   	
-    <button type="submit" class="btn btn-info" name="res"><i class="icon-edit"></i> Change</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+    <button type="submit" class="btn btn-info" name="res"><i class="icon-edit"></i> Cambiar</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
     
   </div>
   
@@ -466,13 +463,5 @@ return true;
  
 
     </div> <!-- /container -->
-    
-    
-   
-
-
-
   </body>
-  
-  
 </html>

@@ -1,3 +1,4 @@
+<?php ob_start(); if(!isset($_SESSION)){session_start();} ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    
-
     <!-- Le styles -->
     <link href="admin/css/bootstrap.css" rel="stylesheet">
     <link href="admin/css/bootstrap-responsive.css" rel="stylesheet">

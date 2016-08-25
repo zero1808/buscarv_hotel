@@ -1,9 +1,6 @@
-<?php include('header.php')?>
-<?php include('admin/connect.php');?>
-
+<?php include('header.php'); ?>
+<?php include('admin/connect.php'); ?>
   <body>
-
-
      <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -20,14 +17,13 @@
               <li><a href="#contact" data-toggle="modal"><i class="icon-envelope"></i> Contact</a></li>
             </ul>
             <form method="post" class="navbar-form pull-right">
- 
               <input class="search-query" type="text" name="username" placeholder="Username" required>
               <input class="search-query" type="password" name="password" placeholder="Password" required>
               
-              
-              
             <div class="btn-group">
   					<button type="submit" class="btn" name="login"><i class="icon-check"></i> Sign in</button>
+
+
   					<button class="btn dropdown-toggle" data-toggle="dropdown">
     				<span class="caret"></span>
   					</button>
@@ -39,12 +35,9 @@
 			</div>
               
             </form>
-            
-            
          <?php
                                 if (isset($_POST['login'])) {
-								
-								      function clean($str) {
+								                   function clean($str) {
                                         $str = @trim($str);
                                         if (get_magic_quotes_gpc()) {
                                             $str = stripslashes($str);
@@ -64,17 +57,15 @@
                                         session_regenerate_id();
                                         $_SESSION['id'] = $row['memberID'];
                                         header('location:member.php');
-										session_write_close();
+										                    session_write_close();
                                     } else {
-									   session_write_close();
+									                      session_write_close();
                                         ?>
                                       <br>
                                       <p>&nbsp;</p>
-                                      
                                         	<script type="text/javascript">
-                                                alert("Please Check Your Password And Email Address");
-                                            </script>
-                                            
+                                                alert("Por favor checa tu usuario y tu contraseña");
+                                          </script>
                                         <?php
                                     }
                                 }
