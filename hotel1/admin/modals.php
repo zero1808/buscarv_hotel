@@ -54,18 +54,7 @@
                                     </div>
                                     
                                 </div>
-                                
-  									
-                             
-
-                                <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Precio:</label>
-                                    <div class="controls">
-                                        <input type="text" name="price">
-                                        <input type="hidden" name="status" value="Available" >
-                                    </div>
-                                </div>
-
+                      
                                
 
                                 <div class="control-group">
@@ -93,11 +82,8 @@
 
                                 $name = $_POST['name'];
                                 $description = $_POST['description'];
-                                $category = $_POST['category'];
-                                
-                                $price = $_POST['price'];
-                         
-								$status = $_POST['status'];
+                                $hcategory = $_POST['category'];                         
+								$status ='Available';
 
                                 //image
                                 $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
@@ -108,8 +94,8 @@
                                 $location = "upload/" . $_FILES["image"]["name"];
 
 
-                                mysql_query("insert into tb_rooms (name,description,category_id,price,location,status)
-                            	values ('$name','$description','$category','$price','$location','$status')
+                                mysql_query("insert into tb_rooms (name,description,category_id,location,status)
+                            	values ('$name','$description','$hcategory','$location','$status')
                                 ") or die(mysql_error());
 
                                 header('location:progressbar.php');
@@ -169,7 +155,13 @@
                                     <div class="controls">
                             <input name="no_ninios" type="text" required="required"  id="no_ninios">
                                     </div>
-                                </div>                                                                                 
+                                </div>
+                                <div class="control-group">
+                                <label class="control-label" for="no_ninios">Precio:</label>
+                                    <div class="controls">
+                            <input name="price" type="text" required="price"  id="no_ninios">
+                                    </div>
+                                </div>  
 
                                 
                             
@@ -198,7 +190,8 @@
                                 $no_camas_ind=$_POST['camas_ind'];
                                 $no_adultos=$_POST['no_adultos'];
                                 $no_ninios=$_POST['no_ninios'];
-                                mysql_query("insert into tb_category (category_name,camas_kingsize,camas_matrimoniales,camas_individuales,no_adultos,no_ninios) values('$nombre_categoria','$no_camas_king','$no_camas_mat','$no_camas_ind','$no_adultos','$no_ninios')") or die(mysql_error());
+                                $cprecio=$_POST['price'];
+                                mysql_query("insert into tb_category (category_name,camas_kingsize,camas_matrimoniales,camas_individuales,no_adultos,no_ninios,precio) values('$nombre_categoria','$no_camas_king','$no_camas_mat','$no_camas_ind','$no_adultos','$no_ninios','$cprecio')") or die(mysql_error());
                                 header('location:progressbar.php');
                             }
 							
