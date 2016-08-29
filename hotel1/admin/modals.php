@@ -156,7 +156,17 @@
                                     <div class="controls">
                             <input name="price" type="text" required="price"  id="no_ninios">
                                     </div>
-                                </div>  
+                                </div> 
+                                <div class="control-group">
+                                 <label class="control-label" for="status">Status: </label>   
+                                    <div class="controls">
+                                        <select id="status_categoria" name="status_categoria">
+                                        <option value="Disponible">Disponible</option>
+                                        <option value="Baja">Baja</option>
+
+                                        </select>
+                                    </div>
+                                </div>
 
                                 
                             
@@ -186,7 +196,8 @@
                                 $no_adultos=$_POST['no_adultos'];
                                 $no_ninios=$_POST['no_ninios'];
                                 $cprecio=$_POST['price'];
-                                mysql_query("insert into tb_category (category_name,camas_kingsize,camas_matrimoniales,camas_individuales,no_adultos,no_ninios,precio) values('$nombre_categoria','$no_camas_king','$no_camas_mat','$no_camas_ind','$no_adultos','$no_ninios','$cprecio')") or die(mysql_error());
+                                $status_categoria=$_POST['status_categoria'];
+                                mysql_query("insert into tb_category (category_name,camas_kingsize,camas_matrimoniales,camas_individuales,no_adultos,no_ninios,precio,status) values('$nombre_categoria','$no_camas_king','$no_camas_mat','$no_camas_ind','$no_adultos','$no_ninios','$cprecio','$status_categoria')") or die(mysql_error());
                                 header('location:progressbar.php');
                             }
                             ?>              

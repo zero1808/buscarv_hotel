@@ -1062,7 +1062,7 @@ function Clickheretoprint()
                                         <option>--Select Category--</option>
 
           		<?php
-				$rslt = mysql_query("SELECT * FROM tb_category ORDER BY category_id ");
+				$rslt = mysql_query("SELECT * FROM tb_category where status='Disponible' ORDER BY category_id  ");
 				while($tst = mysql_fetch_array($rslt))
 				{
 				if (!$rslt)
@@ -1148,7 +1148,8 @@ function Clickheretoprint()
                         <th><div align="center">No. camas individuales</div></th>
                         <th><div align="center">No. adultos</div></th>
                         <th><div align="center">No. niños</div></th>
-                        <th><div align="center">Precio</div></th>                     
+                        <th><div align="center">Precio</div></th> 
+                        <th><div align="center">Status</div></th>
                         <th><div align="center">Menú</div></th>      
                     </tr>
                 </thead>
@@ -1172,6 +1173,7 @@ function Clickheretoprint()
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['no_adultos'];?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['no_ninios'];?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['precio'];?></div></td>
+                                            <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $categoria_row['status'];?></div></td>
                                             <td width="250"><div align="center">
                                             <a href="#edit_category<?php echo $category_id;?>" class="btn" role="button" data-toggle="modal"><i class="icon-edit"></i> Editar</a>
                                             <a href="#delete_category<?php echo $category_id;?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Borrar</a>
@@ -1254,6 +1256,16 @@ function Clickheretoprint()
                                     <div style="margin-left:150px;" class="controls">
                                         Precio: <input type="text" name="price" value="<?php echo $categoria_row['precio'];?>">
                                         	<input type="hidden" name="status" value="Available" >
+                                    </div>
+                                </div>
+                            <div class="control-group">
+                                    <div  style="margin-left:104px;" class="controls">
+                                        Status: 
+                                        <select id="status_categoria" name="status_categoria">
+                                        <option value="Disponible">Disponible</option>
+                                        <option value="Baja">Baja</option>
+
+                                        </select>
                                     </div>
                                 </div>
 
