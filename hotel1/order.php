@@ -53,7 +53,8 @@ $query = mysql_query("select * from tb_member where memberID") or die(mysql_erro
 
 
 }
-
+require ('includes/class.phpmailer.php');
+require ('includes/PHPMailerAutoload.php');
 if(isset($_POST['order'])){
 
 	$confirmation = createRandomPassword();
@@ -105,6 +106,9 @@ $query = mysql_query("insert into tb_member (firstname,lastname,email,contact_nu
 					
                     
                     <?php 
+
+              
+              /*este es el codigo original comentado
 	//send the email
 		
 		
@@ -127,18 +131,56 @@ $query = mysql_query("insert into tb_member (firstname,lastname,email,contact_nu
 
 
 
-					<?php }?>
+					<?php }  */?>
 
-
+<?php //este es mi codigo
+$mail= new PHPMailer();
+//indico a la clase que use SMTP
+$mail->isSMTP();
+//permite modo debug para ver mensajes de las cosas que van ocurriendo
+$mail->SMTPDebug=2;
+//Debo de hacer autenticación SMTP
+$mail->SMTPAuth=true;
+$mail->SMTPSecure="ssl";
+//indico el servidor de Gmail para SMTP
+$mail->Host="smtp.gmail.com";
+//indico el puerto que usa Gmail
+$mail->Port=465;
+//indico un usuario / clave de un usuario de gmail
+$mail->Username= "basichotelmx@gmail.com";
+$mail->Password="buscarvhotel";
+$mail->setFrom('basichotelmx@gmail.com', 'BasicHotel');
+$mail->addReplyTo("basichotelmx@gmail.com","BasicHotel");
+$mail->Subject= "Notificacion de reservacion BASIC HOTEL";
+$mail->msgHTML("Se ha enviado esta orden de reservacion a su correo porque nuestra pagina registro este correo como contacto de reservacion!");
+$mail->msgHTML("Nombre(s): $username<br/>".
+    "Apellido: $lname<br/>".
+    "Email: $email <br/>".
+    "Código postal: $zip <br/>".
+    "Teléfono: $cnumber <br/>".
+    "Password: $password <br/>".
+    "Check In: $start<br/> ".
+    "Check Out: $end<br/> ".
+    "Total de noches: $result<br/> ".
+    "Total a pagar: $total<br/> ".
+    "ID Habitación: echo $id[$i];<br/>".
+    "Numero de confirmación: $confirmation<br/> ");
+                
+$mail->Timeout=60;
+$mail->IsHTML(true);
+$address=$email; //aqui paso el email del cliente
+$mail->addAddress($address, $username);
+if(!$mail->send()) {
+echo "Error al enviar: " . $mail­>ErrorInfo;
+} else {
+echo "Confirmacion de su reservacion enviado a su correo electronico!";
+ }
+}
+?>
 
    
 <?php
-
-
 $id=$_POST['selector'];
-
-
-
 if(count($id)>0)
 {
 	foreach($id as $key=>$id)
@@ -151,6 +193,7 @@ if(count($id)>0)
 }
 else
 	echo '';
+
 
 }
 
@@ -211,7 +254,7 @@ function Clickheretoprint()
   var disp_setting="toolbar=yes,location=no,directories=yes,menubar=yes,"; 
       disp_setting+="scrollbars=yes,width=400, height=400, left=100, top=25"; 
   var content_vlue = document.getElementById("print_content").innerHTML; 
-  
+  9
   var docprint=window.open("","",disp_setting); 
    docprint.document.open(); 
    docprint.document.write('<html><head><title>BASIC HOTEL BuscarV</title>'); 
