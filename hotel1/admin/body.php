@@ -1,11 +1,4 @@
-
 <div id="myCarousel" class="carousel slide">
- <!--<ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>-->
-
  <div style="margin-top:15px;" class="container thumbnail">
 <div  class="input-prepend">
           <div class="btn-group">
@@ -19,22 +12,13 @@
           <button id="btt_habitaciones" class="btn"><i class="icon-off"></i> Habitaciones</button>
           <button id="btt_categorias" class="btn"></i>Categorías</button>     
 
-      </div>
-            
+      </div>        
 </div>
-</div>
-
-  <!-- Carousel items -->
-  <div>
-
-
-
+</div><!-- Carousel items -->
+<div>
 <div id="reservaciones_item" style="display:block"> <!--item 1 -->
-
 <div style="margin-top:15px;" class="container thumbnail">
-
             <pre><h4><strong><i class="icon-list"></i> Reservaciones</strong></h4></pre>
- 
  		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
@@ -53,8 +37,7 @@
                         <th><div align="center">Mode</div></th>
                         <th><div align="center"><a data-trigger="hover" title="Buttons Function" data-placement="top" data-content="Change Room/Discount/Checkin" data-toggle="popover">Menú</a></div></th>
                     </tr>
-                </thead>
-                	
+                </thead>   	
                     <?php
     $cart_table = mysql_query("select  * from tb_reserve where status='reserved'") or die(mysql_error());
                                     $cart_count = mysql_num_rows($cart_table);
@@ -68,9 +51,7 @@
 										
 	$member_query = mysql_query("select * from tb_member where memberID = '$member_id'")or die(mysql_error());
 										$member_row=mysql_fetch_array($member_query);
-                                        ?>
-                                        
-              		
+                                        ?>	
                 <tbody>
                 						<tr>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cart_row['transaction_code']; ?></div></td>
@@ -85,74 +66,43 @@
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cart_row['status']; ?></div></td>
 										    <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php if ($cart_row['discount'] == 0){echo 'None';}else{echo $cart_row['discount'];} ?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php if($cart_row['request' == '']){echo 'None';} else{echo $cart_row['request'];} ?></div></td>
-										  	
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cart_row['modeofpayment']; ?></div></td>
-                                            
                                             <td width="128"><a href="#change<?php echo $order_id; ?>" data-toggle="modal" class="btn"><i class="icon-edit"></i></a>
-                                            
                                             <a href="#discount<?php echo $order_id; ?>" data-toggle="modal" class="btn"><i class="icon-gift"></i></a>
-                                            
                                             <a href="#checkin<?php echo $order_id; ?>" data-toggle="modal" class="btn"><i class="icon-pencil"></i></a>
-                                            
-                                            
                                             </td>
-                                            
                                           <div id="checkin<?php echo $order_id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
-                                        	
                                             <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Check-In</h5>
-                                        	
                                         </div>
                                         <div class="modal-body">
-                                        
-                 <div class="alert-block">
-                                 	
+                 <div class="alert-block">      	
                  	<p><strong>Confirmación: </strong><?php echo $cart_row['transaction_code']; ?></p>
                     <p><strong>Nombre del cliente </strong> <?php echo $member_row['firstname']." ".$member_row['lastname']; ?></p>
                  	<p><strong>Pago parcial: </strong> <?php echo $cart_row['partial']; ?></p>
-                    
                  </div>
-                 
                <div class="alert alert-info"><h6><strong>Balance is: </strong> PHP <?php echo $cart_row['balance']; ?></h6></div>
-                         
                          				</div>
-                         
-                         		
                                         <div class="modal-footer">
           <a class="btn btn-danger" href="checkin.php<?php echo '?id='.$order_id; ?>" ><i class="icon-check"></i> Checkin</a>
           <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancel</button>
-
                                         </div>
-                                        
-                                    </div>     
-                                    
-                                    
-                                    
-                                   
+                                    </div>                      
        <div id="change<?php echo $order_id;?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
      <h5><div style="margin-top:"><img src="../media/kingsfields.png" width="30px" height="30" /></div> BASIC HOTEL Cambiar habitación</h5>
   </div>
   <div class="modal-body"> 
-  
   <form action="res.php" method="post">
-  
   <input name="reserveid" type="hidden" value="<?php echo $order_id;?>">
-  
   <input name="roomp" type="hidden" value="<?php echo $product_id;?>">
-  
   <div align="center">No. de habitación: <select class="span2" name="roomID">
   <?php 
- 	
 	$resc = mysql_query("select * from tb_rooms where category_id = '$catdi' and status = 'available'") or die (mysql_error());
  		while ($row_sche = mysql_fetch_array($resc)){
- 
-  
   ?>
-  
  <option  value="<?php echo $row_sche['roomID']?>"><?php echo 'Room'." ".$row_sche['name'];?></option> 
- 
  <?php }?>
   
   </select>
@@ -1208,7 +1158,6 @@ function Clickheretoprint()
                                     $categoria_count = mysql_num_rows($categoria_tabla);
                                     while ($categoria_row = mysql_fetch_array($categoria_tabla)) {
                                         $category_id=$categoria_row['category_id'];
-										
                                         ?>
                                         
               		
@@ -1474,4 +1423,3 @@ $( document ).ready(function() {
 
 });
 </script>
-

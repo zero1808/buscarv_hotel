@@ -1,18 +1,9 @@
-         
-        </div><!--container 1 -->
-        
+           </div><!--container 1 -->
       </div><!--navbar-inner -->
-      
     </div>
-
-<!-- Subhead
-================================================== -->
-
+<!-- Subhead================================================= -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
-   
     <p class="lead"><?php include('user_name.php'); ?></p>
-  </div>
-  
-            
+  </div>        
 </header>

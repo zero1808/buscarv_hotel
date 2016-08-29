@@ -1,14 +1,9 @@
-
-
-
-                        <!-- Modal add rooms -->
 <div id="addroom" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Agregar habitación</h3>
   </div>
   <div class="modal-body">
-  
   <form class="form-horizontal" method="post"  enctype="multipart/form-data">
                                 <div class="alert alert-info"><strong>Información</strong></div>
                                 <hr>
@@ -97,7 +92,7 @@
                                 mysql_query("insert into tb_rooms (name,description,category_id,location,status)
                             	values ('$name','$description','$hcategory','$location','$status')
                                 ") or die(mysql_error());
-
+                                
                                 header('location:progressbar.php');
                             }
                             ?>           
@@ -194,10 +189,7 @@
                                 mysql_query("insert into tb_category (category_name,camas_kingsize,camas_matrimoniales,camas_individuales,no_adultos,no_ninios,precio) values('$nombre_categoria','$no_camas_king','$no_camas_mat','$no_camas_ind','$no_adultos','$no_ninios','$cprecio')") or die(mysql_error());
                                 header('location:progressbar.php');
                             }
-							
-                            ?>
-							
-                            
+                            ?>              
 <!--add user modal end -->     
                        
 

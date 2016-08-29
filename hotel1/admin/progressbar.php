@@ -1,3 +1,5 @@
+<?php include('session.php'); ?>
+<?php include('connect.php');?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,9 +69,6 @@
 	
 
 	</script>
-    
-<?php include('session.php'); ?>
-<?php include('connect.php');?>
 
 <?php mysql_query("INSERT INTO tb_history(user_id,action,date)VALUES('$session_id', 'Login', NOW())")or die(mysql_error());?>
     
