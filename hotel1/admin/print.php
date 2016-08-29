@@ -6,20 +6,24 @@
         <form class="navbar-form pull-right">
         
 <div class="input-prepend">
-  				<div class="btn-group">
-    <a class="btn" href="admin.php"><i class="icon-home"></i> Home</a>            
-    <a class="btn" href="#logout" data-toggle="modal"><i class="icon-off"></i> Log-out</a>          
- 	<button class="btn dropdown-toggle" data-toggle="dropdown"> Action <span class="caret"></span></button>
+  				<div class="btn-group">          
+    <a class="btn" href="#logout" data-toggle="modal"><i class="icon-off"></i> Cerrar sesión</a>
+    <a class="btn" href="print.php"><i class="icon-print"></i> Reportes</a>          
+ 	<button class="btn dropdown-toggle" data-toggle="dropdown"> Menú <span class="caret"></span></button>
     		<ul class="dropdown-menu">
-    				<li><a href="#adduser" data-toggle="modal"><i class="icon-plus-sign"></i> Addusers</a></li>
-                    <li><a href="#addroom" data-toggle="modal"><i class="icon-plus-sign"></i> Addrooms</a></li>
-                    <li><a href="#addproduct" data-toggle="modal"><i class="icon-plus-sign"></i> Addproduct</a></li>
-                    <li><a href="#trans"><i class="icon-plus-sign"></i> Addtransactions</a></li>
-                    <li><a href="#adddiscount" data-toggle="modal"><i class="icon-plus-sign"></i> Adddiscount</a></li>
+    				<li><a href="#adduser" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar usuarios</a></li>
+                    <li><a href="#addroom" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar habitación</a></li>
+                    <li><a href="#addcategory" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar categoría</a></li>
+                <li><a href="#addproduct" data-toggle="modal"><i class="icon-plus-sign"></i>Agregar producto</a></li>
+                    <li><a href="addtransaction.php"><i class="icon-plus-sign"></i> Transsación</a></li>
+                    <li><a href="#adddiscount" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar descuento</a></li>
+
+                  
                     
     		</ul>
   	</div>
   			<input class="span2" id="prependedDropdownButton" type="text">
+            
 </div>
              
 
@@ -48,11 +52,12 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
 <form action="print.php" method="get">
   <div class="input-prepend input-append">
-  	<span class="add-on">From</span>
+  	<span class="add-on">Desde</span>
     <input type="text" name="d1" class="tcal"/>
     <input type="text" name="d2" class="tcal"/>
-    <div class="btn-group"><button class="btn" type="submit"><i class="icon-search"></i> Search</button>
-    <a style=" margin-bottom:10px;" class="btn" href="javascript:Clickheretoprint()"><i class="icon-print"></i> Print Records</a>     
+    <div class="btn-group"><button class="btn" type="submit"><i class="icon-search"></i> Buscar</button>
+    <a style=" margin-bottom:10px;" class="btn" href="javascript:Clickheretoprint()"><i class="icon-print"></i> Imprimir registros
+        </a>     
     
     </div>
   </div>
@@ -71,7 +76,7 @@ function Clickheretoprint()
   
   var docprint=window.open("","",disp_setting); 
    docprint.document.open(); 
-   docprint.document.write('<html><head><title>Kingsfieldexpressinn Power System Reports</title>'); 
+   docprint.document.write('<html><head><title>Sistema de reportes Hotel</title>'); 
    docprint.document.write('</head><body onLoad="self.print()" style="margin-top:10px; margin-right:20px; margin-left:10px; width: 100%; font-size:12px; font-family:arial;">');          
    docprint.document.write(content_vlue);          
    docprint.document.write('</body></html>'); 
@@ -82,18 +87,18 @@ function Clickheretoprint()
     
     <div id="print_content">     
         
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
+<table cellpadding="0" cellspacing="0" border="1" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th><div align="center">Confirmation</div></th>
-                        <th><div align="center">No.</div></th>
-                        <th><div align="center">Guest</div></th>
-                        <th><div align="center">Days</div></th>
-                        <th><div align="center">Arrival</div></th>
-                        <th><div align="center">Departure</div></th>
+                        <th><div align="center">Codigo de confirmación</div></th>
+                        <th><div align="center">No. de habitación</div></th>
+                        <th><div align="center">Cliente</div></th>
+                        <th><div align="center">Dias</div></th>
+                        <th><div align="center">LLegada</div></th>
+                        <th><div align="center">Salida</div></th>
                         <th><div align="center">Total</div></th>
                        
-                        <th><div align="center">Incharge</div></th>
+                        <th><div align="center">Encargado</div></th>
                         <th><div align="center">Checkout</div></th>
                     </tr>
                 </thead>
@@ -106,8 +111,9 @@ $result = $db->prepare("SELECT * FROM tb_reserve WHERE Date BETWEEN :a AND :b");
 $result->bindParam(':a', $d1);
 $result->bindParam(':b', $d2);
 $result->execute();
+$total_consulta=0;
 for($i=0; $row = $result->fetch(); $i++){
-
+                                            
                                         $order_id = $row['reserveID'];
                                         $product_id = $row['roomID'];
                                         $member_id = $row['memberID'];
@@ -133,12 +139,15 @@ for($i=0; $row = $result->fetch(); $i++){
                                             
                                             <td><div align="center"><?php echo $incharge_row['firstname']." ".$incharge_row['lastname']; ?></div></td>
                                             <td><div align="center"><?php echo $row['Date']; ?></div></td>
+   <?php $total_consulta=$total_consulta+$row['totalamount'];?>
 </tr>
 <?php
 }
 ?>
 </tbody>
-</table>
+        </table>
+    
+    <h3>TOTAL DEL PERIODO: $ <?php echo $total_consulta ?></h3>
 
 		</div><!--Print end -->
 
