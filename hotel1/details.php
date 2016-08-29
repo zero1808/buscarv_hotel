@@ -253,7 +253,7 @@ function goBack()
                 
                    
  	<div align="right">			
- 	<button class="btn btn-large btn-primary" name="order" type="submit"><i class="icon-check"></i> Sign-up</button>
+ 	<button class="btn btn-large btn-primary" name="order" type="submit"><i class="icon-check"></i> Registrarse</button>
     </div>            
                 
                 
@@ -263,8 +263,9 @@ function goBack()
 
   <div style="margin-top:20px;" class="accordion-group">
     <div class="accordion-heading">
+    ¡Ya tienes una cuenta?
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        <i class="icon-user"></i>Login
+        <i class="icon-user"></i>Iniciar Sesion
       </a>
     </div>
     <div id="collapseTwo" class="accordion-body collapse">
@@ -278,7 +279,7 @@ function goBack()
 <div class="control-group">
                    	  <div class="controls">
                     			
-						<label for "username">Username</label>
+						<label for "username">Usuario</label>
 						<input type="text" name="username_login" required/>
                         
                     </div>
@@ -314,7 +315,7 @@ function goBack()
                     
                     <div class="control-group">
                     	<div class="controls">
-						<label for "email">Password</label>
+						<label for "email">Contraseña</label>
 						<input type="password" name="password_login" required/>
 						</div>
                     </div>

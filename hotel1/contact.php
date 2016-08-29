@@ -48,20 +48,20 @@
           <a class="brand" href="#">BASIC HOTEL</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><a href="member.php"><i class="icon-home"></i> Home</a></li>
-              <li><a href="profile.php"><i class="icon-list"></i> Profile</a></li>
-              <li class="active"><a href="contact.php"><i class="icon-envelope"></i> Contact</a></li>
+              <li><a href="member.php"><i class="icon-home"></i> Inicio</a></li>
+              <li><a href="profile.php"><i class="icon-list"></i> Perfil</a></li>
+              <li class="active"><a href="contact.php"><i class="icon-envelope"></i> Contacto</a></li>
             </ul>
             <form class="navbar-form pull-right">
 
             <div class="btn-group">
-  					<button type="submit" class="btn">Actions</button>
+  					<button type="submit" class="btn">Acciones</button>
   					<button class="btn dropdown-toggle" data-toggle="dropdown">
     				<span class="caret"></span>
   					</button>
   				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                 	<li class="divider"></li>
-    				<li><a href="#logout" data-toggle="modal"><i class="icon-off"></i> Log-out</a></li>  
+    				<li><a href="#logout" data-toggle="modal"><i class="icon-off"></i> Desconectarse</a></li>  
                     
                  
   				</ul>
@@ -79,11 +79,11 @@
   <div class="modal-header">
   </div>
   <div class="modal-body">
-  <div class="alert alert-info">Are you Sure you Want to <strong>Logout</strong>?</div>
+  <div class="alert alert-info">¿Estas seguro que quieres <strong>Desconectarte</strong>?</div>
   </div>
   <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
-      <a href="logout.php" class="btn btn-info"><i class="icon-off"></i> Logout</a>
+      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
+      <a href="logout.php" class="btn btn-info"><i class="icon-off"></i> Desconectarse</a>
   </div>
 </div>             
                             
@@ -97,7 +97,7 @@
       <div class="form-signin">	
           
           
-          <div align="center" class="alert alert-error"><i class=" icon-envelope"></i>Messase</div>
+          <div align="center" class="alert alert-error"><i class=" icon-envelope"></i>Mensaje</div>
           
           <div class="row-fluid">	
           
@@ -115,15 +115,15 @@
 						while($row = mysql_fetch_array($query)){	
 						?>
               
-                <div style="margin-left:-110px;">Your Full Name: <input disabled name="" value="<?php echo $row['firstname']." ". $row['lastname']?>" type="text"></div>
-        		<div style="margin-left:-105px;">Email Address: <input disabled name="" value="<?php echo $row['email']?>" type="text"></div>	
+                <div style="margin-left:-110px;">Tu nombre completo: <input disabled name="" value="<?php echo $row['firstname']." ". $row['lastname']?>" type="text"></div>
+        		<div style="margin-left:-105px;">Email: <input disabled name="" value="<?php echo $row['email']?>" type="text"></div>	
                 
                 <form action="" method="post">
                 
-                <div>Message: <textarea placeholder="message" class="span6" name="message" cols="7" rows="6"></textarea></div>
+                <div>Mensaje: <textarea placeholder="message" class="span6" name="message" cols="7" rows="6"></textarea></div>
                 				<input name="mid" type="hidden" value="<?php echo $session_id;?>">
                 		
-               	<button class="btn btn-primary" name="send" type="submit"><i class="icon-envelope"></i> Send</button> 
+               	<button class="btn btn-primary" name="send" type="submit"><i class="icon-envelope"></i> Enviar</button> 
                 
                 </form>
                 
@@ -146,7 +146,7 @@
 					?> 	
 						
 											<script type="text/javascript">
-                                                alert("You are Succesfully Sent Your Message");
+                                                alert("Tu mensaje se envio correctamente");
                                                 window.location= "contact.php";
                                             </script>
 				
