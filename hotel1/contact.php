@@ -120,7 +120,7 @@
                 
                 <form action="" method="post">
                 
-                <div>Mensaje: <textarea placeholder="message" class="span6" name="message" cols="7" rows="6"></textarea></div>
+                <div>Mensaje: <textarea placeholder="Mensaje" class="span6" name="message" cols="7" rows="6"></textarea></div>
                 				<input name="mid" type="hidden" value="<?php echo $session_id;?>">
                 		
                	<button class="btn btn-primary" name="send" type="submit"><i class="icon-envelope"></i> Enviar</button> 

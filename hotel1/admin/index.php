@@ -67,8 +67,8 @@ unset($_SESSION['id']);
 
       <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Por favor inicia sesión</h2>
-        <input name="username" type="text" class="input-block-level" placeholder="Email address">
-        <input name="password" type="password" class="input-block-level" placeholder="Password">
+        <input name="username" type="text" class="input-block-level" placeholder="Usuario">
+        <input name="password" type="password" class="input-block-level" placeholder="Contraseña">
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recuerdame
         </label>
@@ -106,7 +106,7 @@ unset($_SESSION['id']);
                                       <p>&nbsp;</p>
                                       
                                             <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                            <div class="alert"><i class="icon-remove-sign"></i>&nbsp;Please Check Your Username And Password</div>
+                                            <div class="alert"><i class="icon-remove-sign"></i>&nbsp;Por favor revisa tu usuario y tu contraseña</div>
                                       
                                         <?php
                                     }

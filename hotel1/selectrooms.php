@@ -67,7 +67,7 @@ break;
 }
 if (hasChecked == false)
 {
-alert("Please select at least one.");
+alert("Por favor selecciona por lo menos uno.");
 return false;
 }
 return true;
@@ -112,7 +112,7 @@ return true;
   
       
       <div class="btn-group">
-  <button style="margin-left:0px; margin-bottom:0px;" class="btn" onClick="goBack()"><i class="icon-hand-left"></i> Back</button>
+  <button style="margin-left:0px; margin-bottom:0px;" class="btn" onClick="goBack()"><i class="icon-hand-left"></i> Regresar</button>
   <button class="btn dropdown-toggle" data-toggle="dropdown">
     <span class="caret"></span>
   </button>

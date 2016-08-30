@@ -55,11 +55,14 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   	<span class="add-on">Desde</span>
     <input type="text" name="d1" class="tcal"/>
     <input type="text" name="d2" class="tcal"/>
+
     <div class="btn-group"><button class="btn" type="submit"><i class="icon-search"></i> Buscar</button>
     <a style=" margin-bottom:10px;" class="btn" href="javascript:Clickheretoprint()"><i class="icon-print"></i> Imprimir registros
         </a>     
     
     </div>
+    <a style=" margin-bottom:10px;" class="btn" href="javascript:Clickheretoprint()"><i class="icon-print"></i> Descargar Excel
+        </a>  
   </div>
   
 </form>

@@ -48,20 +48,20 @@
           <a class="brand" href="#">BASIC HOTEL</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><a href="member.php"><i class="icon-home"></i> Home</a></li>
-              <li class="active"><a href="profile.php"><i class="icon-list"></i> Profile</a></li>
-              <li><a href="contact.php"><i class="icon-envelope"></i> Contact</a></li>
+              <li><a href="member.php"><i class="icon-home"></i> Inicio</a></li>
+              <li class="active"><a href="profile.php"><i class="icon-list"></i> Perfil</a></li>
+              <li><a href="contact.php"><i class="icon-envelope"></i> Contacto</a></li>
             </ul>
             <form class="navbar-form pull-right">
 
             <div class="btn-group">
-  					<button type="submit" class="btn">Actions</button>
+  					<button type="submit" class="btn">Acciones</button>
   					<button class="btn dropdown-toggle" data-toggle="dropdown">
     				<span class="caret"></span>
   					</button>
   				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                 	<li class="divider"></li>
-    				<li><a href="#logout" data-toggle="modal"><i class="icon-off"></i> Log-out</a></li>  
+    				<li><a href="#logout" data-toggle="modal"><i class="icon-off"></i> Desconectarse</a></li>  
                     
                  
   				</ul>
@@ -79,11 +79,11 @@
   <div class="modal-header">
   </div>
   <div class="modal-body">
-  <div class="alert alert-info">Are you Sure you Want to <strong>Logout</strong>?</div>
+  <div class="alert alert-info">¿Estas seguro que quieres <strong>Desconectarte</strong>?</div>
   </div>
   <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
-      <a href="logout.php" class="btn btn-info"><i class="icon-off"></i> Logout</a>
+      <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cerrar</button>
+      <a href="logout.php" class="btn btn-info"><i class="icon-off"></i> Desconectarse</a>
   </div>
 </div>             
                             
@@ -97,7 +97,7 @@
       <div class="form-signin">	
           
           
-          <div align="center" class="alert alert-info"><i class="icon-info-sign"></i>Member Informations</div>
+          <div align="center" class="alert alert-info"><i class="icon-info-sign"></i>Informacion usuario</div>
           
           <div class="row-fluid">	
           
