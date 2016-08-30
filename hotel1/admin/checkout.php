@@ -11,7 +11,7 @@ $t = $_POST['t'];
 
 mysql_query("update tb_reserve set totalamount='$t',date='$Today',status='checkout',incharge='$session_id',balance='paid' where reserveID='$get_id'")or die(mysql_error());
 
-mysql_query("update tb_rooms set status='Available' where roomID='$roomID'") or die(mysql_error());
+mysql_query("update tb_rooms set status='Disponible' where roomID='$roomID'") or die(mysql_error());
 
 header('location:process.php');
 

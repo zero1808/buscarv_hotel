@@ -78,7 +78,7 @@
                                 $name = $_POST['name'];
                                 $description = $_POST['description'];
                                 $hcategory = $_POST['category'];                         
-								$status ='Available';
+								$status ='Disponible';
 
                                 //image
                                 $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
@@ -359,7 +359,7 @@
 		$price	= $_POST['price'];
 		
 		mysql_query("insert into tb_discount (name,price) values('$ndiscount','$price')") or die(mysql_error());
-		header('location:admin.php');
+		header('location:progressbar.php');
 	
 	
 		}

@@ -6,7 +6,8 @@
         <form class="navbar-form pull-right">
         
 <div class="input-prepend">
-  				<div class="btn-group">          
+  				<div class="btn-group">    
+    <a class="btn" href="admin.php"><i class="icon-home"></i> Inicio</a>            
     <a class="btn" href="#logout" data-toggle="modal"><i class="icon-off"></i> Cerrar sesión</a>
     <a class="btn" href="print.php"><i class="icon-print"></i> Reportes</a>          
  	<button class="btn dropdown-toggle" data-toggle="dropdown"> Menú <span class="caret"></span></button>

@@ -838,9 +838,9 @@ function Clickheretoprint()
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cart_row['lastname'];?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cart_row['contact'];?></div></td>
                                             <td width="230"><div align="center">
-                                            <a href="#adduser" class="btn" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Add</a>
-                                            <a href="#edit_user<?php echo $user_id; ?>" class="btn" role="button" data-toggle="modal"><i class="icon-edit"></i> Edit</a>
-                                            <a href="#delete_user<?php echo $user_id; ?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Delete</a>
+                                            <a href="#adduser" class="btn" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar</a>
+                                            <a href="#edit_user<?php echo $user_id; ?>" class="btn" role="button" data-toggle="modal"><i class="icon-edit"></i> Editar</a>
+                                            <a href="#delete_user<?php echo $user_id; ?>" class="btn btn-danger" role="button" data-toggle="modal"><i class="icon-trash"></i> Borrar</a>
                                             </div></td>
                                             
                                             <!-- Modal delete user -->
@@ -997,7 +997,12 @@ function Clickheretoprint()
     
    <form action="update_room.php<?php echo '?id=' . $roomID; ?>" method="post">
    
-   			<div align="center">Status habitación: <input name="status" type="text" value="" /></div>
+   			<div align="center">Status habitación: <select name="status">
+                <option value="Disponible">Disponible</option>
+                <option value="Reservada">Reservada</option>
+                <option value="Bloqueada">Bloqueada</option>
+                <option value="No disponible">No disponible</option>
+                </select></div>
     
   </div>
   <div class="modal-footer">
