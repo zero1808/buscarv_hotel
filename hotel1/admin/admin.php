@@ -13,7 +13,7 @@
                     <li><a href="#addroom" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar habitación</a></li>
                     <li><a href="#addcategory" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar categoría</a></li>
                 <li><a href="#addproduct" data-toggle="modal"><i class="icon-plus-sign"></i>Agregar producto</a></li>
-                    <li><a href="addtransaction.php"><i class="icon-plus-sign"></i> Transsación</a></li>
+                    <!--<li><a href="addtransaction.php"><i class="icon-plus-sign"></i> Transsación</a></li>-->
                     <li><a href="#adddiscount" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar descuento</a></li>   
     		</ul>
   	</div>
