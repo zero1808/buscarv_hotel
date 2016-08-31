@@ -9458,7 +9458,7 @@
 			 * control over where it appears in the string. If "_INPUT_" is not given
 			 * then the input box is appended to the string automatically.
 			 *  @type string
-			 *  @default Buscar:
+			 *  @default Search:
 			 *  @dtopt Language
 			 * 
 			 *  @example
@@ -9481,7 +9481,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Buscar:",
+			"sSearch": "Search:",
 		
 		
 			/**

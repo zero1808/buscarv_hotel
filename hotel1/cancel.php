@@ -45,7 +45,8 @@
  <?php
 
 include('admin/connect.php');	
-
+require ('includes/class.phpmailer.php');
+require ('includes/PHPMailerAutoload.php');
 
 		
 	$confirmation = $_POST['confirmation'];
@@ -86,7 +87,7 @@ $qry = mysql_query("select count('reserveID') from tb_reserve where transaction_
 				$email = $mrow['email'];
 				
 	
-	
+	/*
 		$mail_To = $email;
                 $mail_Subject = "Reservation notification From BASIC HOTEL";
                 $mail_Body = "First Name: $fname\n".
@@ -95,9 +96,45 @@ $qry = mysql_query("select count('reserveID') from tb_reserve where transaction_
 		"Confirmation Number: $confirmation\n ".
 		"You have Successfully Cancel a Reservation Thanks!!";
                 mail($mail_To, $mail_Subject, $mail_Body);
+		*/
+
+        $mail= new PHPMailer();
+//indico a la clase que use SMTP
+$mail->isSMTP();
+//permite modo debug para ver mensajes de las cosas que van ocurriendo
+$mail->SMTPDebug=2;
+//Debo de hacer autenticación SMTP
+$mail->SMTPAuth=true;
+$mail->SMTPSecure="ssl";
+//indico el servidor de Gmail para SMTP
+$mail->Host="smtp.gmail.com";
+//indico el puerto que usa Gmail
+$mail->Port=465;
+//indico un usuario / clave de un usuario de gmail
+$mail->Username= "basichotelmx@gmail.com";
+$mail->Password="buscarvhotel";
+$mail->setFrom('basichotelmx@gmail.com', 'BasicHotel');
+$mail->addReplyTo("basichotelmx@gmail.com","BasicHotel");
+$mail->Subject= "Notificacion de cancelacion de reservacion BASIC HOTEL";
+$mail->msgHTML("Se ha enviado esta orden de reservacion a su correo porque nuestra pagina registro este correo como contacto de reservacion!");
+$mail->msgHTML("Nombre(s): $fname<br/>".
+    "Apellido: $lname<br/>".
+    "Email: $email <br/>".
+    "Codigo de confirmacion : $confirmation <br/>".
+    "Usted ha cancelado satisfactoriamente su reservacion, Gracias. <br/>");
+                
+$mail->Timeout=60;
+$mail->IsHTML(true);
+$address=$email; //aqui paso el email del cliente
+$mail->addAddress($address, $fname);
+if(!$mail->send()) {
+echo "Error al enviar: " . $mail­>ErrorInfo;
+} else {
+echo "Confirmacion de su cancelacion de reservacion enviado a su correo electronico!";
+ }
+}
 		
 		
-		}
 		
 	?>   
     

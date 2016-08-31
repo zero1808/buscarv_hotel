@@ -147,9 +147,81 @@ if ( $.fn.DataTable.TableTools ) {
 }
 
 
+//esto lo agrege yo
+function filterGlobal () {
+    $('#example').DataTable().search(
+        $('#global_filter').val(),
+        $('#global_regex').prop('checked'),
+        $('#global_smart').prop('checked')
+    ).draw();
+}
+ 
+function filterColumn ( i ) {
+    $('#example').DataTable().column( i ).search(
+        $('#col'+i+'_filter').val(),
+        $('#col'+i+'_regex').prop('checked'),
+        $('#col'+i+'_smart').prop('checked')
+    ).draw();
+}
+
 $(document).ready( function() {
 		     $('#example').dataTable( {
    "iDisplayLength": -1,
     "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
   } );
+		     
+ $('#example').DataTable();
+ 
+    $('input.global_filter').on( 'keyup click', function () {
+        filterGlobal();
+    } );
+ 
+    $('input.column_filter').on( 'keyup click', function () {
+        filterColumn( $(this).parents('tr').attr('data-column') );
+    } );
+
+
+		     /*
+
+   $('#example1').dataTable( {
+   "iDisplayLength": -1,
+    "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
+  } );
+
+   $('#example3').dataTable( {
+   "iDisplayLength": -1,
+    "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
+  } );
+
+      $('#example4').dataTable( {
+   "iDisplayLength": -1,
+    "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
+  } );
+
+      $('#example5').dataTable( {
+   "iDisplayLength": -1,
+    "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
+  } );
+
+      $('#example6').dataTable( {
+   "iDisplayLength": -1,
+    "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
+  } );
+
+         $('#example7').dataTable( {
+   "iDisplayLength": -1,
+    "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
+  } );
+
+
+   $('#example8').dataTable( {
+   "iDisplayLength": -1,
+    "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
+  } );
+
+  $('#example9').dataTable( {
+   "iDisplayLength": -1,
+    "aLengthMenu": [[-1,10,25, 50, 100], ["Todos",10,25, 50, 100]]
+  } );
+*/
   } );

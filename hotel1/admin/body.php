@@ -195,7 +195,7 @@
 
            <pre><h4><strong><i class="icon-list"></i> Lista de Checkin</strong></h4></pre>
  
- 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example1">
                 <thead>
                     <tr>
                         <th><div align="center">Confirmación</div></th>
@@ -536,7 +536,7 @@ function Clickheretoprint()
 
             <pre><h4><strong><i class="icon-list"></i> Lista de Checkout</strong></h4></pre>
  
- 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example3">
                 <thead>
                     <tr>
                         <th><div align="center">Confirmación</div></th>
@@ -603,7 +603,7 @@ function Clickheretoprint()
 
             <pre><h4><strong><i class="icon-list"></i> Lista de transaciones canceladas</strong></h4></pre>
  
- 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example4">
                 <thead>
                     <tr>
                         <th><div align="center">Confirmación</div></th>
@@ -670,7 +670,7 @@ function Clickheretoprint()
 
             <pre><h4><strong><i class="icon-user"></i> Historial de conexión</strong></h4></pre>
  
- 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example5">
                 <thead>
                     <tr>
                         <th><div align="center">ID</div></th>
@@ -727,7 +727,7 @@ function Clickheretoprint()
 
             <pre><h4><strong><i class="icon-user"></i> Lista de Clientes</strong></h4></pre>
  
- 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example6">
                 <thead>
                     <tr>
                         <th><div align="center">ID</div></th>
@@ -807,7 +807,7 @@ function Clickheretoprint()
 
             <pre><h4><strong><i class="icon-user"></i> Lista de usuarios</strong></h4></pre>
  
- 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example7">
                 <thead>
                     <tr>
                         <th><div align="center">ID</div></th>
@@ -944,7 +944,7 @@ function Clickheretoprint()
 
             <pre><h4><strong><i class="icon-list"></i> Lista de habitaciones</strong></h4></pre>
  
- 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example8">
                 <thead>
                     <tr>
                         <th><div align="center">ID</div></th>
@@ -1143,7 +1143,7 @@ function Clickheretoprint()
 
             <pre><h4><strong><i class="icon-list"></i> Lista de categorías</strong></h4></pre>
  
- 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+ 		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example9">
                 <thead>
                     <tr>
                         <th><div align="center">ID</div></th>
