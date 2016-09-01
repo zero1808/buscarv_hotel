@@ -185,8 +185,7 @@ function Clickheretoprint()
 
 	<div class="form-signin">
     
-    <h4>Gracias por su paciencia</h4>
-    <h6>Por favor imprime los detalles de tu reservación. Anticipo del 10%.</h6>    
+    <h6>Por favor imprime los detalles de tu reservación.</h6>    
 			<hr>
             
             <a style=" margin-bottom:10px;" class="btn" href="javascript:Clickheretoprint()"><i class="icon-print"></i> Print</a>
@@ -214,6 +213,12 @@ function Clickheretoprint()
                 <tr>
                 	<td><strong>Numero de noches:</strong></td>
                 	<td><div align="right"><?php echo $result;?></div></td>
+                </tr>
+         <tr>
+                	<td></td>
+                    <td><div align="right">Cargo total por personas extras</div></td>
+                    <td width="170px"><div align="right">$ <?php echo $pextras;?></div></td>
+                
                 </tr>
                 <tr>
                 	<td></td>

@@ -274,13 +274,13 @@ function goBack()
 
 
 	
-	$tax = $g * 11.5/100;
+	//$tax = $g * 11.5/100;
 	
-	$t = sprintf ("%.2f", $tax);
+	//$t = sprintf ("%.2f", $tax);
 	
     $pagoextras=150*$pextras;
     $pagoextras1=$result*$pagoextras;                    
-	$total = $f * $result+$t+$pagoextras1;
+	$total = $f * $result+$pagoextras1;
     
 	
 	$tt = sprintf ("%.2f", $total);
@@ -308,9 +308,9 @@ function goBack()
                 
                 </tr>
                 <tr>
-                	<td></td>
-                    <td><div align="right"><i class="icon-info-sign"></i> Impuesto por reservación:</div></td>
-                    <td width="100px"><div align="right"><?php echo '$'." ".$t;?> </div></td>
+                	<!--<td></td>
+                   <<td><div align="right"><i class="icon-info-sign"></i> Impuesto por reservación:</div></td>
+                    <td width="100px"><div align="right"><?php echo '$'." ".$t;?> </div></td>-->
                 
                 </tr>
                  <tr>
