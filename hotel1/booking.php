@@ -1,4 +1,4 @@
-<?php include('header.php');?>
+<?php include('header1.php');?>
     <style type="text/css">
       body {
         padding-top: 10px;
@@ -37,7 +37,7 @@
         margin-top: 18px;
       }
     </style>
-    <link href="admin/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="sistema/admin/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -226,7 +226,7 @@ function goBack()
 </script>
         
 
-<?php include('header.php'); ?>
+<?php include('header1.php'); ?>
 
  
   </head>
@@ -247,6 +247,8 @@ function goBack()
 				                    
 					  <span style="margin-right: 5px; color:rgba(0,0,0,1);">LLegada:<input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="LLegada" name="start" id="sd" value="" maxlength="10" readonly style="width: 210px; margin-left: 15px; border: 1px double #CCCCCC; padding:5px 10px;"/></span><br>
 						<span style="margin-right: 5px; color:rgba(0,0,0,1);"> Salida :  <input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Salida" name="end" id="ed" value="" maxlength="10" readonly style="width: 210px; margin-left: 23px; border: 1px double #CCCCCC; padding:5px 10px;" /></span><br>
+                        
+                        <span style="margin-right: 0px; color:rgba(0,0,0,1);">Personas extras($150 por persona):<input type="text" class="w8em" name="pextras" id="pextras" value="0" maxlength="10" value="0"  style="width: 50px; margin-left: 15px; border: 1px double #CCCCCC; padding:5px 10px;"/><br>
 						<input type="hidden" name="result" id="result" /><br>
                         
                     

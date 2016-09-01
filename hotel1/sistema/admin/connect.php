@@ -1,7 +1,7 @@
 <?php $hostname = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "kingsfields_database";
+	$dbname = "buscarv_hotel";
 	$connection = mysql_connect($hostname, $username, $password);
 	if(!$connection) {
 		echo "Database connection failed.";

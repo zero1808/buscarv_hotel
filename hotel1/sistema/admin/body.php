@@ -35,6 +35,8 @@
                         <th><div align="center">Descuento</div></th>
                         <th><div align="center">Requiere</div></th>
                         <th><div align="center">Mode</div></th>
+                        <th><div align="center">Personas extras</div></th>
+
                         <th><div align="center"><a data-trigger="hover" title="Buttons Function" data-placement="top" data-content="Change Room/Discount/Checkin" data-toggle="popover">Menú</a></div></th>
                     </tr>
                 </thead>   	
@@ -67,6 +69,7 @@
 										    <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php if ($cart_row['discount'] == 0){echo 'None';}else{echo $cart_row['discount'];} ?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php if($cart_row['request' == '']){echo 'None';} else{echo $cart_row['request'];} ?></div></td>
                                             <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cart_row['modeofpayment']; ?></div></td>
+                                              <td><div style="font-size:11px; color:rgba(153,0,0,1);" align="center"><?php echo $cart_row['pextras']; ?></div></td>
                                             <td width="128"><a href="#change<?php echo $order_id; ?>" data-toggle="modal" class="btn"><i class="icon-edit"></i></a>
                                             <a href="#discount<?php echo $order_id; ?>" data-toggle="modal" class="btn"><i class="icon-gift"></i></a>
                                             <a href="#checkin<?php echo $order_id; ?>" data-toggle="modal" class="btn"><i class="icon-pencil"></i></a>
@@ -81,7 +84,7 @@
                     <p><strong>Nombre del cliente </strong> <?php echo $member_row['firstname']." ".$member_row['lastname']; ?></p>
                  	<p><strong>Pago parcial: </strong> <?php echo $cart_row['partial']; ?></p>
                  </div>
-               <div class="alert alert-info"><h6><strong>Balance is: </strong> PHP <?php echo $cart_row['balance']; ?></h6></div>
+               <div class="alert alert-info"><h6><strong>Balance is: </strong> $ <?php echo $cart_row['balance']; ?></h6></div>
                          				</div>
                                         <div class="modal-footer">
           <a class="btn btn-danger" href="checkin.php<?php echo '?id='.$order_id; ?>" ><i class="icon-check"></i> Checkin</a>
@@ -375,7 +378,7 @@ function Clickheretoprint()
                  
                 
                  
-               <div class="alert alert-info"><h6><strong>Balance is: </strong> <?php echo $cart_row['balance']; ?> + <?php echo $excess_id; ?> = Total Payable:&nbsp; <span style="font-size:18px">PHP <?php echo $t; ?></span></div>
+               <div class="alert alert-info"><h6><strong>Balance is: </strong> <?php echo $cart_row['balance']; ?> + <?php echo $excess_id; ?> = Total Payable:&nbsp; <span style="font-size:18px">$ <?php echo $t; ?></span></div>
                          
                          				</div>
                   </div><!--Print Receipt -->        
@@ -421,7 +424,7 @@ function Clickheretoprint()
                     while($row=mysql_fetch_array($while_query)){
                     ?>
 					
-                    <option value="<?php echo $row['excess_id']?>"><?php echo $row['name'];echo'&nbsp;&nbsp;'; echo'PHP'; echo '&nbsp;'; echo $row['prices']; echo '.00';?></option>
+                    <option value="<?php echo $row['excess_id']?>"><?php echo $row['name'];echo'&nbsp;&nbsp;'; echo'$'; echo '&nbsp;'; echo $row['prices']; echo '.00';?></option>
 
 		
                     <?php } ?>
@@ -438,7 +441,7 @@ function Clickheretoprint()
                     while($prow=mysql_fetch_array($pwhile_query)){
                     ?>
 					
-                    <option value="<?php echo $prow['productID']?>"><?php echo $prow['name'];echo'&nbsp;&nbsp;'; echo'PHP'; echo '&nbsp;'; echo $prow['price']; echo '.00';?></option>
+                    <option value="<?php echo $prow['productID']?>"><?php echo $prow['name'];echo'&nbsp;&nbsp;'; echo'$'; echo '&nbsp;'; echo $prow['price']; echo '.00';?></option>
 
 		
                     <?php } ?>
@@ -449,7 +452,7 @@ function Clickheretoprint()
                  
                  <div align="center"><input name="qty" type="text" placeholder="Quantity" required /></div>
                  
-               <div class="alert alert-info"><h6><strong>Balance is: </strong> PHP <?php echo $cart_row['balance'];?></h6></div>
+               <div class="alert alert-info"><h6><strong>Balance es: </strong> $ <?php echo $cart_row['balance'];?></h6></div>
                          
                          				</div>
                          

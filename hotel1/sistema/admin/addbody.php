@@ -1,53 +1,21 @@
-<?php include('core.php'); ?>	
-<?php include('session.php'); ?>
-<?php include('connect.php');?>
-<?php include('hover.php');?>
-
-
-
-        
-        <form class="navbar-form pull-right">
-        
-<div class="input-prepend">
-  				<div class="btn-group">
-    <a class="btn" href="admin.php"><i class="icon-home"></i> Inicio</a>            
-    <a class="btn" href="#logout" data-toggle="modal"><i class="icon-off"></i> Cerrar sesión</a>          
- 	<button class="btn dropdown-toggle" data-toggle="dropdown"> Action <span class="caret"></span></button>
-    			<ul class="dropdown-menu">
-    				<li><a href="#adduser" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar usuarios</a></li>
-                    <li><a href="#addroom" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar habitación</a></li>
-                    <li><a href="#addcategory" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar categoría</a></li>
-                <li><a href="#addproduct" data-toggle="modal"><i class="icon-plus-sign"></i>Agregar producto</a></li>
-                    <li><a href="addtransaction.php"><i class="icon-plus-sign"></i> Transsación</a></li>
-                    <li><a href="#adddiscount" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar descuento</a></li>   
-    		</ul>
-  	</div>
-  			<input class="span2" id="prependedDropdownButton" type="text">
-</div>
-             
-
-		</form>
-          
-
-<?php include('title.php');?>
 <div style="margin-top:20px; margin-bottom:20px;" class="container thumbnail">
 
 		<form id="formID" class="form-horizontal" method="post" onSubmit="return validateForm()">
-    <div class="alert alert-info"><strong><i class="icon-info-sign"></i> Información</strong></div>
+    <div class="alert alert-info"><strong><i class="icon-info-sign"></i> Informations</strong></div>
                                 <hr>
                                 
                                 <div class="span6">
                                 
-    							<div class="alert alert-info"><i class="icon-user"></i> Detalles del cliente</div>
+    							<div class="alert alert-info"><i class="icon-user"></i> Guest Details</div>
                                 
                                 <div class="control-group">
-                                    <label class="control-label" for="inputEmail">Nombre(s):</label>
+                                    <label class="control-label" for="inputEmail">FirstName:</label>
                                     <div class="controls">
                                         <input class="validate[required,custom[onlyLetterSp]] text-input" name="fname" type="text" id="req" >
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Apellido:</label>
+                                    <label class="control-label" for="inputPassword">LastName:</label>
                                     <div class="controls">
                                         <input class="validate[required,custom[onlyLetterSp]] text-input" type="text"  name="lastname">
                                     </div>
@@ -66,7 +34,7 @@
                                 </div>
 
 								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Teléfono:</label>
+                                    <label class="control-label" for="inputPassword">Contact Number:</label>
                                     <div class="controls">
                                         <input value="63" class="validate[required,[maxSize[12],custom[onlyNumberSp],[minSize[12]] text-input" name="cnumber" maxlength="12" type="text" id="telephone">
                                     </div>
@@ -82,14 +50,14 @@
                                 
                                 
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Dirección:</label>
+                                    <label class="control-label" for="inputPassword">Address:</label>
                                     <div class="controls">
                                         <input class="validate[required] text-input" name="address" type="text"/>
                                     </div>
                                 </div>
                                 
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Código postal:</label>
+                                    <label class="control-label" for="inputPassword">Zip:</label>
                                     <div class="controls">
                                         <input class="validate[required,custom[onlyNumberSp]] text-input" name="zip" type="text" id="onlynumber"/>
                                     </div>
@@ -102,18 +70,18 @@
                                 
                                 <div class="span5">
                                 
-                                <div class="alert alert-info"><i class="icon-shopping-cart"></i> Datos de la transacción</div>
+                                <div class="alert alert-info"><i class="icon-shopping-cart"></i> Guest Orders</div>
     							
                                 <div class="control-group">
-                                    <label class="control-label" for="inputEmail">Nombre de la categoria:</label>
+                                    <label class="control-label" for="inputEmail">Category name:</label>
                                     <div class="controls">
                                     	<select name="country" id="country">
-              								<option>-Selecciona la categoria-</option>
+              								<option>-select your category-</option>
              				<?php 
 		
-       						 mysql_select_db('kingsfields_database',mysql_connect("localhost","root","")) or die(mysql_error());
+       						 mysql_select_db('buscarv_hotel',mysql_connect("localhost","buscarv","hotel2016*")) or die(mysql_error());
 		 
-        						$result=mysql_query("SELECT * from tb_category where status='Disponible' order by category_id ");
+        						$result=mysql_query("SELECT * from tb_category order by category_id");
         						while($country=mysql_fetch_array($result)){
          
         					echo "<option value=$country[category_id]>$country[category_name]</option>";
@@ -126,8 +94,7 @@
                                     <label class="control-label" for="inputPassword">Room no.:</label>
                                     <div class="controls">
                                         <select name="city" id="city">
-              								<option>-Seleccionar habitaciones disponibles-</option>
-                 
+              								<option>-select available rooms-</option>
             							</select>
                                     </div>
                                 </div>
@@ -255,6 +222,3 @@ mysql_query("update tb_rooms set status='Reserved' where roomID='$roomID'") or d
 
 
 ?>
-
-<?php include'modals.php';?> 
-<?php include'script.php';?>

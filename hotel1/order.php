@@ -1,11 +1,12 @@
-<?php include('header.php'); ?>
-<?php include('admin/connect.php');?>
+<?php include('header1.php'); ?>
+<?php include('sistema/admin/connect.php');?>
 
 <?php
 $query = mysql_query("select * from tb_member where memberID") or die(mysql_error());
+$m1;
                                     while ($row = mysql_fetch_array($query)) {
                                         $memberID = $row['memberID'];
-										$m = $memberID + 1;
+										$m1 = $memberID + 1;
 										
 										
 										
@@ -61,11 +62,11 @@ if(isset($_POST['order'])){
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$result = $_POST['result'];
+	$pextras = $_POST['pextras'];
 	$total = $_POST['total'];
 	$pre = $_POST['pre'];
 	$bal = $_POST['bal'];
 	$tax = $_POST['tax'];
-	
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$username = $_POST['user'];
@@ -75,7 +76,6 @@ if(isset($_POST['order'])){
 	$zip = $_POST['zip'];
 	$address = $_POST['address'];
 	$request = $_POST['request'];
-	
 	$totalper = $_POST['totalper'];
   	$balance = $_POST['balance'];
   	$partial = $_POST['partial'];
@@ -86,106 +86,16 @@ if(isset($_POST['order'])){
 			
 $query = mysql_query("insert into tb_member (firstname,lastname,email,contact_number,password,username,zip,address)
 			values('$fname','$lname','$email','$cnumber','$password','$username','$zip','$address')") or die(mysql_error());
-	
-	
-								
 
-?>
-
- <?php
-
-					$id=$_POST['selector'];
-					$N = count($id);
-					for($i=0; $i < $N; $i++)
-					{
-
-					?>
-
-					
-
-					
-                    
-                    <?php 
-
-              
-              /*este es el codigo original comentado
-	//send the email
-		
-		
-		
-		$mail_To = $email;
-                $mail_Subject = "Notificacion de reservación BASIC HOTEL";
-                $mail_Body = "Nombre(s): $username\n".
-		"Apellido: $lname\n".
-		"Email: $email \n".
-		"Código postal: $zip \n".
-		"Teléfono: $cnumber \n".
-		"Password: $password \n".
-		"Check In: $start\n ".
-		"Check Out: $end\n ".
-		"Total de noches: $result\n ".
-		"Total a pagar: $total\n ".
-		"ID Habitación: echo $id[$i];\n".
-		"Numero de confirmación: $confirmation\n ";
-                mail($mail_To, $mail_Subject, $mail_Body);?>
-
-
-
-					<?php }  */?>
-
-<?php //este es mi codigo
-$mail= new PHPMailer();
-//indico a la clase que use SMTP
-$mail->isSMTP();
-//permite modo debug para ver mensajes de las cosas que van ocurriendo
-$mail->SMTPDebug=2;
-//Debo de hacer autenticación SMTP
-$mail->SMTPAuth=true;
-$mail->SMTPSecure="ssl";
-//indico el servidor de Gmail para SMTP
-$mail->Host="smtp.gmail.com";
-//indico el puerto que usa Gmail
-$mail->Port=465;
-//indico un usuario / clave de un usuario de gmail
-$mail->Username= "basichotelmx@gmail.com";
-$mail->Password="buscarvhotel";
-$mail->setFrom('basichotelmx@gmail.com', 'BasicHotel');
-$mail->addReplyTo("basichotelmx@gmail.com","BasicHotel");
-$mail->Subject= "Notificacion de reservacion BASIC HOTEL";
-$mail->msgHTML("Se ha enviado esta orden de reservacion a su correo porque nuestra pagina registro este correo como contacto de reservacion!");
-$mail->msgHTML("Nombre(s): $username<br/>".
-    "Apellido: $lname<br/>".
-    "Email: $email <br/>".
-    "Código postal: $zip <br/>".
-    "Teléfono: $cnumber <br/>".
-    "Password: $password <br/>".
-    "Check In: $start<br/> ".
-    "Check Out: $end<br/> ".
-    "Total de noches: $result<br/> ".
-    "Total a pagar: $total<br/> ".
-    "ID Habitación: echo $id[$i];<br/>".
-    "Numero de confirmación: $confirmation<br/> ");
-                
-$mail->Timeout=60;
-$mail->IsHTML(true);
-$address=$email; //aqui paso el email del cliente
-$mail->addAddress($address, $username);
-if(!$mail->send()) {
-echo "Error al enviar: " . $mail­>ErrorInfo;
-} else {
-echo "Confirmacion de su reservacion enviado a su correo electronico!";
- }
-}
-?>
-
-   
-<?php
+echo $id;
 $id=$_POST['selector'];
+
 if(count($id)>0)
 {
 	foreach($id as $key=>$id)
 	{
-		$query="INSERT INTO tb_reserve (roomID,memberID,days_no,total,partial,balance,arrival,departure,status,transaction_code,request) VALUES ('$id','$m','$result','$totalper','$partial','$balance','$start','$end','reserved','$confirmation','$request')";
+
+$query="INSERT INTO tb_reserve(roomID,memberID,days_no,total,partial,balance,arrival,departure,status,transaction_code,request,pextras)  VALUES('$id','$m1','$result','$totalper','$partial','$balance','$start','$end','reserved','$confirmation','$request','$pextras')";
 		mysql_query($query) or die ('Error Updating the Database' . mysql_errno());
 		mysql_query("update tb_rooms set status='Reserved' where roomID='$id'") or die(mysql_error());			
 	}
@@ -196,9 +106,7 @@ else
 
 
 }
-
-?>
-									
+?>									
 
  <style type="text/css">
  
@@ -310,13 +218,13 @@ function Clickheretoprint()
                 <tr>
                 	<td></td>
                     <td><div align="right">Cargo total por renta de habitacion/es:</div></td>
-                    <td width="170px"><div align="right">PHP <?php echo $total;?></div></td>
+                    <td width="170px"><div align="right">$ <?php echo $total;?></div></td>
                 
                 </tr>
                 <tr>
                 	<td></td>
                     <td><div align="right">Total:</div></td>
-                    <td width="100px"><div align="right">PHP <?php echo $bal;?></div></td>
+                    <td width="100px"><div align="right">$ <?php echo $bal;?></div></td>
                 
                 </tr>
               <!--  <tr class="alert alert-info">
@@ -404,53 +312,6 @@ function Clickheretoprint()
             
    </div>         
        
-    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" onSubmit="save();">
-       
-    	<input type="hidden" name="cmd" value="_xclick" />
-     	<input type="hidden" name="amount" value="<?php echo $pre; ?>" />
-        <input type="hidden" name="business" value="kringcarl_j@yahoo.com.ph" />
-        <input type="hidden" name="item_name" value="	<?php 
-  
-  	$id=$_POST['selector'];
-	$N = count($id);
-	$rname = NULL;
-	$pname = NULL;
-
-	for($i=0; $i < $N; $i++)
-	{
-	
-	
-	$res = mysql_query("SELECT * FROM tb_rooms where roomID='$id[$i]'");
-	while($row = mysql_fetch_array($res)){
-			$rname = $row['name'];
-
-			
-	}
-  
-  
-   ?>
-    <?php echo '#'."".$rname;?>
-    
-    <?php }?> " />
-    	<input type="hidden" name="item_number" value="<?php echo $confirmation; ?>" />
-        <input type="hidden" name="no_shipping" value="1" />
-        <input type="hidden" name="no_note" value="1" />
-        <input type="hidden" name="currency_code" value="PHP" />
-        <input type="hidden" name="lc" value="GB" />
-        <input type="hidden" name="bn" value="PP-BuyNowBF" />
-        
-        <input class="thumbnail" type="image" src="paypal.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" style=" margin-top:20px; margin-left: 250px;" />
-        <img alt="fdff" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
-        <!-- Payment confirmed -->
-        <input type="hidden" name="return" value="https://kingsfields.x10.mx/showconfirm.php" />
-        <!-- Payment cancelled -->
-        <input type="hidden" name="cancel_return" value="http://kingsfieldexpressinn.com" />
-        <input type="hidden" name="rm" value="2" />
-        <input type="hidden" name="notify_url" value="http://kingsfields.x10.mx/ipn.php" />
-        <input type="hidden" name="custom" value="any other custom field you want to pass" />
-        <input type="hidden" name="roomid" id="roomid" value="<?php echo $m;?>"/>
-
-    </form>
 
     	
 	</div><!--form end -->

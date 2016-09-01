@@ -8,45 +8,45 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le styles -->
-    <link href="admin/css/bootstrap.css" rel="stylesheet">
-    <link href="admin/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="sistema/admin/css/bootstrap.css" rel="stylesheet">
+    <link href="sistema/admin/css/bootstrap-responsive.css" rel="stylesheet">
     
      <!-- Placed at the end of the document so the pages load faster -->
   	
     
-	<script type="text/javascript" charset="utf-8" language="javascript" src="admin/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" charset="utf-8" language="javascript" src="admin/js/DT_bootstrap.js"></script>
+	<script type="text/javascript" charset="utf-8" language="javascript" src="sistema/admin/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" charset="utf-8" language="javascript" src="sistema/admin/js/DT_bootstrap.js"></script>
      
-    <script src="admin/js/jquery.js"></script>
-    <script src="admin/js/bootstrap-transition.js"></script>
-    <script src="admin/js/bootstrap-alert.js"></script>
-    <script src="admin/js/bootstrap-modal.js"></script>
-    <script src="admin/js/bootstrap-dropdown.js"></script>
-    <script src="admin/js/bootstrap-scrollspy.js"></script>
-    <script src="admin/js/bootstrap-tab.js"></script>
-    <script src="admin/js/bootstrap-tooltip.js"></script>
-    <script src="admin/js/bootstrap-popover.js"></script>
-    <script src="admin/js/bootstrap-button.js"></script>
-    <script src="admin/js/bootstrap-collapse.js"></script>
-    <script src="admin/js/bootstrap-carousel.js"></script>
-    <script src="admin/js/bootstrap-typeahead.js"></script>
+    <script src="sistema/admin/js/jquery.js"></script>
+    <script src="sistema/admin/js/bootstrap-transition.js"></script>
+    <script src="sistema/admin/js/bootstrap-alert.js"></script>
+    <script src="sistema/admin/js/bootstrap-modal.js"></script>
+    <script src="sistema/admin/js/bootstrap-dropdown.js"></script>
+    <script src="sistema/admin/js/bootstrap-scrollspy.js"></script>
+    <script src="sistema/admin/js/bootstrap-tab.js"></script>
+    <script src="sistema/admin/js/bootstrap-tooltip.js"></script>
+    <script src="sistema/admin/js/bootstrap-popover.js"></script>
+    <script src="sistema/admin/js/bootstrap-button.js"></script>
+    <script src="sistema/admin/js/bootstrap-collapse.js"></script>
+    <script src="sistema/admin/js/bootstrap-carousel.js"></script>
+    <script src="sistema/admin/js/bootstrap-typeahead.js"></script>
     
     <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 
     
     
-    <script>
+    <!--<script>
       !function ($) {
         $(function(){
           // carousel demo
           $('#myCarousel').carousel()
         })
       }(window.jQuery)
-    </script>
+    </script>-->
     
     
-    <script src="admin/js/holder/holder.js"></script>
+    <script src="sistema/admin/js/holder/holder.js"></script>
     
     <style>
 
@@ -228,5 +228,5 @@
 
     <!-- Fav and touch icons -->
 
-                                   <link rel="shortcut icon" href="admin/ico/icon.png">
+                                   <link rel="shortcut icon" href="sistema/admin/ico/icon.png">
   </head>

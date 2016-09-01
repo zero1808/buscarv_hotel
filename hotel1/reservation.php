@@ -1,5 +1,5 @@
-<?php include('header.php');?>
-<?php include('admin/connect.php');?>
+<?php include('header1.php');?>
+<?php include('sistema/admin/connect.php');?>
 
     <style type="text/css">
  
@@ -45,6 +45,7 @@ function goBack()
   $start = $_POST['start'];
   $end = $_POST['end'];
   $result = $_POST['result'];
+  $pextras = $_POST['pextras'];
 
 	?>
 
@@ -77,6 +78,8 @@ function goBack()
   <li><a tabindex="-1" href="#"><span class="text-info">LLegada:</span> <?php echo $start?></a></li>
   <li><a tabindex="-1" href="#"><span class="text-info">Salida:</span> <?php echo $end?></a></li>
   <li><a tabindex="-1" href="#"><span class="text-info">No. de dias:</span> <?php echo $result?></a></li>
+  <li class="divider"></li>
+        <li><a tabindex="-1" href="#"><span class="text-info">P. extras:</span> <?php echo $pextras?></a></li>
   <li class="divider"></li>
   <li><a tabindex="-1" href="#"><strong>No. Habitacion:</strong></a></li>
   <li class="divider"></li>
@@ -275,7 +278,10 @@ function goBack()
 	
 	$t = sprintf ("%.2f", $tax);
 	
-	$total = $f * $result+$t;
+    $pagoextras=150*$pextras;
+    $pagoextras1=$result*$pagoextras;                    
+	$total = $f * $result+$t+$pagoextras1;
+    
 	
 	$tt = sprintf ("%.2f", $total);
 	
@@ -289,7 +295,7 @@ function goBack()
 	
 	
 	
-	$totalper = sprintf("%.2f",$result * $prce);	
+	$totalper = sprintf("%.2f",($result * $prce)+$pagoextras1);	
 	$prep = sprintf("%.2f",$totalper * .10);
 	$balance = sprintf("%.2f",$totalper /*- $prep*/);
 	$part = sprintf("%.2f",$totalper - $balance);
@@ -307,12 +313,19 @@ function goBack()
                     <td width="100px"><div align="right"><?php echo '$'." ".$t;?> </div></td>
                 
                 </tr>
+                 <tr>
+                	<td></td>
+                    <td><div align="right">Costo por personas adicionales:</div></td>
+                    <td width="100px"><div align="right"><?php echo '$'." ".$pagoextras1;?> </div></td>
+                
+                </tr>
                 <tr>
                 	<td></td>
                     <td><div align="right">Costo total de las habitaciones:</div></td>
                     <td width="100px"><div align="right"><?php echo '$'." ".$tt;?> </div></td>
                 
                 </tr>
+                 
                
             <!--    <tr class="alert alert-info">
                 	<td></td>
@@ -339,6 +352,7 @@ function goBack()
                 <input name="start" type="hidden" value="<?php echo $start;?>">
                 <input name="end" type="hidden" value="<?php echo $end;?>">
                 <input name="result" type="hidden" value="<?php echo $result;?>">
+                <input name="pextras" type="hidden" value="<?php echo $pextras?>">
                 <input name="bal" type="hidden" value="<?php echo $bal;?>">
                 <input name="pre" type="hidden" value="<?php echo $pre;?>">
                 <input name="total" type="hidden" value="<?php echo $tt;?>">

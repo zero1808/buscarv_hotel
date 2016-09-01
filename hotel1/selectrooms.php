@@ -1,6 +1,6 @@
 
-<?php include('header.php');?>
-<?php include('admin/connect.php');?>
+<?php include('header1.php');?>
+<?php include('sistema/admin/connect.php');?>
     <style type="text/css">
       body {
         padding-top: 40px;
@@ -29,9 +29,9 @@
     
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script> 
     
-    <link rel="stylesheet" type="text/css" href="admin/css/DT_bootstrap.css">   
-	<script type="text/javascript" charset="utf-8" language="javascript" src="admin/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" charset="utf-8" language="javascript" src="admin/js/DT_bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="sistema/admin/css/DT_bootstrap.css">   
+	<script type="text/javascript" charset="utf-8" language="javascript" src="sistema/admin/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" charset="utf-8" language="javascript" src="sistema/admin/js/DT_bootstrap.js"></script>
 
 
 	<script type="text/javascript" src="js/sagallery.js"></script>
@@ -83,6 +83,7 @@ return true;
 	$start=$_POST['start'];
 	$end=$_POST['end'];
 	$r=$_POST['result'];
+    $pextras=$_POST['pextras'];
 	
 	if ($r==0){		
 		$r=$r+1;
@@ -123,6 +124,8 @@ return true;
   <li><a tabindex="-1" href="#"><span class="text-info">LLegada:</span> <?php echo $start?></a></li>
   <li><a tabindex="-1" href="#"><span class="text-info">Salida:</span> <?php echo $end?></a></li>
   <li><a tabindex="-1" href="#"><span class="text-info">No. de dias</span> <?php echo $result?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Personas extras</span> <?php echo $pextras?></a></li>
+
     <!-- dropdown menu links -->
   </ul>
 </div>
@@ -145,6 +148,8 @@ return true;
         									<input name="start" type="hidden" value="<?php echo $start;?>">
                                             <input name="end" type="hidden" value="<?php echo $end;?>">
                                             <input name="result" type="hidden" value="<?php echo $result;?>">
+                                            <input name="pextras" type="hidden" value="<?php echo $pextras;?>">
+
         																
       	
                                             
@@ -187,42 +192,42 @@ return true;
                                     
 
                                         <tr>
-                                        	<td width="60"><a href="admin/<?php echo $row['location']?>" class="image-zoom" rel="prettyPhoto[gallery]" title="Without window and without garage room"><img style="margin-top:10px;" class="img-rounded thumbnail" src="admin/<?php echo $row['location']?>" height="50" width="50"></a></td>
+                                        	<td width="60"><a href="sistema/admin/<?php echo $row['location']?>" class="image-zoom" rel="prettyPhoto[gallery]" title="Without window and without garage room"><img style="margin-top:10px;" class="img-rounded thumbnail" src="sistema/admin/<?php echo $row['location']?>" height="50" width="50"></a></td>
                                             
-                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo $row['name'];}else{echo '-&deg;-';}?></div></td>
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Disponible'){ echo $row['name'];}else{echo '-&deg;-';}?></div></td>
                                              
-                                    		<td><div align="center" style="margin-top:10px"><?php if($row['status']=='Available'){ echo $cat_row['precio'];
+                                    		<td><div align="center" style="margin-top:10px"><?php if($row['status']=='Disponible'){ echo $cat_row['precio'];
 											}
 												else{ echo '-&deg;-';}
 											
 											
 											?></div></td>
-                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo '<i class="icon-user"></i>'." : ".$cat_row['no_adultos'];
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Disponible'){ echo '<i class="icon-user"></i>'." : ".$cat_row['no_adultos'];
 											
 											}
 											
 											else{ echo '-&deg;-';}
 											
 											?></div></td>   
-                                                   <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){echo '<i class="icon-user"></i>'." : ".$cat_row['no_ninios'];
+                                                   <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Disponible'){echo '<i class="icon-user"></i>'." : ".$cat_row['no_ninios'];
 											
 											}else{ echo '-&deg;-';}?></div></td>  
                                             
                                                
                                             
-                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo $cat_row['camas_kingsize'];
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Disponible'){ echo $cat_row['camas_kingsize'];
 											
 											}
 											
 											else{ echo '-&deg;-';}
 											
-											?></div></td>     <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo $cat_row['camas_matrimoniales'];
+											?></div></td>     <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Disponible'){ echo $cat_row['camas_matrimoniales'];
 											
 											}
 											
 											else{ echo '-&deg;-';}
 											
-											?></div></td>     <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){ echo $cat_row['camas_individuales'];
+											?></div></td>     <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Disponible'){ echo $cat_row['camas_individuales'];
 											
 											}
 											
@@ -232,13 +237,13 @@ return true;
                                        
                                 
                                             
-                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Available'){echo $cat_row['category_name'];}else{ echo '-&deg;-';}?></div></td> 
+                                            <td><div align="center" style="margin-top:20px"><?php if($row['status']=='Disponible'){echo $cat_row['category_name'];}else{ echo '-&deg;-';}?></div></td> 
  									
                                             
                                             <td><div align="center" style="margin-top:30px;"><strong>
-											<?php if ($row['status']=='Available'){
+											<?php if ($row['status']=='Disponible'){
 												
-												echo '<div style="color:rgba(0,153,51,1);font-size:18px;">Available</div>';
+												echo '<div style="color:rgba(0,153,51,1);font-size:18px;">Disponible</div>';
 												
 												$disabled = "";
 												

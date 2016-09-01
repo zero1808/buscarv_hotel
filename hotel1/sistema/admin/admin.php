@@ -9,11 +9,12 @@
     <a class="btn" href="print.php"><i class="icon-print"></i> Reportes</a>          
  	<button class="btn dropdown-toggle" data-toggle="dropdown"> Menú <span class="caret"></span></button>
     		<ul class="dropdown-menu">
+                    <li><a href="http://sybharis.com/booking.php"><i class="icon-plus-sign"></i> Reservación</a></li>
+
     				<li><a href="#adduser" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar usuarios</a></li>
                     <li><a href="#addroom" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar habitación</a></li>
                     <li><a href="#addcategory" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar categoría</a></li>
                 <li><a href="#addproduct" data-toggle="modal"><i class="icon-plus-sign"></i>Agregar producto</a></li>
-                    <!--<li><a href="addtransaction.php"><i class="icon-plus-sign"></i> Transsación</a></li>-->
                     <li><a href="#adddiscount" data-toggle="modal"><i class="icon-plus-sign"></i> Agregar descuento</a></li>   
     		</ul>
   	</div>

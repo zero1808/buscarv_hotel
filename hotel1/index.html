@@ -1,0 +1,596 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sybharis</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Chrome, Firefox OS y Opera -->
+ <meta name="theme-color" content="#4285f4"/>
+ <!-- Windows Phone -->
+ <meta name="msapplication-navbutton-color" content="#4285f4"/>
+ <!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Description" content="Hotel ubicado en la Ciudad de México, se encuentra situado frente a la oficina central de Telmex a unos  pasos del  Circuito Interior, Localizado en la Ciudad de México. Cercano al Auditorio Nacional y Parque de Chapultepec a unos pasos  de los principales Teatros de la Colonia San Rafael, próximo a la Zona Rosa a unos pasos  de la Avenida Paseo de la Reforma e Insurgentes, cerca del principal distrito financiero y bursátil, a 15 minutos del Centro Histórico con fácil acceso a muchas de las oficinas centrales de empresas nacionales y trasnacionales solo a 15 km del Aeropuerto Internacional de Ciudad de México, a 20 minutos de Polanco y a 5 minutos de la Embajada Americana.">
+<meta name="Keywords" content="Shybaris, Hoteles baratos en México,sybharis hotel México, Hoteles baratos CDMX, Hoteles economicos, Hotel cercano al audtitorio nacional, Hotel cercano a san rafael, hotel cercano a reforma, hotel en reforma, hotel cercano a la embajada americana ">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- login-pop-up -->
+<script src="js/menu_jquery.js"></script>
+<!-- //login-pop-up -->
+<!-- animation-effect -->
+<link href="css/animate.min.css" rel="stylesheet"> 
+<script type="text/javascript" src="js/datepicker.js"></script>
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+
+<script src="js/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+<!-- //animation-effect -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="//v2.zopim.com/?3wrKukiaxwmNNQf2sy5TT3gbK9Arz1QF";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zopim Live Chat Script-->
+<meta name='B-verify' content='a7a8eb6821a7efeced73fab71c55e58f2602d9fb' />
+</head>
+	
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78471560-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    <script type="text/javascript">
+		//<![CDATA[
+
+		/*
+				A "Reservation Date" example using two datePickers
+				--------------------------------------------------
+
+				* Functionality
+
+				1. When the page loads:
+						- We clear the value of the two inputs (to clear any values cached by the browser)
+						- We set an "onchange" event handler on the startDate input to call the setReservationDates function
+				2. When a start date is selected
+						- We set the low range of the endDate datePicker to be the start date the user has just selected
+						- If the endDate input already has a date stipulated and the date falls before the new start date then we clear the input's value
+
+				* Caveats (aren't there always)
+
+				- This demo has been written for dates that have NOT been split across three inputs
+
+		*/
+
+		function makeTwoChars(inp) {
+				return String(inp).length < 2 ? "0" + inp : inp;
+		}
+
+		function initialiseInputs() {
+				// Clear any old values from the inputs (that might be cached by the browser after a page reload)
+				document.getElementById("sd").value = "";
+				document.getElementById("ed").value = "";
+
+				// Add the onchange event handler to the start date input
+				datePickerController.addEvent(document.getElementById("sd"), "change", setReservationDates);
+		}
+
+		var initAttempts = 0;
+
+		function setReservationDates(e) {
+				// Internet Explorer will not have created the datePickers yet so we poll the datePickerController Object using a setTimeout
+				// until they become available (a maximum of ten times in case something has gone horribly wrong)
+
+				try {
+						var sd = datePickerController.getDatePicker("sd");
+						var ed = datePickerController.getDatePicker("ed");
+				} catch (err) {
+						if(initAttempts++ < 10) setTimeout("setReservationDates()", 50);
+						return;
+				}
+
+				// Check the value of the input is a date of the correct format
+				var dt = datePickerController.dateFormat(this.value, sd.format.charAt(0) == "m");
+
+				// If the input's value cannot be parsed as a valid date then return
+				if(dt == 0) return;
+
+				// At this stage we have a valid YYYYMMDD date
+
+				// Grab the value set within the endDate input and parse it using the dateFormat method
+				// N.B: The second parameter to the dateFormat function, if TRUE, tells the function to favour the m-d-y date format
+				var edv = datePickerController.dateFormat(document.getElementById("ed").value, ed.format.charAt(0) == "m");
+
+				// Set the low range of the second datePicker to be the date parsed from the first
+				ed.setRangeLow( dt );
+				
+				// If theres a value already present within the end date input and it's smaller than the start date
+				// then clear the end date value
+				if(edv < dt) {
+						document.getElementById("ed").value = "";
+				}
+		}
+
+		function removeInputEvents() {
+				// Remove the onchange event handler set within the function initialiseInputs
+				datePickerController.removeEvent(document.getElementById("sd"), "change", setReservationDates);
+		}
+
+		datePickerController.addEvent(window, 'load', initialiseInputs);
+		datePickerController.addEvent(window, 'unload', removeInputEvents);
+
+		//]]>
+		</script>
+		<!--sa error trapping-->
+		<script type="text/javascript">
+		function validateForm()
+		{
+		var x=document.forms["index"]["start"].value;
+		if (x==null || x=="")
+		  {
+		  alert("You must enter your check in Date(click the calendar icon)");
+		  return false;
+		  }
+		var y=document.forms["index"]["end"].value;
+		if (y==null || y=="")
+		  {
+		  alert("You must enter your check out Date(click the calendar icon)");
+		  return false;
+		  }
+		}
+		</script>
+		<!--sa minus date-->
+		<script type="text/javascript">
+			// Error checking kept to a minimum for brevity
+		 
+			function setDifference(frm) {
+			var dtElem1 = frm.elements['start'];
+			var dtElem2 = frm.elements['end'];
+			var resultElem = frm.elements['result'];
+			 
+		// Return if no such element exists
+			if(!dtElem1 || !dtElem2 || !resultElem) {
+		return;
+			}
+			 
+			//assuming that the delimiter for dt time picker is a '/'.
+			var x = dtElem1.value;
+			var y = dtElem2.value;
+			var arr1 = x.split('/');
+			var arr2 = y.split('/');
+			 
+		// If any problem with input exists, return with an error msg
+		if(!arr1 || !arr2 || arr1.length != 3 || arr2.length != 3) {
+		resultElem.value = "Invalid Input";
+		return;
+			}
+			 
+		var dt1 = new Date();
+		dt1.setFullYear(arr1[2], arr1[1], arr1[0]);
+		var dt2 = new Date();
+		dt2.setFullYear(arr2[2], arr2[1], arr2[0]);
+
+		resultElem.value = (dt2.getTime() - dt1.getTime()) / (60 * 60 * 24 * 1000);
+		}
+		</script>
+        
+        <script>
+		function goBack()
+ 		 {
+ 		 window.history.back()
+  			}
+  
+		</script>
+		
+<script type="text/javascript">
+function validateForms()
+{
+
+var a=document.forms["cancelpage"]["confirmation"].value;
+if ((a==null || a==""))
+  {
+  alert("Ingresa tu codigo de confirmacion para cancelar tu reservación!!!");
+  return false;
+  }
+ 
+if (document.cancelpage.cancelpolicy.checked == false)
+{
+alert ('Por favor, acepte las condiciones de cancelación de este hotel!');
+return false;
+}
+else
+{
+return true;
+}
+}
+</script>
+<style>
+     .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 62px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 12px;
+        padding: 10px 20px;
+		margin-left:80px;
+      }
+    
+    
+    </style>
+
+<!-- header -->
+	<div class="header-top">
+		<div class="container">
+			<div class="header-top-left animated wow slideInLeft" data-wow-delay=".5s">
+				<p>SYBHARIS</p>
+			</div>
+			<div class="header-top-left1 animated wow slideInLeft" data-wow-delay=".7s">
+				<h1>Contáctanos (55) 30 93 39 39 <a href="EN/index.html"><img src="images/es.png" width="35" height="35"></a><img src="images/dia.png" width="5" height="40"><a href="EN/index.html"><img src="images/en.png" width="35" height="35"></a><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></h1> 
+                
+			</div>
+			<div class="header-top-right">
+				<div id="loginContainer login"><a href="#" id="loginButton"><span>Login</span></a>
+					<div id="loginBox">                
+						<form id="loginForm">
+							<fieldset id="body">
+								<fieldset>
+									<label for="email">Usuario</label>
+									<input type="text" name="email" id="email">
+								</fieldset>
+								<fieldset>
+									<label for="password">Contraseña</label>
+									<input type="password" name="password" id="password">
+								</fieldset>
+								<input type="submit" id="login" value="Sign in">
+								<label for="checkbox"><input type="checkbox" id="checkbox"> <i></i></label>
+							</fieldset>
+							<span><a href="#">Solo personal auorizado</a></span>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="header-nav">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo animated wow slideInLeft" data-wow-delay=".5s">
+				    <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="84" height="56" alt="www.basichotel.com" longdesc="http://www.basichotel.com"></a>
+					</div>
+                    
+                    
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Inicio</a></li>
+						<li><a href="about.html">Nosotros</a></li>
+						<li><a href="habitacion.html">Habitaciones</a></li>
+						<li><a href="res.html">Reservación</a></li>
+						<li><a href="contactanos.php">Contáctanos</a></li>
+                        <li><a href="facturacion/facturacion.php">Facturación</a></li>
+					</ul>
+					
+					<div class="search">
+						
+					</div>
+				</div><!-- /.navbar-collapse -->	
+				
+			</nav>
+		</div>
+	</div>
+<!-- //header -->
+<!-- banner -->
+	<div class="banner">
+		<div class="banner-pos banner1">
+		  <div class="banner-posit animated wow zoomIn" data-wow-delay=".5s">
+		    <h2></span>Reservación online</h2>
+              <br>
+		<div id="widget">				                    
+					<form method="post" action="selectrooms.php" name="index" onSubmit="return validateForm()">
+				        <div class="row"> 
+                           <div class="col-md-3"><label style="color:#FFFFFF;">LLegada:</label> </div>
+                            <div class="col-md-9"><input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="LLegada" name="start" id="sd" value="" maxlength="10" readonly /></div></div>
+						<br>
+                        <div class="row">
+                            <div class="col-md-3"><label style="color:#FFFFFF;">Salida:</label> </div>
+                            <div class="col-md-9"><input type="text" class="w8em format-d-m-y highlight-days-67 range-low-today" placeholder="Salida" name="end" id="ed" value="" maxlength="10" readonly  /></div></div>
+						<input type="hidden" name="result" id="result" /><br>
+                        
+         
+        <div align="center"> 	
+<button type="submit" onClick="setDifference(this.form);" class="btn btn-info"><i class="icon-check"></i>VER DISPONIBILIDAD</button>
+       </div>
+                        
+						
+					  </form></div>
+			</div>
+            </div>
+                
+				<p></p>
+	  </div>
+
+    
+
+<!---strat-date-piker---->
+									
+								<!---/End-date-piker---->
+
+<!-- //banner -->
+<!-- banner-bottom --><!-- //banner-bottom --><!-- banner-bottom -->
+	<div class="banner-bottom">
+		<div class="container">
+			<div class="banner-bottom-grids">
+			  <div class="col-md-4 banner-bottom-grid animated wow slideInLeft" data-wow-delay=".5s">
+					<h3>Sybharis</h3>
+				  <p align="justify">Hotel ubicado en la Ciudad de México, se encuentra situado frente a la oficina central de Telmex a unos  pasos del  Circuito Interior, Localizado en la Ciudad de México. Cercano al Auditorio Nacional y Parque de Chapultepec a unos pasos  de los principales Teatros de la Colonia San Rafael, próximo a la Zona Rosa a unos pasos  de la Avenida Paseo de la Reforma e Insurgentes</p>
+				</div>
+			  <div class="col-md-4 banner-bottom-grid animated wow slideInLeft" data-wow-delay=".7s">
+				<h3>...</h3>
+				  <p align="justify">Cerca del principal distrito financiero y bursátil, a 15 minutos del Centro Histórico con fácil acceso a muchas de las oficinas centrales de empresas nacionales y trasnacionales solo a 15 km del Aeropuerto Internacional de Ciudad de México, a 20 minutos de Polanco y a 5 minutos de la Embajada Americana</p>
+                    
+             
+					
+                    
+				</div>
+				<div class="col-md-4 banner-bottom-grid animated wow slideInLeft" data-wow-delay=".8s">
+					<div class="banner-bottom-grid-left">
+						<img src="images/1.jpg" alt=" " class="img-responsive" />
+					</div>
+					<div class="banner-bottom-grid-left">
+						<img src="images/2.jpg" alt=" " class="img-responsive" />
+					</div>
+					<div class="clearfix"> </div>
+					<div class="banner-bottom-grid-left">
+						<img src="images/3.jpg" alt=" " class="img-responsive" />
+					</div>
+                    <div class="banner-bottom-grid-left">
+						<img src="images/3.1.jpg" alt=" " class="img-responsive" />
+					</div>
+					
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //banner-bottom -->
+<!-- newsletter -->
+	<div class="newsletter-top">
+		<div class="col-md-2 newsletter-top-grid animated wow slideInLeft" data-wow-delay=".5s">
+			<div class="newsletter-top-grid1">
+				<figure class="thumb">
+					<img src="images/10.jpg" alt=" " class="img-responsive" />
+					<figcaption class="caption">
+						<h3><a href="res.html">Estandar</a></h3>
+						<span>...</span>
+						<h3>...0</h3>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="col-md-2 newsletter-top-grid animated wow slideInLeft" data-wow-delay=".7s">
+			<div class="newsletter-top-grid1">
+				<figure class="thumb">
+					<img src="images/11.jpg" alt=" " class="img-responsive" />
+					<figcaption class="caption">
+						<h3><a href="res.html">Familiar</a></h3>
+						<span>...</span>
+						<h3>...</H3>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="col-md-2 newsletter-top-grid animated wow slideInLeft" data-wow-delay=".8s">
+			<div class="newsletter-top-grid1">
+				<figure class="thumb">
+					<img src="images/12.jpg" alt=" " class="img-responsive" />
+					<figcaption class="caption">
+						<h3><a href="res.html">Ejecutiva</a></h3>
+						<span>...</span>
+						<h3>...</h3>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+        
+     <div class="col-md-2 newsletter-top-grid animated wow slideInLeft" data-wow-delay=".8s">
+			<div class="newsletter-top-grid1">
+				<figure class="thumb">
+					<img src="images/12-2.jpg" alt=" " class="img-responsive" />
+					<figcaption class="caption">
+						<h3><a href="res.html">Lo que estabas buscando</a></h3>
+						<span>...</span>
+						<h3>...</h3>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+        
+        
+        
+        
+		<div class="col-md-6 newsletter-top-grid animated wow slideInRight" data-wow-delay=".6s">
+			
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+<!-- //newsletter -->
+<!-- popular -->
+	<div class="popular">
+		<div class="container">
+			<h3 class="animated wow zoomIn" data-wow-delay=".5s">SERVICIOS</h3>
+			<div class="popular-grids">
+				<div class="col-md-4 popular-grid animated wow slideInUp" data-wow-delay=".5s">
+					<img src="images/4.jpg" alt=" " class="img-responsive" />
+				</div>
+			  <div class="col-md-4 popular-grid animated wow slideInUp" data-wow-delay=".5s">
+					<div class="popular-grid1">
+						<h4>EVENTOS ESPECIALES</h4>
+					  <p>...</p><span class="popular-grid1-pos animated wow slideInUp"><img src="images/5.jpg" alt=" " class="img-responsive" /></span></p>
+                        
+					  <div class="popular-grid1-pos animated wow slideInUp" data-wow-delay=".5s"></div>
+					</div>
+				</div>
+				<div class="col-md-4 popular-grid animated wow slideInUp" data-wow-delay=".5s">
+					<img src="images/6.jpg" alt=" " class="img-responsive" />
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="popular-grids">
+				<div class="col-md-4 popular-grid animated wow slideInUp" data-wow-delay=".5s">
+					<div class="popular-grid1">
+						<h4>SALONES DE FIESTA</h4>
+					  <p>...</p>
+						<div class="popular-grid1-pos animated wow slideInUp" data-wow-delay=".5s">
+						<img src="images/8.jpg" alt=" " class="img-responsive" /></div>
+					</div>
+				</div>
+				<div class="col-md-4 popular-grid fdf animated wow slideInUp" data-wow-delay=".5s">
+					<img src="images/7.jpg" alt=" " class="img-responsive" />
+				</div>
+				<div class="col-md-4 popular-grid animated wow slideInUp" data-wow-delay=".5s">
+					<div class="popular-grid1">
+						<h4>SERVICIO EMPRESARIAL</h4>
+						<p>...</p>
+						<div class="popular-grid1-pos animated wow slideInUp" data-wow-delay=".5s">
+							<img src="images/9.jpg" alt=" " class="img-responsive" />
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //popular -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">	
+			<div class="footer-grids">
+				<div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
+					<h3>Ubicación</h3>
+					<p>James Sullivan 163 bis,Mexico City, DF, 06470, México.</p>
+					<a class="exam" href="contactanos.php">Mapa de ubicación</a>
+				</div>
+				<div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
+					<h3>Contacto</h3>
+					<div class="dealer-grids">
+						<div class="dealer-grid-left">
+							<a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="dealer-grid-right">
+							<h4><a href="single.html">Telefonos</a></h4>
+							<p>Contáctanos (55) 30 93 39 39</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="dealer-grids">
+						<div class="dealer-grid-left">
+							<a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="dealer-grid-right">
+							<h4><a href="single.html">email</a></h4>
+							<p><a href="mailto: contacto@basichotel.com.mx">contacto@sybharis.com.mx</a> <a href="mailto: eventos@basichotel.com.mx">eventos@sybharis.com.mx</a></p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
+					<h3>Justo lo que necesitas</h3>
+					<div class="footer-grds">
+						<div class="footer-grd">
+							<a href=""><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="footer-grd">
+							<a href=""><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="footer-grd">
+							<a href=""><img src="images/20.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="footer-grd">
+							<a href=""><img src="images/21.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="footer-grds">
+						<div class="footer-grd">
+							<a href=""><img src="images/22.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="footer-grd">
+							<a href=""><img src="images/23.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="footer-grd">
+							<a href=""><img src="images/24.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="footer-grd">
+							<a href=""><img src="images/25.jpg" alt=" " class="img-responsive" /></a>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copy">
+		<div class="container">	
+			<div class="footer-left animated wow slideInUp" data-wow-delay=".5s">
+				<p>Siguenos en nuestras redes sociales <a href=""></a></p>
+			</div>
+			<div class="footer-right animated wow slideInUp" data-wow-delay=".7s">
+				<ul>
+					<li></li>
+					<li><a href="https://www.facebook.com/Sybharis-301017626927791/?fref=ts" class="facebook"> </a></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>

@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php include('header1.php'); ?>
 <?php include('admin/connect.php');?>
 
 
@@ -47,6 +47,7 @@ if(isset($_POST['order_login'])){
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$result = $_POST['result'];
+    $pextras = $_POST['pextras'];
 	$total = $_POST['total'];
 	$pre = $_POST['pre'];
 	$bal = $_POST['bal'];
@@ -132,6 +133,7 @@ $qry = mysql_query("select count('memberID') from tb_member where username = '$u
 		"Check In: $start\n ".
 		"Check Out: $end\n ".
 		"Total nights of stay: $result\n ".
+        "Personas extras: $pextras\n ".
 		"Payable amount: $total\n ".
 		"Room ID: echo $id[$i];\n".
 		"Confirmation Number: $confirmation\n ";
@@ -154,7 +156,7 @@ if(count($id)>0)
 {
 	foreach($id as $key=>$id)
 	{
-		$query="INSERT INTO tb_reserve (roomID,memberID,days_no,total,partial,balance,arrival,departure,status,transaction_code,request) VALUES ('$id','$m','$result','$totalper','$partial','$balance','$start','$end','reserved','$confirmation','$request')";
+		$query="INSERT INTO tb_reserve (roomID,memberID,days_no,total,partial,balance,arrival,departure,status,transaction_code,request,pextras) VALUES ('$id','$m','$result','$totalper','$partial','$balance','$start','$end','reserved','$confirmation','$request','$pextras')";
 		mysql_query($query) or die ('Error Updating the Database' . mysql_errno());
 		mysql_query("update tb_rooms set status='Reserved' where roomID='$id'") or die(mysql_error());			
 	}

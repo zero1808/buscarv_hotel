@@ -38,7 +38,7 @@
 $db_host		= 'localhost';
 $db_user		= 'root';
 $db_pass		= '';
-$db_database	= 'kingsfields_database'; 
+$db_database	= 'buscarv_hotel'; 
 
 /* End config */
 

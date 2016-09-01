@@ -50,6 +50,7 @@
       <script src="../assets/js/html5shiv.js"></script>
     <![endif]-->
     
+ 
 <?php include('connect.php');
 //Start session
 session_start();
@@ -97,7 +98,9 @@ unset($_SESSION['id']);
                                        session_start();
                                         session_regenerate_id();
                                         $_SESSION['id'] = $row['user_id'];
-                                        header('location:progressbar.php');
+                                        ?>
+                                    <a href="admin.php"><div  class="alert"><i class="icon-remove-sign"></i>&nbsp;Inicio de sesion exitoso! Da click aqui para ir a tu panel de administrador</div></a><?php
+                                        //header('location:progressbar.php');
 										session_write_close();
                                     } else {
 									   session_write_close();

@@ -1,5 +1,5 @@
-<?php include('header.php');?>
-<?php include('admin/connect.php');?>
+<?php include('header1.php');?>
+<?php include('sistema/admin/connect.php');?>
 
     <style type="text/css">
  
@@ -81,6 +81,7 @@ function goBack()
   $start = $_POST['start'];
   $end = $_POST['end'];
   $result = $_POST['result'];
+  $pextras = $_POST['pextras'];
   $bal = $_POST['bal'];
   $pre = $_POST['pre'];
   $total = $_POST['total'];
@@ -117,6 +118,7 @@ function goBack()
   <li><a tabindex="-1" href="#"><span class="text-info">Llegada:</span> <?php echo $start;?></a></li>
   <li><a tabindex="-1" href="#"><span class="text-info">Salida:</span> <?php echo $end;?></a></li>
   <li><a tabindex="-1" href="#"><span class="text-info">No. de noches:</span> <?php echo $result;?></a></li>
+  <li><a tabindex="-1" href="#"><span class="text-info">Personas extras:</span> <?php echo $pextras;?></a></li>
   <li class="divider"></li>
   <li><a tabindex="-1" href="#"><strong>Pagables al hotel</strong></a></li>
   <li class="divider"></li>
@@ -153,6 +155,7 @@ function goBack()
                    	<input name="start" type="hidden" value="<?php echo $start;?>">
                     <input name="end" type="hidden" value="<?php echo $end;?>">
                     <input name="result" type="hidden" value="<?php echo $result;?>">
+                    <input name="pextras" type="hidden" value="<?php echo $pextras;?>">
                     <input name="total" type="hidden" value="<?php echo $total;?>">
                     <input name="pre" type="hidden" value="<?php echo $pre;?>">
                     <input name="bal" type="hidden" value="<?php echo $bal;?>">
@@ -189,7 +192,7 @@ function goBack()
                 
                 <tr>
                 
-                	<td>Email:<input class="validate[required,custom[email]] text-input" name="email" id="email" type="text"></td>
+                	<td>Ingrese Email:<input class="validate[required,custom[email]] text-input" name="email" id="email" type="text"></td>
                     <td>Confirmar email:<input class="validate[required,equals[email]] text-input" name="cemail" id="email2" type="text"></td>
                 
                 
@@ -289,6 +292,7 @@ function goBack()
                     <input name="start" type="hidden" value="<?php echo $start;?>">
                     <input name="end" type="hidden" value="<?php echo $end;?>">
                     <input name="result" type="hidden" value="<?php echo $result;?>">
+                    <input name="pextras" type="hidden" value="<?php echo $pextras;?>">
                     <input name="total" type="hidden" value="<?php echo $total;?>">
                     <input name="pre" type="hidden" value="<?php echo $pre;?>">
                     <input name="bal" type="hidden" value="<?php echo $bal;?>">
